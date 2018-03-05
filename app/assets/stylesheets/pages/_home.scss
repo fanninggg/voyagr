@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+body {
+  background: #4da0b0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #3D7EAA, #F89D29); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #3D7EAA, #F89D29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.home-world {
+  height: 30px;
+  width: 30px;
+}
+.home-page {
+  h1 {
+    color: #F89D29;
+    font-size: 56px;
+  } p {
+    color: rgb(220,220,220);
+  }
+}
