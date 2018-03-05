@@ -27,7 +27,6 @@ class WebhooksController < ApplicationController
         elsif messaging["postback"]
           # Error check
           if messaging["postback"]["payload"] == "We are Voyagr!"
-            puts "hey world"
             # sender = messaging["sender"]["id"]
             # my_reply = get_started_reply(sender)
           end
