@@ -6,15 +6,12 @@ body {
 }
 
 .home-world {
-  height: 30px;
-  width: 30px;
+  height: 48px;
+  width: 48px;
 }
 
 .home-page {
-  h1 {
-    color: #F89D29;
-    font-size: 56px;
-  } h2 {
+  h2 {
     color: rgb(220,220,220);
   } p {
     margin: 0px 200px;
@@ -58,7 +55,8 @@ a.fb-msg-btn{
   align-items: center;
   justify-content: center;
   h1 {
-  font-size: 50px;
+  color: #F89D29;
+  font-size: 80px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   } h2 {

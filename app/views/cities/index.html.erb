@@ -1,2 +1,65 @@
-<h1>Cities#index</h1>
-<p>Find me in app/views/cities/index.html.erb</p>
+<div class="index-page">
+  <div class="link-logo">
+  <%= link_to root_path do %>
+    <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
+  <% end %>
+  </div>
+  <br>
+  <br>
+
+  <h1 class="text-center">Cities</h1>
+  <h2 class="text-center">Here are our suggestions for you trip...</h2>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="cards-box">
+    <div class="city-card"
+      data-aos="fade-up-right"
+      data-aos-duration="2000">
+      <h2 class="text-center">Berlin</h2>
+      <%= image_tag "berlin", :class=> "city" %>
+    </div>
+    <div class="city-card"
+      data-aos="fade-up"
+      data-aos-duration="2000">
+      <h2 class="text-center">Amsterdam</h2>
+      <%= image_tag "amsterdam", :class=> "city" %>
+    </div>
+    <div class="city-card"
+      data-aos="fade-up-left"
+      data-aos-duration="2000">
+      <h2 class="text-center">Rio de Janeiro</h2>
+      <%= image_tag "rio", :class=> "city" %>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+<%= javascript_pack_tag 'home' %>
+
+  <script> // add as a javascript_pack_tag
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : 'your-app-id',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.12'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+</div>
