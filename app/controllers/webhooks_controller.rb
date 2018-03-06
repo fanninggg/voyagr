@@ -23,32 +23,91 @@ class WebhooksController < ApplicationController
       entry["messaging"].each do |messaging|
         if messaging["read"]
           # do nothing
-          puts "hi"
+          puts "read"
         elsif messaging["delivery"]
-          puts "ho"
+          puts "delivery"
           #do nothing
         elsif messaging["postback"]
-          puts "hey"
-          # Error check
-          if messaging["postback"]["payload"] == "We are Voyagr!"
-            # sender = messaging["sender"]["id"]
-            # my_reply = get_started_reply(sender)
-          end
+          puts "postback"
+          sender = messaging["sender"]["id"]
+          get_started(messaging, sender)
+          first_question(messaging, sender)
+          second_question(messaging, sender)
+          third_question(messaging, sender)
+          fourth_question(messaging, sender)
+          escape(messaging, sender)
         elsif messaging["message"]
           sender = messaging["sender"]["id"]
           text = messaging["message"]["text"]
           if text == "Help"
-            puts "holla"
+            puts "help"
           else
             puts "salut"
             my_reply = welcome_reply(sender)
           end
           HTTP.post(url, json: my_reply)
-          puts my_reply
         end
       end
       render plain: my_reply
     end
+  end
+
+  def get_started(messaging, sender)
+    if messaging["postback"]["payload"] == "Get Started!"
+      my_reply = first_question_reply(sender)
+      HTTP.post(url, json: my_reply)
+    end
+  end
+
+  def first_question(messaging, sender)
+    if messaging["postback"]["payload"] == "£"
+      my_reply = second_question_reply(sender)
+    elsif messaging["postback"]["payload"] == "££"
+      my_reply = second_question_reply(sender)
+    elsif  messaging["postback"]["payload"] == "£££"
+      my_reply = second_question_reply(sender)
+    end
+    HTTP.post(url, json: my_reply)
+  end
+
+  def second_question(messaging, sender)
+    if messaging["postback"]["payload"] == "Europe"
+      my_reply = third_question_reply(sender)
+    elsif messaging["postback"]["payload"] == "Further Afield"
+      my_reply = third_question_reply(sender)
+    end
+    HTTP.post(url, json: my_reply)
+  end
+
+  def third_question(messaging, sender)
+    if messaging["postback"]["payload"] == "bar"
+      my_reply = fourth_question_reply(sender)
+    elsif messaging["postback"]["payload"] == "restaurant"
+      my_reply = fourth_question_reply(sender)
+    elsif messaging["postback"]["payload"] == "locals"
+      my_reply = fourth_question_reply(sender)
+    end
+    HTTP.post(url, json: my_reply)
+  end
+
+  def fourth_question(messaging, sender)
+    if messaging["postback"]["payload"] == "culture"
+      my_reply = escape_reply(sender)
+    elsif messaging["postback"]["payload"] == "adventure"
+      my_reply = escape_reply(sender)
+    elsif messaging["postback"]["payload"] == "relax"
+      my_reply = escape_reply(sender)
+    end
+    HTTP.post(url, json: my_reply)
+  end
+
+  def escape(messaging, sender)
+    if messaging["postback"]["payload"] == "Continue"
+      my_reply = welcome_reply(sender)
+    elsif messaging["postback"]["payload"] == "results"
+      my_reply = welcome_reply(sender)
+    end
+    HTTP.post(url, json: my_reply)
   end
 
   def url

@@ -5,8 +5,8 @@ require_relative 'config/application'
 
 Rails.application.load_tasks
 
-curl -X POST -H "Content-Type: application/json" -d '{
-  "setting_type" : "domain_whitelisting",
-  "whitelisted_domains" : ["https://7a41c0c1.ngrok.io"],
-  "domain_action_type": "add"
-}' "https://graph.facebook.com/v2.6/me/thread_settings?access_token=EAAFHfgUlUNUBABNsrhzhBNs8X2kdmdI9i5uMHyzYG3ZAsJVGJf922zwyc8jJpqfUbr8MHhNfIjyjpPZBjwwROFJjviIaRNTYPCuVxCv12xXGZBUO4ExMdhap7SPZCWWTbfL0TcDunlZCVqMLujFTfTgDaqzZAUzUfW7nnrrArRrQZDZD"
+# curl -X POST -H "Content-Type: application/json" -d '{
+#   "setting_type" : "domain_whitelisting",
+#   "whitelisted_domains" : ["https://7a41c0c1.ngrok.io"],
+#   "domain_action_type": "add"
+# }' "https://graph.facebook.com/v2.6/me/thread_settings?access_token=EAAFHfgUlUNUBABNsrhzhBNs8X2kdmdI9i5uMHyzYG3ZAsJVGJf922zwyc8jJpqfUbr8MHhNfIjyjpPZBjwwROFJjviIaRNTYPCuVxCv12xXGZBUO4ExMdhap7SPZCWWTbfL0TcDunlZCVqMLujFTfTgDaqzZAUzUfW7nnrrArRrQZDZD"
