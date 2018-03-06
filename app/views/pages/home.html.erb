@@ -1,6 +1,17 @@
 <div class="home-page">
-  <h1 class="text-center">v<%= image_tag "world", :class=> "home-world" %>yagr</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
+  <div class="banner">
+    <div class="banner-content">
+      <h1 class="text-center">v<%= image_tag "world", :class=> "home-world" %>yagr</h1>
+      <h2>Choose the right destination</h2>
+
+      <div class= "text-center footer">
+        <i class="fa fa-angle-double-down bigger-icon"></i>
+      </div>
+
+    </div>
+
+  </div>
+
   <br>
   <br>
   <br>
@@ -11,6 +22,86 @@
   <br>
   <br>
   <br>
+  <br>
+  <br>
+
+
+  <div data-aos="fade-left" class= "text-right">
+    <%#= link_to 'Message us on Facebook', "https://m.me/your-profile-username", class: "fb-msg-btn", target: "_blank" %>
+    <div class="fb-messengermessageus"
+      messenger_app_id="#"
+      page_id="#"
+      color="blue"
+      size="standard">
+    </div>
+<!--
+    messenger_app_id="<APP_ID>"
+      page_id="<PAGE_ID>"
+      color="<blue | white>"
+      size="<standard | large | xlarge>"> -->
+    <p>Open ChatBot</p>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <br>
+
+  <div data-aos="fade-right" class= "text-left">
+    <p>Answer Questions</p>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div data-aos="fade-left" class= "text-right" >
+    <p>Get Suggestions</p>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <div data-aos="fade-right" class= "text-left">
+    <p>Bon Voyagr!</p>
+  </div>
+
 
   <br>
   <br>
@@ -33,144 +124,32 @@
   <br>
   <br>
   <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <%= javascript_pack_tag 'home' %>
+
+  <script> // add as a javascript_pack_tag
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : 'your-app-id',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.12'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
 </div>
-
-<h2>choose the right destination</h2>
-
-
-<div data-aos="fade-left" style="background-color: orange; color:white">
-  <p>Open ChatBot</p>
-</div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div data-aos="fade-left" style="background-color: orange; color:white">
-  <p>Answer Questions</p>
-</div>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div data-aos="fade-left" style="background-color: orange; color:white">
-  <p>Get Suggestions</p>
-</div>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div data-aos="fade-left" style="background-color: orange; color:white">
-  <p>Bon Voyagr!</p>
-</div>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<%= javascript_pack_tag 'home' %>
