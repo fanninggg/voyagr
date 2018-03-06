@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20180306120802) do
   enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
+    t.string "name"
     t.string "budget"
     t.string "location"
     t.string "type_of_evening"
