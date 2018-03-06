@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.3'
 
 gem 'http'
+gem 'httparty'
 gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
