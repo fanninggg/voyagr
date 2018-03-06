@@ -16,7 +16,6 @@ def welcome_reply(sender)
                     "template_type": "generic",
                     "elements": [{
                       "title": "Welcome to Voyagr, to find your next holiday destination press 'Get Started!",
-                      "subtitle": "Tap a button to answer.",
                       "buttons": [
                         {
                           "type": "postback",
@@ -33,160 +32,115 @@ end
 
 def first_question_reply(sender)
   response = {
-                "attachment": {
-                  "type": "template",
-                  "payload": {
-                    "template_type": "generic",
-                    "elements": [{
-                      "title": "How much are you willing to pay for your holiday?",
-                      "subtitle": "Tap a button to answer.",
-                      "buttons": [
-                        {
-                          "type": "postback",
-                          "title": "£",
-                          "payload": "£",
-                        },
-                        {
-                          "type": "postback",
-                          "title": "££",
-                          "payload": "££",
-                        },
-                        {
-                          "type": "postback",
-                          "title": "£££",
-                          "payload": "£££",
-                        },
-                      ],
-                    }],
-                  }
+              "text": "How much do you want to spend?",
+              "quick_replies": [
+                {
+                  "content_type": "text",
+                  "title": "\u{1F4B0}",
+                  "payload": "£",
+                },
+                {
+                  "content_type": "text",
+                  "title": "\u{1F4B0 1F4B0}",
+                  "payload": "££",
+                },
+                {
+                  "content_type": "text",
+                  "title": "\u{1F4B0 1F4B0 1F4B0}",
+                  "payload": "£££",
                 }
-              }
+              ]
+            }
 
   my_standard_reply(response, sender)
 end
 
 def second_question_reply(sender)
   response = {
-                "attachment": {
-                  "type": "template",
-                  "payload": {
-                    "template_type": "generic",
-                    "elements": [{
-                      "title": "Do you want to explore Europe or go further afield?",
-                      "subtitle": "Tap a button to answer.",
-                      "buttons": [
-                        {
-                          "type": "postback",
-                          "title": "Europe",
-                          "payload": "Europe",
-                        },
-                        {
-                          "type": "postback",
-                          "title": "Further Afield",
-                          "payload": "Further Afield",
-                        }
-                      ],
-                    }],
-                  }
+              "text": "Do you want to travel in Europe or further afield?",
+              "quick_replies": [
+                {
+                  "content_type": "text",
+                  "title": "Europe \u{1F1EA 1F1FA}",
+                  "payload": "europe",
+                },
+                {
+                  "content_type": "text",
+                  "title": "Further \u{1F30F}",
+                  "payload": "further",
                 }
-              }
+              ]
+            }
 
   my_standard_reply(response, sender)
 end
 
 def third_question_reply(sender)
   response = {
-                "attachment": {
-                  "type": "template",
-                  "payload": {
-                    "template_type": "generic",
-                    "elements": [{
-                      "title": "How would you describe your perfect evening?",
-                      "subtitle": "Tap a button to answer.",
-                      "buttons": [
-                        {
-                          "type": "postback",
-                          "title": "Drinking in a bar",
-                          "payload": "bar",
-                        },
-                        {
-                          "type": "postback",
-                          "title": "Eating in a restaurant",
-                          "payload": "restaurant",
-                        },
-                        {
-                          "type": "postback",
-                          "title": "Meeting the locals",
-                          "payload": "locals",
-                        }
-                      ],
-                    }],
-                  }
+              "text": "What would be your perfect evening on holiday?",
+              "quick_replies": [
+                {
+                  "content_type": "text",
+                  "title": "Restaurant \u{1F35D}",
+                  "payload": "restaurant",
+                },
+                {
+                  "content_type": "text",
+                  "title": "Drinking in a bar \u{1F378}",
+                  "payload": "bar",
+                },
+                {
+                  "content_type": "text",
+                  "title": "Meeting Locals \u{1F483}",
+                  "payload": "locals",
                 }
-              }
+              ]
+            }
 
   my_standard_reply(response, sender)
 end
 
 def fourth_question_reply(sender)
   response = {
-                "attachment": {
-                  "type": "template",
-                  "payload": {
-                    "template_type": "generic",
-                    "elements": [{
-                      "title": "What type of holiday would you like?",
-                      "subtitle": "Tap a button to answer.",
-                      "buttons": [
-                        {
-                          "type": "postback",
-                          "title": "Cultural",
-                          "payload": "culture",
-                        },
-                        {
-                          "type": "postback",
-                          "title": "Adventurous",
-                          "payload": "adventure",
-                        },
-                        {
-                          "type": "postback",
-                          "title": "Relaxing",
-                          "payload": "relax",
-                        }
-                      ],
-                    }],
-                  }
+              "text": "What kind of holiday do you want?",
+              "quick_replies": [
+                {
+                  "content_type": "text",
+                  "title": "Cultural \u{1F3DB FE0F}",
+                  "payload": "culture",
+                },
+                {
+                  "content_type": "text",
+                  "title": "Adventurous \u{1F9D7}",
+                  "payload": "adventure",
+                },
+                {
+                  "content_type": "text",
+                  "title": "Relaxing \u{1F3D6}",
+                  "payload": "relax",
                 }
-              }
+              ]
+            }
 
   my_standard_reply(response, sender)
 end
 
 def escape_reply(sender)
   response = {
-                "attachment": {
-                  "type": "template",
-                  "payload": {
-                    "template_type": "generic",
-                    "elements": [{
-                      "title": "Ok! We have some results for you... Would you like to get more specific or exit now and get your results?",
-                      "subtitle": "Tap a button to answer.",
-                      "buttons": [
-                        {
-                          "type": "postback",
-                          "title": "Continue",
-                          "payload": "continue",
-                        },
-                        {
-                          "type": "postback",
-                          "title": "Get my results",
-                          "payload": "results",
-                        }
-                      ],
-                    }],
-                  }
+              "text": "We have your results! Would you like to see them now, or narrow them further with more questions",
+              "quick_replies": [
+                {
+                  "content_type": "text",
+                  "title": "See my results \u{1F389}",
+                  "payload": "results",
+                },
+                {
+                  "content_type": "text",
+                  "title": "Continue \u{1F3CA}",
+                  "payload": "continue",
                 }
-              }
+              ]
+            }
 
   my_standard_reply(response, sender)
 end
