@@ -24,11 +24,6 @@ body {
   }
 }
 
-.bigger-icon {
-  font-size: 50px;
-  color: rgb(220,220,220);
-}
-
 a.fb-msg-btn{
 
   display: inline-block;
@@ -69,6 +64,12 @@ a.fb-msg-btn{
     opacity: 0.6;
     margin-bottom: 30px;
   }
+}
+
+.bigger-icon {
+  font-size: 50px;
+  color: rgb(220,220,220);
+  // color: #FFC97C;
 }
 
 .footer {
