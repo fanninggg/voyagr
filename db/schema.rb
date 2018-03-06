@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20180306120802) do
   create_table "cities", force: :cascade do |t|
     t.string "budget"
     t.string "location"
-    t.string "ype_of_evening"
+    t.string "type_of_evening"
     t.string "type_of_city"
     t.bigint "price_answer_id"
     t.bigint "location_answer_id"
