@@ -1,0 +1,47 @@
+.index-page {
+  h1 {
+    color: rgb(220,220,220);
+    font-size: 56px;
+  } h2 {
+    font-size: 40px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+  } h3 {
+    color: #F89D29;
+    font-size: 30px;
+    } p {
+    width: 300px;
+    font-size: 16px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+  }
+}
+
+.link-logo {
+  margin-left: 10px;
+  margin-top: -25px;
+}
+
+.logo-world {
+  height: 20px;
+  width: 20px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.cards-box {
+  display: flex;
+  lex-direction: row;
+}
+.city-card {
+  width: 477px;
+  margin: 10px;
+}
+.city {
+  height: 215px;
+  width: 450px;
+}
