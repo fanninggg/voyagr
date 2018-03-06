@@ -41,11 +41,12 @@ class WebhooksController < ApplicationController
             puts "holla"
           else
             puts "salut"
+            my_reply = welcome_reply(sender)
           end
           HTTP.post(url, json: my_reply)
+          puts my_reply
         end
       end
-      puts my_reply
       render plain: my_reply
     end
   end
