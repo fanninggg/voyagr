@@ -6,11 +6,73 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# PriceQuestion.destroy_all
+# LocationQuestion.destroy_all
+# EveningQuestion.destroy_all
+# CityTypeQuestion.destroy_all
+puts "Seeding"
+
+price_questions_attributes =
+{
+  content: 'How much do you want to spend?'
+  }
+price = PriceQuestion.create!(price_questions_attributes)
+
+location_questions_attributes =
+{content: 'Do you want to travel in Europe or go further?'
+  }
+
+location = LocationQuestion.create!(location_questions_attributes)
+
+evening_questions_attributes =
+{
+  content: 'What would be your perfect evening on holidays?'
+  }
+
+evening = EveningQuestion.create!(evening_questions_attributes)
+
+city_type_attributes =
+{
+  content: 'What kind of holiday do you want ?'
+  }
+city_type = CityTypeQuestion.create!(city_type_attributes)
+
+
+price_answers_attributes = {
+  price_question_id: price.id,
+  content: ["low", "medium", "Expensive"]
+}
+
+PriceAnswer.create!(price_answers_attributes)
+
+
+location_answers_attributes = {
+  location_question_id: location.id,
+  content: ['Europe', 'Worldwide']
+  }
+
+LocationAnswer.create!(location_answers_attributes)
+
+evening_answers_attributes = {
+  evening_question_id: evening.id,
+  content: ['Bar', 'Restaurant','Meet the locals']
+}
+
+EveningAnswer.create!(evening_answers_attributes)
+
+city_type_answers_attributes = {
+  city_type_question_id: city_type.id,
+  content: ['Culturous', 'Adventurous', 'Relaxing']
+}
+CityTypeAnswer.create!(city_type_answers_attributes)
+
+puts "Now for the cities"
+
 
 cities_attributes = [
   {
     name: 'Venice, Italy',
-    budget:         'high',
+    budget:         'Expensive',
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Cultural'
@@ -390,7 +452,7 @@ cities_attributes = [
     type_of_city:        'Culturous'
   },
   {
-    name: 'Siem Reap, Cambodia',
+    name: 'Angkor, Cambodia',
     budget:         'low',
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
@@ -537,7 +599,7 @@ cities_attributes = [
     type_of_city:        'Relaxing'
   },
      {
-    name: 'Oia, Greece',
+    name: 'Santorini, Greece',
     budget:         'Medium',
     location:      'Europe',
     type_of_evening:  'Restaurant',
@@ -642,7 +704,7 @@ cities_attributes = [
     type_of_city:        'Culturous'
   },
     {
-    name: 'Sacred Valley, Peru',
+    name: 'Machu Picchu, Peru',
     budget:         'Medium',
     location:      'Worldwide',
     type_of_evening:  'Bar',
@@ -733,11 +795,443 @@ cities_attributes = [
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing'
   },
-
-
+      {
+    name: 'Kathmandu, Nepal',
+    budget:         'Medium',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Adventurous'
+  },
+  {
+    name: 'Zanzibar, Tanzania',
+    budget:         'Medium',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Adventurous'
+  },
+  {
+    name: 'Samarkand, Uzbekistan',
+    budget:         'Medium',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Adventurous'
+  },
+   {
+    name: 'Petra, Jordan',
+    budget:         'Medium',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Lalibela, Ethiopia',
+    budget:         'Medium',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Beijing, China',
+    budget:         'Medium',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Cape Town, South Africa',
+    budget:         'Medium',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Relaxing'
+  },
+  {
+    name: 'Honolulu, Hawaii',
+    budget:         'Medium',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Relaxing'
+  },
+  {
+    name: 'Papeete, Bora Bora',
+    budget:         'Medium',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Relaxing'
+  },
+ {
+    name: 'Chamonix, France',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Adventurous'
+  },
+   {
+    name: 'Lucerne, Switzerland',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Adventurous'
+  },
+   {
+    name: 'Capri, Italy',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Adventurous'
+  },
+ {
+    name: 'London, England',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Florence, Italy',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Paris, France',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Geneva, Switzerland',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Relaxing'
+  },
+   {
+    name: 'Manchester, UK',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Relaxing'
+  },
+   {
+    name: 'Nice, France',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Relaxing'
+  },
+   {
+    name: 'Mont Saint Michel, France',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Adventurous'
+  },
+   {
+    name: 'Lausanne, Switzerland',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Adventurous'
+  },
+   {
+    name: 'Bergen, Norway',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Bar',
+    type_of_city:        'Adventurous'
+  },
+    {
+    name: 'Vatican City',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Culturous'
+  },
+    {
+    name: 'Amsterdam, Netherlands',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Culturous'
+  },
+    {
+    name: 'Rome, Italy',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Copenhagen, Denmark',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Relaxing'
+  },
+   {
+    name: 'Zurich, Switzerland',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Relaxing'
+  },
+   {
+    name: 'Wild Taiga, Finland',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Adventurous'
+  },
+   {
+    name: 'Edinburgh, Scotland',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Adventurous'
+  },
+   {
+    name: 'Gothenburg, Sweden',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Adventurous'
+  },
+   {
+    name: 'Stockholm, Sweden',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Brussels, Belgium',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Maastricht, The Netherlands',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Rotterdam, Netherlands ',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Relaxing'
+  },
+   {
+    name: 'Oslo, Norway',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Relaxing'
+  },
+   {
+    name: 'Reykjavik, Iceland',
+    budget:         'Expensive',
+    location:      'Europe',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Relaxing'
+  },
+  {
+    name: 'Havana, Cuba',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Bar',
+    type_of_city:        'Adventurous'
+  },
+  {
+    name: 'Queenstown, New Zealand',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Bar',
+    type_of_city:        'Adventurous'
+  },
+  {
+    name: 'Melbourne, Australia',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Bar',
+    type_of_city:        'Adventurous'
+  },
+   {
+    name: 'Bangkok, Thailand',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Bar',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Osaka, Japan',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Bar',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Shanghai, China',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Bar',
+    type_of_city:        'Culturous'
+  },
+  {
+    name: 'Sydney, Australia',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Bar',
+    type_of_city:        'Relaxing'
+  },
+  {
+    name: 'Vancouver, Canada',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Bar',
+    type_of_city:        'Relaxing'
+  },
+  {
+    name: 'San Diego, US',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Bar',
+    type_of_city:        'Relaxing'
+  },
+  {
+    name: 'San Francisco, United States',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Adventurous'
+  },
+  {
+    name: 'Bali, Indonesia',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Adventurous'
+  },
+  {
+    name: 'Niagara Falls, US/ Canada',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Adventurous'
+  },
+   {
+    name: 'Taipei, Taiwan',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Ulan Bator, Mongolia',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Seoul, South Korea',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Culturous'
+  },
+  {
+    name: 'Washington DC, US',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Relaxing'
+  },
+  {
+    name: 'Dubai, United Arab Emirates',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Relaxing'
+  },
+  {
+    name: 'Bern, Switzerland',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Relaxing'
+  },
+  {
+    name: 'Auckland, New Zealand',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Adventurous'
+  },
+  {
+    name: 'Grand Canyon, US',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Adventurous'
+  },
+  {
+    name: 'Moraine Lake, Banff, Canada',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Adventurous'
+  },
+   {
+    name: 'Kyoto, Japan',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Wellington, New Zealand',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Hong Kong',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Culturous'
+  },
+   {
+    name: 'Victoria, Seychelles',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Relaxing'
+  },
+   {
+    name: 'Honolulu, Hawaii',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Relaxing'
+  },
+   {
+    name: 'Dubai, UAE',
+    budget:         'Expensive',
+    location:      'Worldwide',
+    type_of_evening:  'Meet the locals',
+    type_of_city:        'Relaxing'
+  }
 ]
 
 City.create!(cities_attributes)
 
-
+puts "done"
 

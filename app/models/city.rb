@@ -1,7 +1,7 @@
 class City < ApplicationRecord
-  belongs_to :price_answer
-  belongs_to :location_answer
-  belongs_to :evening_answer
-  belongs_to :city_type_answer
+  belongs_to :price_answer, optional: true
+  belongs_to :location_answer, optional: true
+  belongs_to :evening_answer, optional: true
+  belongs_to :city_type_answer, optional: true
   has_many :trip_cities
 end
