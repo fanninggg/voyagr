@@ -27,6 +27,15 @@ def welcome_reply(sender)
                   }
                 }
               }
+
+  my_standard_reply(response, sender)
+end
+
+def help_reply(sender)
+  response = {
+              "text": "Need help? Just type 'Hey' below to start"
+              }
+
   my_standard_reply(response, sender)
 end
 
@@ -148,22 +157,45 @@ end
 def results_reply(sender)
   response = {
               "attachment": {
-                  "type": "template",
-                  "payload": {
-                    "template_type": "generic",
-                    "elements": [{
-                      "title": "Here are your results:",
-                      "item_url": "https://www.voyagr.co.uk",
-                      "buttons": [{
-                                "type": "web_url",
-                                "url": "https://www.voyagr.co.uk",
-                                "title": "Place"
-                        }
-                      ]
-                    }]
-                  }
-                }
+              "type": "template",
+              "payload": {
+              "template_type": "generic",
+                "elements": [{
+                "title": "First Result",
+                  "subtitle": "This is the first result",
+                  "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg",
+                  "buttons":
+                  [{
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/",
+                    "title": "More information"
+                  }],
+                },
+                {
+                  "title": "Second result",
+                  "subtitle": "This is the second result",
+                  "image_url": "https://media.wired.com/photos/59e644e21a7a784c71f7d86d/2:1/w_2500,c_limit/TorontoSkyline-HP-553395387.jpg",
+                  "buttons":
+                  [{
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/",
+                    "title": "More information"
+                  }],
+                },
+                {
+                  "title": "Third result",
+                  "subtitle": "This is the third result",
+                  "image_url": "https://www.birdlife.org/sites/default/files/styles/1600/public/bialowieza_forest_c_tomasz_wilk_0.jpg?itok=iXRoJtoL",
+                  "buttons":
+                  [{
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/",
+                    "title": "More information"
+                  }],
+                }]
               }
+            }
+          }
 
   my_standard_reply(response, sender)
 end
