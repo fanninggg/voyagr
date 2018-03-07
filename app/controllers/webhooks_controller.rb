@@ -39,7 +39,6 @@ class WebhooksController < ApplicationController
           third_question(messaging, sender)
           fourth_question(messaging, sender)
           escape(messaging, sender)
-          my_reply = results_reply(sender)
         elsif messaging["message"]
           sender = messaging["sender"]["id"]
           text = messaging["message"]["text"]
