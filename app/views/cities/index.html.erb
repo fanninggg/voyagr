@@ -14,25 +14,22 @@
   <br>
   <br>
   <div class="cards-box">
-    <div class="city-card"
-      data-aos="fade-up-right"
-      data-aos-duration="2000">
-      <h2 class="text-center">Berlin</h2>
-      <%= image_tag "berlin", :class=> "city" %>
-    </div>
+  <% @cities.each do |city| %>
     <div class="city-card"
       data-aos="fade-up"
       data-aos-duration="2000">
-      <h2 class="text-center">Amsterdam</h2>
-      <%= image_tag "amsterdam", :class=> "city" %>
+    <%= cl_image_tag city.photo, height: 200, width: 300, crop: :fill %>
+      <h2 class="text-center"><%= city.name %></h2>
     </div>
-    <div class="city-card"
-      data-aos="fade-up-left"
-      data-aos-duration="2000">
-      <h2 class="text-center">Rio de Janeiro</h2>
-      <%= image_tag "rio", :class=> "city" %>
-    </div>
-  </div>
+  <% end %>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <br>
   <br>
   <br>
