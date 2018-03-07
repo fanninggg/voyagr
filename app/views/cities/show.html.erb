@@ -1,2 +1,10 @@
 <h1>Cities#show</h1>
 <p>Find me in app/views/cities/show.html.erb</p>
+
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>">
+</div>
