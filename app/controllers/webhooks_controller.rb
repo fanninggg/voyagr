@@ -1,7 +1,7 @@
 require_relative "../views/webhooks/bot_reply"
 
 class WebhooksController < ApplicationController
-  skip_before_action :authenticate_user!
+  # skip_before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
 
   def messenger
@@ -39,6 +39,7 @@ class WebhooksController < ApplicationController
           third_question(messaging, sender)
           fourth_question(messaging, sender)
           escape(messaging, sender)
+          my_reply = results_reply(sender)
         elsif messaging["message"]
           sender = messaging["sender"]["id"]
           text = messaging["message"]["text"]
@@ -106,9 +107,9 @@ class WebhooksController < ApplicationController
 
   def escape(messaging, sender)
     if messaging["message"]["quick_reply"]["payload"] == "continue"
-      my_reply = welcome_reply(sender)
+      my_reply = results_reply(sender)
     elsif messaging["message"]["quick_reply"]["payload"] == "results"
-      my_reply = welcome_reply(sender)
+      my_reply = results_reply(sender)
     end
     HTTP.post(url, json: my_reply)
   end
