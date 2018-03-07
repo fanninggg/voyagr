@@ -6,24 +6,6 @@
     </div>
   </div>
 
-
-  <div data-aos="fade-left" class= "text-right">
-    <p>Open ChatBot</p>
-  </div>
-    <%#= link_to 'Message us on Facebook', "https://m.me/your-profile-username", class: "fb-msg-btn", target: "_blank" %>
-  <!--     <div class="fb-messengermessageus"
-
-      messenger_app_id="#"
-      page_id="#"
-      color="blue"
-      size="standard">
-    </div> -->
-
-    <!--    messenger_app_id="<APP_ID>"
-      page_id="<PAGE_ID>"
-      color="<blue | white>"
-      size="<standard | large | xlarge>"> -->
-
   <div class="test here">
     <div id="icon-container">
         <!-- <div id="circle">&#x25CC;</div> -->
@@ -38,8 +20,8 @@
     <br>
     <br>
 
-    <div data-aos="fade-left" class= "text-right">
-      <p>Open ChatBot</p>
+    <div data-aos="fade-left" class= "text-right" id="open-chat">
+      <p> Open ChatBot <%= link_to image_tag("Messenger_Icon.png", class: "messenger-button"), "https://m.me/Celia-voyagr-198055850797006", target: "_blank"%></p>
     </div>
 
     <br>
@@ -100,7 +82,6 @@
 
     <div data-aos="fade-right" class= "text-left">
       <p>Bon Voyagr!</p>
-      <p><a href="http://m.me/Celia-voyagr-198055850797006">Here</a></p>
     </div>
   </div>
   <br>
@@ -125,6 +106,7 @@
   <br>
   <br>
   <br>
+
 
   <div data-aos="zoom-in" class="team">
     <div class="team-member">
@@ -156,10 +138,14 @@
       <p class="text-center">hen@voyagr.co.uk</p>
     </div>
   </div>
-  <br>
-  <br>
-  <br>
 
+    <div class="text-center facebook-page-link">
+      <i class="fa fa-facebook-f text-center facebook-page-link"></i>
+    </div>
+
+<br>
+<br>
+<br>
 
   <%= javascript_pack_tag 'home' %>
 
