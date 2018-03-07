@@ -145,6 +145,29 @@ def escape_reply(sender)
   my_standard_reply(response, sender)
 end
 
+def results_reply(sender)
+  response = {
+              "attachment": {
+                  "type": "template",
+                  "payload": {
+                    "template_type": "generic",
+                    "elements": [{
+                      "title": "Here are your results:",
+                      "item_url": "https://www.voyagr.co.uk",
+                      "buttons": [{
+                                "type": "web_url",
+                                "url": "https://www.voyagr.co.uk",
+                                "title": "Place"
+                        }
+                      ]
+                    }]
+                  }
+                }
+              }
+
+  my_standard_reply(response, sender)
+end
+
 
 
 
