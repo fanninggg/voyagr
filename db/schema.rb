@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307140423) do
+ActiveRecord::Schema.define(version: 20180307161623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,10 +99,12 @@ ActiveRecord::Schema.define(version: 20180307140423) do
     t.bigint "city_type_answer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "trip_id"
     t.index ["city_type_answer_id"], name: "index_trip_answers_on_city_type_answer_id"
     t.index ["evening_answer_id"], name: "index_trip_answers_on_evening_answer_id"
     t.index ["location_answer_id"], name: "index_trip_answers_on_location_answer_id"
     t.index ["price_answer_id"], name: "index_trip_answers_on_price_answer_id"
+    t.index ["trip_id"], name: "index_trip_answers_on_trip_id"
   end
 
   create_table "trip_cities", force: :cascade do |t|
@@ -134,6 +136,7 @@ ActiveRecord::Schema.define(version: 20180307140423) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "psid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -150,6 +153,7 @@ ActiveRecord::Schema.define(version: 20180307140423) do
   add_foreign_key "trip_answers", "evening_answers"
   add_foreign_key "trip_answers", "location_answers"
   add_foreign_key "trip_answers", "price_answers"
+  add_foreign_key "trip_answers", "trips"
   add_foreign_key "trip_cities", "cities"
   add_foreign_key "trip_cities", "trip_answers"
   add_foreign_key "trips", "users"
