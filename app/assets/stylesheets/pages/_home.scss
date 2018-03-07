@@ -20,15 +20,36 @@ body {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (min-width: 300px) {
   .home-page p {
     font-size: 17px;
-    margin: 0px 30px;
+    margin: 0px 20px;
   }
   .messenger-button {
     height: 20px !important;
   }
 }
+
+@media only screen and (min-width: 500px) {
+  .home-page p {
+    font-size: 35px;
+    margin: 0px 30px;
+  }
+  .messenger-button {
+    height: 35px !important;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .home-page p {
+    font-size: 45px;
+    margin: 0px 30px;
+  }
+  .messenger-button {
+    height: 35px !important;
+  }
+}
+
 
 .banner {
   color: white;
