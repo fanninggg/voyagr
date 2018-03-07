@@ -33,7 +33,6 @@ class WebhooksController < ApplicationController
           get_started(messaging, sender)
         elsif messaging["message"]["quick_reply"]
           sender = messaging["sender"]["id"]
-          text = messaging["message"]["text"]
           first_question(messaging, sender)
           second_question(messaging, sender)
           third_question(messaging, sender)
@@ -43,9 +42,8 @@ class WebhooksController < ApplicationController
           sender = messaging["sender"]["id"]
           text = messaging["message"]["text"]
           if text == "Help"
-            puts "help"
+            my_reply = help_reply(sender)
           else
-            puts "salut"
             my_reply = welcome_reply(sender)
           end
           HTTP.post(url, json: my_reply)

@@ -27,6 +27,15 @@ def welcome_reply(sender)
                   }
                 }
               }
+
+  my_standard_reply(response, sender)
+end
+
+def help_reply(sender)
+  response = {
+              "text": "Need help? Just type 'Hey' below to start"
+              }
+
   my_standard_reply(response, sender)
 end
 
@@ -71,6 +80,7 @@ def second_question_reply(sender)
                 }
               ]
             }
+
   my_standard_reply(response, sender)
 end
 
@@ -94,6 +104,7 @@ def third_question_reply(sender)
                   "payload": "locals",
                 }
               ]
+            }
 
   my_standard_reply(response, sender)
 end
@@ -119,6 +130,7 @@ def fourth_question_reply(sender)
                 }
               ]
             }
+
   my_standard_reply(response, sender)
 end
 
@@ -138,6 +150,7 @@ def escape_reply(sender)
                 }
               ]
             }
+
   my_standard_reply(response, sender)
 end
 
@@ -183,6 +196,7 @@ def results_reply(sender)
               }
             }
           }
+
   my_standard_reply(response, sender)
 end
 
