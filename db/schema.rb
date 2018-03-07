@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307123726) do
+ActiveRecord::Schema.define(version: 20180307134057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
-    t.string "name"
     t.string "budget"
     t.string "location"
-    t.string "type_of_evening"
+    t.string "ype_of_evening"
     t.string "type_of_city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180307123726) do
     t.bigint "location_answer_id"
     t.bigint "evening_answer_id"
     t.bigint "city_type_answer_id"
+    t.string "photo"
     t.index ["city_type_answer_id"], name: "index_cities_on_city_type_answer_id"
     t.index ["evening_answer_id"], name: "index_cities_on_evening_answer_id"
     t.index ["location_answer_id"], name: "index_cities_on_location_answer_id"
