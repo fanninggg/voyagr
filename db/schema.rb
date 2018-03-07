@@ -16,10 +16,9 @@ ActiveRecord::Schema.define(version: 20180307140423) do
   enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
-    t.string "name"
     t.string "budget"
     t.string "location"
-    t.string "type_of_evening"
+    t.string "ype_of_evening"
     t.string "type_of_city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
