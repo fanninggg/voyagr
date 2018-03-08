@@ -69,7 +69,7 @@ CityTypeAnswer.create!(city_type_answers_attributes)
 puts "Now for the cities"
 
 
-cities_attributes = [
+cities_attributes_1 = [
   {
     name: 'Venice, Italy',
     budget:         'Expensive',
@@ -226,7 +226,10 @@ cities_attributes = [
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426721/voyagr/Brighton.jpg"
-  },
+  }
+]
+
+cities_attributes_2 = [
  {
     name: 'Vienna, Austria',
     budget:         'low',
@@ -1382,7 +1385,8 @@ cities_attributes = [
   }
 ]
 
-City.create!(cities_attributes)
-
+City.create!(cities_attributes_1)
+puts "finding more locations..."
+City.create!(cities_attributes_2)
 puts "done"
 
