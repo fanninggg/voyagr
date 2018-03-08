@@ -4,7 +4,7 @@ class CitiesController < ApplicationController
   def index
 
     if @cities = City.where.not(latitude: nil, longitude: nil)
-      @markers = @cities.map do |city|
+       @markers = @cities.map do |city|
         {
           lat: city.latitude,
           lng: city.longitude#,
@@ -18,14 +18,14 @@ class CitiesController < ApplicationController
 
   def show
     @city = City.find(params[:id])
-    @cities = City.where.not(latitude: nil, longitude: nil)
 
-    @markers = @cities.map do |city|
+    @markers = [
       {
-        lat: city.latitude,
-        lng: city.longitude#,
+        lat: @city.latitude,
+        lng: @city.longitude#,
         # infoWindow: { content: render_to_string(partial: "/cities/map_box", locals: { city: city }) }
       }
+
     end
     # check_in_date = 2.weeks.from_now
     # check_out_date = 4.weeks.from_now
@@ -46,11 +46,8 @@ class CitiesController < ApplicationController
     # radius: 10,
     # check_in: check_in_date,
     # check_out: check_out_date}
-  end
+  
 
-  def showHotel
-
-  end
 end
 
 
