@@ -1,4 +1,4 @@
 class Trip < ApplicationRecord
-  belongs_to :user
+  validates :sender, presence: true
   has_one :trip_answer
 end

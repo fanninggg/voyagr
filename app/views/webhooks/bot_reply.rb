@@ -1,5 +1,5 @@
-def my_standard_reply(response, sender)
-  my_standard_reply = {
+def bot_standard_reply(response, sender)
+  bot_standard_reply = {
                 "messaging_type": "RESPONSE",
                 "recipient": {
                   "id": "#{sender}"
@@ -8,7 +8,7 @@ def my_standard_reply(response, sender)
               }
 end
 
-def welcome_reply(sender)
+def bot_welcome_reply(sender)
   response = {
                 "attachment": {
                   "type": "template",
@@ -28,113 +28,71 @@ def welcome_reply(sender)
                 }
               }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def help_reply(sender)
+def bot_help_reply(sender)
   response = {
               "text": "Need help? Just type 'Hey' below to start"
               }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def first_question_reply(sender)
+def bot_first_question(sender)
   response = {
-              "text": "How much do you want to spend?",
+              "text": PriceQuestion.first.content,
               "quick_replies": [
-                {
-                  "content_type": "text",
-                  "title": "\u{1F4B0}",
-                  "payload": "£",
-                },
-                {
-                  "content_type": "text",
-                  "title": "\u{1F4B0 1F4B0}",
-                  "payload": "££",
-                },
-                {
-                  "content_type": "text",
-                  "title": "\u{1F4B0 1F4B0 1F4B0}",
-                  "payload": "£££",
-                }
+                { "content_type": "text", "title": PriceAnswer.first.title, "payload": PriceAnswer.first.payload},
+                { "content_type": "text", "title": PriceAnswer.second.title, "payload": PriceAnswer.second.payload},
+                { "content_type": "text", "title": PriceAnswer.third.title, "payload": PriceAnswer.third.payload}
               ]
             }
+  p response
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def second_question_reply(sender)
+def bot_second_question(sender)
   response = {
-              "text": "Do you want to travel in Europe or further afield?",
-              "quick_replies": [
-                {
-                  "content_type": "text",
-                  "title": "Europe \u{1F1EA 1F1FA}",
-                  "payload": "europe",
-                },
-                {
-                  "content_type": "text",
-                  "title": "Further \u{1F30F}",
-                  "payload": "further",
-                }
-              ]
-            }
+                "text": LocationQuestion.first.content,
+                "quick_replies": [
+                  { "content_type": "text", "title": LocationAnswer.first.title, "payload": LocationAnswer.first.payload},
+                  { "content_type": "text", "title": LocationAnswer.second.title, "payload": LocationAnswer.second.payload},
+                ]
+              }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def third_question_reply(sender)
+def bot_third_question(sender)
   response = {
-              "text": "What would be your perfect evening on holiday?",
-              "quick_replies": [
-                {
-                  "content_type": "text",
-                  "title": "Restaurant \u{1F35D}",
-                  "payload": "restaurant",
-                },
-                {
-                  "content_type": "text",
-                  "title": "Drinking in a bar \u{1F378}",
-                  "payload": "bar",
-                },
-                {
-                  "content_type": "text",
-                  "title": "Meeting Locals \u{1F483}",
-                  "payload": "locals",
-                }
-              ]
-            }
+                "text": EveningQuestion.first.content,
+                "quick_replies": [
+                  { "content_type": "text", "title": EveningAnswer.first.title, "payload": EveningAnswer.first.payload},
+                  { "content_type": "text", "title": EveningAnswer.second.title, "payload": EveningAnswer.second.payload},
+                  { "content_type": "text", "title": EveningAnswer.third.title, "payload": EveningAnswer.third.payload},
+                ]
+              }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def fourth_question_reply(sender)
+def bot_fourth_question(sender)
   response = {
-              "text": "What kind of holiday do you want?",
-              "quick_replies": [
-                {
-                  "content_type": "text",
-                  "title": "Cultural \u{1F3DB FE0F}",
-                  "payload": "culture",
-                },
-                {
-                  "content_type": "text",
-                  "title": "Adventurous \u{1F9D7}",
-                  "payload": "adventure",
-                },
-                {
-                  "content_type": "text",
-                  "title": "Relaxing \u{1F3D6}",
-                  "payload": "relax",
-                }
-              ]
-            }
+                "text": CityTypeQuestion.first.content,
+                "quick_replies": [
+                  { "content_type": "text", "title": CityTypeAnswer.first.title, "payload": CityTypeAnswer.first.payload},
+                  { "content_type": "text", "title": CityTypeAnswer.second.title, "payload": CityTypeAnswer.second.payload},
+                  { "content_type": "text", "title": CityTypeAnswer.third.title, "payload": CityTypeAnswer.third.payload},
+                ]
+              }
 
-  my_standard_reply(response, sender)
+
+  bot_standard_reply(response, sender)
 end
 
-def escape_reply(sender)
+def bot_escape_reply(sender)
   response = {
               "text": "We have your results! Would you like to see them now, or narrow them further with more questions",
               "quick_replies": [
@@ -151,10 +109,10 @@ def escape_reply(sender)
               ]
             }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def results_reply(sender)
+def bot_results_reply(sender)
   response = {
               "attachment": {
               "type": "template",
@@ -197,7 +155,7 @@ def results_reply(sender)
             }
           }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
 
