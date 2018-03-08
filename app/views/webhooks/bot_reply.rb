@@ -1,5 +1,5 @@
-def my_standard_reply(response, sender)
-  my_standard_reply = {
+def bot_standard_reply(response, sender)
+  bot_standard_reply = {
                 "messaging_type": "RESPONSE",
                 "recipient": {
                   "id": "#{sender}"
@@ -8,7 +8,7 @@ def my_standard_reply(response, sender)
               }
 end
 
-def welcome_reply(sender)
+def bot_welcome_reply(sender)
   response = {
                 "attachment": {
                   "type": "template",
@@ -28,18 +28,18 @@ def welcome_reply(sender)
                 }
               }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def help_reply(sender)
+def bot_help_reply(sender)
   response = {
               "text": "Need help? Just type 'Hey' below to start"
               }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def first_question_reply(sender)
+def bot_first_question(sender)
   response = {
               "text": "How much do you want to spend?",
               "quick_replies": [
@@ -61,10 +61,10 @@ def first_question_reply(sender)
               ]
             }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def second_question_reply(sender)
+def bot_second_question(sender)
   response = {
               "text": "Do you want to travel in Europe or further afield?",
               "quick_replies": [
@@ -81,10 +81,10 @@ def second_question_reply(sender)
               ]
             }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def third_question_reply(sender)
+def bot_third_question(sender)
   response = {
               "text": "What would be your perfect evening on holiday?",
               "quick_replies": [
@@ -106,10 +106,10 @@ def third_question_reply(sender)
               ]
             }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def fourth_question_reply(sender)
+def bot_fourth_question(sender)
   response = {
               "text": "What kind of holiday do you want?",
               "quick_replies": [
@@ -131,10 +131,10 @@ def fourth_question_reply(sender)
               ]
             }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def escape_reply(sender)
+def bot_escape_reply(sender)
   response = {
               "text": "We have your results! Would you like to see them now, or narrow them further with more questions",
               "quick_replies": [
@@ -151,10 +151,10 @@ def escape_reply(sender)
               ]
             }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
-def results_reply(sender)
+def bot_results_reply(sender)
   response = {
               "attachment": {
               "type": "template",
@@ -197,7 +197,7 @@ def results_reply(sender)
             }
           }
 
-  my_standard_reply(response, sender)
+  bot_standard_reply(response, sender)
 end
 
 
