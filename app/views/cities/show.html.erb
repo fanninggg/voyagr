@@ -1,47 +1,91 @@
 <div class="show-page">
-  <div class="link-logo">
-    <%= link_to root_path do %>
-      <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
-    <% end %>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-<%= @city.name %>
+  <div class="row">
+    <div class="show-banner">
+      <div class="col-xs-9 show-background" style= "background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.photo %>')";>
+        <div class="link-logo show-link-logo">
+          <%= link_to root_path do %>
+            <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
+          <% end %>
+        </div>
+        <div class="city-information">
+          <h1 class="text-center"><%= @city.name %></h1>
+          <div class="info-card hotels">
+            <h2>Places to stay</h2>
+            <div class="image-and-text">
+              <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200 %>
+              <p>Based on the answers you gave to our friendly little chat bot, Graham, we have created a list of places that are within your budget where you might like to stay. If you'd like to see the list click on the incredibly subtle button over there.</p>
 
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>">
+              <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#hotelModal">Hotels</button>
+
+              <div id="hotelModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Places to rest your head</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p id="modal-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum consequatur a at ea, obcaecati est impedit hic. Vero neque soluta libero accusantium corporis. Eveniet fuga, consequatur, illum molestias libero veniam?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="info-card entertainment">
+            <h2>Entertainment</h2>
+            <div class="image-and-text">
+              <%= cl_image_tag "voyagr/entertainment.jpg", width: 350, height: 200 %>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
+            </div>
+          </div>
+          <div class="info-card food" data-aos="zoom-in"
+      data-aos-duration="2000">
+            <h2>Food</h2>
+            <div class="image-and-text">
+              <%= cl_image_tag "voyagr/food.jpg", width: 350, height: 200 %>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
+            </div>
+          </div>
+          <div class="info-card sightseeing" data-aos="zoom-in"
+      data-aos-duration="2000">
+          <h2>Sightseeing</h2>
+            <div class="image-and-text">
+              <%= cl_image_tag "voyagr/sightseeing.jpg", width: 350, height: 200 %>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3 show-map">
+      <div id="map" style="width: 100%; height: 100vh;" data-markers="<%= @markers.to_json %>">
+      </div>
+    </div>
+  </div>
+  <%= javascript_pack_tag 'home' %>
+
+  <script> // add as a javascript_pack_tag
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : 'your-app-id',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.12'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
 </div>
+
