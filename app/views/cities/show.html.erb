@@ -1,14 +1,14 @@
 <div class="show-page">
   <div class="row">
     <div class="show-banner">
-      <div class="col-xs-9 show-background" style= "background-image: url('<%= cl_image_path City.first.photo %>')";>
+      <div class="col-xs-9 show-background" style= "background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.photo %>')";>
         <div class="link-logo show-link-logo">
           <%= link_to root_path do %>
             <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
           <% end %>
         </div>
         <div class="city-information">
-          <h1 class="text-center"><%= City.first.name %></h1>
+          <h1 class="text-center"><%= @city.name %></h1>
           <div class="info-card hotels">
             <h2>Places to stay</h2>
             <div class="image-and-text">
