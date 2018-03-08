@@ -11,10 +11,35 @@
     color: #F89D29;
     font-size: 30px;
     } p {
-    width: 300px;
     font-size: 16px;
     font-weight: lighter;
     color: rgb(255, 255, 255);
     opacity: 0.6;
   }
+}
+.show-link-logo {
+  margin-left: 45px;
+  opacity: 1 !important;
+}
+.show-banner {
+  padding: 0;
+}
+.show-map {
+  padding: 0;
+  position: fixed;
+  right: 0;
+
+}
+.city-information {
+  margin: 45px;
+}
+.show-background {
+  background-size: cover !important;
+  height: 100vh;
+  position: fixed;
+}
+.image-and-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

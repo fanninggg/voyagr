@@ -1,26 +1,46 @@
 <div class="show-page">
-  <div class="link-logo">
-    <%= link_to root_path do %>
-      <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
-    <% end %>
+  <div class="row">
+    <div class="col-xs-9 show-banner">
+      <div class="show-background" style= "background-image: url('<%= cl_image_path City.first.photo %>')";>
+        <div class="link-logo show-link-logo">
+          <%= link_to root_path do %>
+            <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
+          <% end %>
+        </div>
+        <div class="city-information">
+          <div class="hotels">
+            <h2>Places to stay:</h3>
+            <div class="image-and-text">
+              <%= image_tag "hotel", width: 350, height: 200 %>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
+            </div>
+          </div>
+          <div class="entertainment">
+            <h2>Entertainment:</h3>
+            <div class="image-and-text">
+              <%= image_tag "entertainment", width: 350, height: 200 %>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
+            </div>
+          </div>
+          <div class="food">
+            <h2>Food:</h3>
+            <div class="image-and-text">
+              <%= image_tag "food", width: 350, height: 200 %>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
+            </div>
+          </div>
+          <div class="sightseeing">
+          <h2>Sightseeing:</h3>
+            <div class="image-and-text">
+              <%= image_tag "sightseeing", width: 350, height: 200 %>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3 show-map">
+      <div id="map" style="width: 100%; height: 100vh;" data-markers="<%= @markers.to_json %>">
+      </div>
+    </div>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-<%= @city.name %>
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @marker.to_json %>">
-</div>
-
