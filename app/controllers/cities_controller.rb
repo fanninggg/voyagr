@@ -26,8 +26,6 @@ class CitiesController < ApplicationController
         icon: "http://res.cloudinary.com/dm2e6swvo/image/upload/c_scale,w_50/v1520525872/voyagr/black-pin.png"#,
         # infoWindow: { content: render_to_string(partial: "/cities/map_box", locals: { city: city }) }
       }
-
-    end
     # check_in_date = 2.weeks.from_now
     # check_out_date = 4.weeks.from_now
     # params = {
@@ -47,7 +45,7 @@ class CitiesController < ApplicationController
     # radius: 10,
     # check_in: check_in_date,
     # check_out: check_out_date}
-  
+
 
 end
 
