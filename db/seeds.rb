@@ -6,10 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# PriceQuestion.destroy_all
-# LocationQuestion.destroy_all
-# EveningQuestion.destroy_all
-# CityTypeQuestion.destroy_all
+PriceQuestion.destroy_all
+LocationQuestion.destroy_all
+EveningQuestion.destroy_all
+CityTypeQuestion.destroy_all
+PriceAnswer.destroy_all
+LocationAnswer.destroy_all
+EveningAnswer.destroy_all
+CityTypeAnswer.destroy_all
+City.destroy_all
+
 puts "Seeding"
 
 price_questions_attributes =
@@ -38,33 +44,21 @@ city_type_attributes =
 city_type = CityTypeQuestion.create!(city_type_attributes)
 
 
-price_answers_attributes = {
-  price_question_id: price.id,
-  content: ["low", "medium", "Expensive"]
-}
+PriceAnswer.create!(price_question: price, title: "\u{1F4B0}", payload: "£")
+PriceAnswer.create!(price_question: price, title: "\u{1F4B0 1F4B0}", payload: "££")
+PriceAnswer.create!(price_question: price, title: "\u{1F4B0 1F4B0 1F4B0}", payload: "£££")
 
-PriceAnswer.create!(price_answers_attributes)
+LocationAnswer.create!(location_question: location, title: "Europe \u{1F1EA 1F1FA}", payload: "europe")
+LocationAnswer.create!(location_question: location, title: "Further \u{1F30F}", payload: "further")
 
+EveningAnswer.create!(evening_question: evening, title: "Restaurant \u{1F35D}", payload: "restaurant")
+EveningAnswer.create!(evening_question: evening, title: "Drinking in a bar \u{1F378}", payload: "bar")
+EveningAnswer.create!(evening_question: evening, title: "Meeting Locals \u{1F483}", payload: "locals")
 
-location_answers_attributes = {
-  location_question_id: location.id,
-  content: ['Europe', 'Worldwide']
-  }
+CityTypeAnswer.create!(city_type_question: city_type, title: "Cultural \u{1F3DB FE0F}", payload: "culture")
+CityTypeAnswer.create!(city_type_question: city_type, title: "Adventurous \u{1F9D7}", payload: "adventure")
+CityTypeAnswer.create!(city_type_question: city_type, title: "Relaxing \u{1F3D6}", payload: "relax")
 
-LocationAnswer.create!(location_answers_attributes)
-
-evening_answers_attributes = {
-  evening_question_id: evening.id,
-  content: ['Bar', 'Restaurant','Meet the locals']
-}
-
-EveningAnswer.create!(evening_answers_attributes)
-
-city_type_answers_attributes = {
-  city_type_question_id: city_type.id,
-  content: ['Culturous', 'Adventurous', 'Relaxing']
-}
-CityTypeAnswer.create!(city_type_answers_attributes)
 
 puts "Now for the cities"
 

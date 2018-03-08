@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308132720) do
+ActiveRecord::Schema.define(version: 20180308170401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,12 +37,11 @@ ActiveRecord::Schema.define(version: 20180308132720) do
   end
 
   create_table "city_type_answers", force: :cascade do |t|
-    t.string "content"
     t.bigint "city_type_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "answered", default: false
-    t.string "sender"
+    t.string "title"
+    t.string "payload"
     t.index ["city_type_question_id"], name: "index_city_type_answers_on_city_type_question_id"
   end
 
@@ -50,17 +49,14 @@ ActiveRecord::Schema.define(version: 20180308132720) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "asked", default: false
-    t.string "sender"
   end
 
   create_table "evening_answers", force: :cascade do |t|
-    t.string "content"
     t.bigint "evening_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "answered", default: false
-    t.string "sender"
+    t.string "title"
+    t.string "payload"
     t.index ["evening_question_id"], name: "index_evening_answers_on_evening_question_id"
   end
 
@@ -68,17 +64,14 @@ ActiveRecord::Schema.define(version: 20180308132720) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "asked", default: false
-    t.string "sender"
   end
 
   create_table "location_answers", force: :cascade do |t|
-    t.string "content"
     t.bigint "location_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "answered", default: false
-    t.string "sender"
+    t.string "title"
+    t.string "payload"
     t.index ["location_question_id"], name: "index_location_answers_on_location_question_id"
   end
 
@@ -86,17 +79,14 @@ ActiveRecord::Schema.define(version: 20180308132720) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "asked", default: false
-    t.string "sender"
   end
 
   create_table "price_answers", force: :cascade do |t|
-    t.string "content"
     t.bigint "price_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "answered", default: false
-    t.string "sender"
+    t.string "title"
+    t.string "payload"
     t.index ["price_question_id"], name: "index_price_answers_on_price_question_id"
   end
 
@@ -104,8 +94,6 @@ ActiveRecord::Schema.define(version: 20180308132720) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "asked", default: false
-    t.string "sender"
   end
 
   create_table "trip_answers", force: :cascade do |t|
@@ -116,6 +104,7 @@ ActiveRecord::Schema.define(version: 20180308132720) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "trip_id"
+    t.string "sender"
     t.index ["city_type_answer_id"], name: "index_trip_answers_on_city_type_answer_id"
     t.index ["evening_answer_id"], name: "index_trip_answers_on_evening_answer_id"
     t.index ["location_answer_id"], name: "index_trip_answers_on_location_answer_id"
@@ -133,10 +122,9 @@ ActiveRecord::Schema.define(version: 20180308132720) do
   end
 
   create_table "trips", force: :cascade do |t|
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_trips_on_user_id"
+    t.string "sender"
   end
 
   create_table "users", force: :cascade do |t|
@@ -172,5 +160,4 @@ ActiveRecord::Schema.define(version: 20180308132720) do
   add_foreign_key "trip_answers", "trips"
   add_foreign_key "trip_cities", "cities"
   add_foreign_key "trip_cities", "trip_answers"
-  add_foreign_key "trips", "users"
 end

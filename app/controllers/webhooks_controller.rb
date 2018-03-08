@@ -22,6 +22,10 @@ class WebhooksController < ApplicationController
     entries.each do |entry|
       entry["messaging"].each do |messaging|
         sender = messaging["sender"]["id"]
+        if Trip.find_by(sender: sender).nil?
+          trip = Trip.create(sender: sender)
+          trip_answer = TripAnswer.create(sender: sender, trip: trip)
+        end
         if messaging["read"]
           # do nothing
         elsif messaging["delivery"]
@@ -30,10 +34,7 @@ class WebhooksController < ApplicationController
           if messaging["postback"]["payload"] == "Get Started!"
             go_to_first_question(messaging, sender)
           end
-        elsif messaging["message"]["quick_reply"]
-          routing_questions(messaging, sender)
-          escape(messaging, sender)
-        elsif messaging["message"]
+        elsif messaging["message"]["text"] == "Hi"
           text = messaging["message"]["text"]
           if text == "Help"
             bot_reply = bot_help_reply(sender)
@@ -41,6 +42,9 @@ class WebhooksController < ApplicationController
             bot_reply = bot_welcome_reply(sender)
           end
           HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["quick_reply"]
+          routing_questions(messaging, sender)
+          escape(messaging, sender)
         end
       end
       render plain: bot_reply
@@ -54,102 +58,46 @@ class WebhooksController < ApplicationController
 
   def routing_questions(messaging, sender)
     # store the response and mark the first question as answered
-    if PriceQuestion.where(sender: sender).blank?
-      PriceQuestion.create(sender: sender)
-    end
-    if LocationQuestion.where(sender: sender).blank?
-      LocationQuestion.create(sender: sender)
-    end
-    if EveningQuestion.where(sender: sender).blank?
-      EveningQuestion.create(sender: sender)
-    end
-    if CityTypeQuestion.where(sender: sender).blank?
-      CityTypeQuestion.create(sender: sender)
-    end
-    if PriceQuestion.where(sender: sender).last.asked == false
-      question = PriceQuestion.where(sender: sender)
-      question.last.update(asked: true)
-      price_answer_content = first_user_answer(messaging, sender)
-      PriceAnswer.create!(price_question_id: question.last.id, sender: sender, content: price_answer_content, answered: true)
+    trip_answer = TripAnswer.find_by(sender: sender)
+
+    if trip_answer.price_answer.nil?
+      trip_answer.price_answer = first_user_answer(messaging, sender)
+      trip_answer.save
       bot_reply = bot_second_question(sender)
       HTTP.post(url, json: bot_reply)
-    end
-    if LocationQuestion.where(sender: sender).last.asked == false && PriceAnswer.where(price_question_id: question.first.id, sender: sender, content: price_answer_content, answered: true)
-      question2 = LocationQuestion.where(sender: sender)
-      question2.first.update(asked: true)
-      location_answer_content = second_user_answer(messaging, sender)
-      LocationAnswer.create!(location_question_id: question2.first.id, sender: sender, content: location_answer_content, answered: true)
+    elsif trip_answer.location_answer.nil?
+      trip_answer.location_answer = second_user_answer(messaging, sender)
+      trip_answer.save
       bot_reply = bot_third_question(sender)
       HTTP.post(url, json: bot_reply)
-    end
-    if EveningQuestion.where(sender: sender).first.asked == false && LocationAnswer.where(location_question_id: question2.first.id, sender: sender, content: location_answer_content, answered: true)
-      question3 = EveningQuestion.where(sender: sender)
-      question3.first.update(asked: true)
-      evening_answer_content = third_user_answer(messaging, sender)
-      EveningAnswer.create!(evening_question_id: question3.first.id, sender: sender, content: evening_answer_content, answered: true)
+    elsif trip_answer.evening_answer.nil?
+      trip_answer.evening_answer = third_user_answer(messaging, sender)
+      trip_answer.save
       bot_reply = bot_fourth_question(sender)
       HTTP.post(url, json: bot_reply)
-    end
-    if CityTypeQuestion.where(sender: sender).first.asked == false && EveningAnswer.where(evening_question_id: question3.first.id, sender: sender, content: evening_answer_content, answered: true)
-      question4 = CityTypeQuestion.where(sender: sender)
-      question4.first.update(asked: true)
-      type_answer_content = fourth_user_answer(messaging, sender)
-      CityTypeAnswer.create!(city_type_question_id: question4.first.id, sender: sender, content: type_answer_content, answered: true)
-      user = User.where(psid: sender).first
-      user ||= User.create(psid: sender)
-      trip = Trip.where(user: user).first
-      trip ||= Trip.create(user: user)
-      trip_answer = TripAnswer.create!(price_answer: PriceAnswer.first,
-                                             location_answer: LocationAnswer.first,
-                                             evening_answer: EveningAnswer.first,
-                                             city_type_answer: CityTypeAnswer.first,
-                                             trip: trip)
+    elsif trip_answer.city_type_answer.nil?
+      trip_answer.city_type_answer = fourth_user_answer(messaging, sender)
+      trip_answer.save
       bot_reply = bot_escape_reply(sender)
       HTTP.post(url, json: bot_reply)
     end
-
   end
 
+
   def first_user_answer(messaging, sender)
-    if messaging["message"]["quick_reply"]["payload"] == "£"
-      price_answer_content = 'low'
-    elsif messaging["message"]["quick_reply"]["payload"]  == "££"
-      price_answer_content = 'Medium'
-    elsif messaging["message"]["quick_reply"]["payload"] == "£££"
-      price_answer_content = 'Expensive'
-    end
-    price_answer_content
+    return PriceAnswer.where(payload: messaging["message"]["quick_reply"]["payload"]).first
   end
 
   def second_user_answer(messaging, sender)
-    if messaging["message"]["quick_reply"]["payload"] == "europe"
-      location_answer_content = 'Europe'
-    elsif messaging["message"]["quick_reply"]["payload"] == "further"
-      location_answer_content = 'Worldwide'
-    end
-    location_answer_content
+    return LocationAnswer.where(payload: messaging["message"]["quick_reply"]["payload"]).first
   end
 
   def third_user_answer(messaging, sender)
-    if messaging["message"]["quick_reply"]["payload"] == "bar"
-      evening_answer_content = 'Bar'
-    elsif messaging["message"]["quick_reply"]["payload"] == "restaurant"
-      evening_answer_content = 'Restaurant'
-    elsif messaging["message"]["quick_reply"]["payload"] == "locals"
-      evening_answer_content = 'Meet the locals'
-    end
-    evening_answer_content
+    return EveningAnswer.where(payload: messaging["message"]["quick_reply"]["payload"]).first
   end
 
   def fourth_user_answer(messaging, sender)
-    if messaging["message"]["quick_reply"]["payload"] == "culture"
-      type_answer_content =  'Culturous'
-    elsif messaging["message"]["quick_reply"]["payload"] == "adventure"
-      type_answer_content =  'Adventurous'
-    elsif messaging["message"]["quick_reply"]["payload"] == "relax"
-      type_answer_content =  'Relaxing'
-    end
-    type_answer_content
+    return CityTypeAnswer.where(payload: messaging["message"]["quick_reply"]["payload"]).first
   end
 
   def escape(messaging, sender)
