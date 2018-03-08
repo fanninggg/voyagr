@@ -1,36 +1,38 @@
 <div class="show-page">
   <div class="row">
-    <div class="col-xs-9 show-banner">
-      <div class="show-background" style= "background-image: url('<%= cl_image_path City.first.photo %>')";>
+    <div class="show-banner">
+      <div class="col-xs-9 show-background" style= "background-image: url('<%= cl_image_path City.first.photo %>')";>
         <div class="link-logo show-link-logo">
           <%= link_to root_path do %>
             <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
           <% end %>
         </div>
         <div class="city-information">
-          <div class="hotels">
-            <h2>Places to stay:</h3>
+          <div class="info-card hotels">
+            <h2>Places to stay:</h2>
             <div class="image-and-text">
               <%= image_tag "hotel", width: 350, height: 200 %>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
             </div>
           </div>
-          <div class="entertainment">
-            <h2>Entertainment:</h3>
+          <div class="info-card entertainment">
+            <h2>Entertainment:</h2>
             <div class="image-and-text">
               <%= image_tag "entertainment", width: 350, height: 200 %>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
             </div>
           </div>
-          <div class="food">
-            <h2>Food:</h3>
+          <div class="info-card food" data-aos="zoom-in"
+      data-aos-duration="2000">
+            <h2>Food:</h2>
             <div class="image-and-text">
               <%= image_tag "food", width: 350, height: 200 %>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
             </div>
           </div>
-          <div class="sightseeing">
-          <h2>Sightseeing:</h3>
+          <div class="info-card sightseeing" data-aos="zoom-in"
+      data-aos-duration="2000">
+          <h2>Sightseeing:</h2>
             <div class="image-and-text">
               <%= image_tag "sightseeing", width: 350, height: 200 %>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
@@ -44,3 +46,25 @@
       </div>
     </div>
   </div>
+  <%= javascript_pack_tag 'home' %>
+
+  <script> // add as a javascript_pack_tag
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : 'your-app-id',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.12'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+</div>
+

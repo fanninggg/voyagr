@@ -18,7 +18,7 @@
   }
 }
 .show-link-logo {
-  margin-left: 45px;
+  margin-left: 10px;
   opacity: 1 !important;
 }
 .show-banner {
@@ -28,18 +28,21 @@
   padding: 0;
   position: fixed;
   right: 0;
-
 }
 .city-information {
   margin: 45px;
+  padding-bottom: 50px;
 }
 .show-background {
   background-size: cover !important;
-  height: 100vh;
-  position: fixed;
+  min-height: 100vh;
+  background-attachment: fixed;
 }
 .image-and-text {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+.info-card {
+  padding-bottom: 100px;
 }
