@@ -155,5 +155,4 @@ class WebhooksController < ApplicationController
       end
     end
   end
-  end
 end
