@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308122745) do
+ActiveRecord::Schema.define(version: 20180308132720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20180308122745) do
     t.bigint "city_type_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "answered", default: false
+    t.string "sender"
     t.index ["city_type_question_id"], name: "index_city_type_answers_on_city_type_question_id"
   end
 
@@ -49,6 +51,7 @@ ActiveRecord::Schema.define(version: 20180308122745) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "asked", default: false
+    t.string "sender"
   end
 
   create_table "evening_answers", force: :cascade do |t|
@@ -56,6 +59,8 @@ ActiveRecord::Schema.define(version: 20180308122745) do
     t.bigint "evening_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "answered", default: false
+    t.string "sender"
     t.index ["evening_question_id"], name: "index_evening_answers_on_evening_question_id"
   end
 
@@ -64,6 +69,7 @@ ActiveRecord::Schema.define(version: 20180308122745) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "asked", default: false
+    t.string "sender"
   end
 
   create_table "location_answers", force: :cascade do |t|
@@ -71,6 +77,8 @@ ActiveRecord::Schema.define(version: 20180308122745) do
     t.bigint "location_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "answered", default: false
+    t.string "sender"
     t.index ["location_question_id"], name: "index_location_answers_on_location_question_id"
   end
 
@@ -79,6 +87,7 @@ ActiveRecord::Schema.define(version: 20180308122745) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "asked", default: false
+    t.string "sender"
   end
 
   create_table "price_answers", force: :cascade do |t|
@@ -86,6 +95,8 @@ ActiveRecord::Schema.define(version: 20180308122745) do
     t.bigint "price_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "answered", default: false
+    t.string "sender"
     t.index ["price_question_id"], name: "index_price_answers_on_price_question_id"
   end
 
@@ -94,6 +105,7 @@ ActiveRecord::Schema.define(version: 20180308122745) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "asked", default: false
+    t.string "sender"
   end
 
   create_table "trip_answers", force: :cascade do |t|
