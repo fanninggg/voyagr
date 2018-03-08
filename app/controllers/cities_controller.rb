@@ -16,18 +16,14 @@ class CitiesController < ApplicationController
 
   def show
     @city = City.find(params[:id])
-    @cities = City.where.not(latitude: nil, longitude: nil)
 
-    # @cities.each do |city|
-      @markers = @cities.map do |city|
-        {
-          lat: city.latitude,
-          lng: city.longitude#,
-          # infoWindow: { content: render_to_string(partial: "/cities/map_box", locals: { city: city }) }
-        }
-      end
-
-    # end
+    @markers = [
+      {
+        lat: @city.latitude,
+        lng: @city.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/cities/map_box", locals: { city: city }) }
+      }
+    ]
 
   end
 end
