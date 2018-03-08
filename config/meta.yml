@@ -1,0 +1,5 @@
+meta_product_name: "voyagr"
+meta_title: "voyagr - Find your destination"
+meta_description: "Personal travel recommendations"
+meta_image: "world.png"                       # should exist in `app/assets/images/`
+
