@@ -46,7 +46,7 @@ class CitiesController < ApplicationController
     # radius: 10,
     # check_in: check_in_date,
     # check_out: check_out_date}
-
+  end
 
 end
 
