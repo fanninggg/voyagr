@@ -864,7 +864,7 @@ cities_attributes_2 = [
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426663/voyagr/Beijing.jpg"
   },
    {
-    name: 'Marrakech, Moroccoa',
+    name: 'Marrakech, Morocco',
     budget:         'Medium',
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
