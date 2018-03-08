@@ -13,7 +13,7 @@
             <h2>Places to stay</h2>
             <div class="image-and-text">
               <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200 %>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sunt similique delectus, pariatur. Deserunt iure omnis et? Dolorum minima voluptas natus, voluptate eaque voluptatibus veritatis repellat nemo, amet illo et?</p>
+              <p> <%= @hotel["results"][0]["name"] %></p>
             </div>
           </div>
           <div class="info-card entertainment">
@@ -68,4 +68,6 @@
      }(document, 'script', 'facebook-jssdk'));
   </script>
 </div>
+
+
 
