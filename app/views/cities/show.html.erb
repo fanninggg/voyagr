@@ -13,12 +13,17 @@
             <h2>Places to stay</h2>
             <div class="image-and-text">
               <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200 %>
-              <div class="text-and-button">
-                <p>Based on the answers you gave to our friendly little VoyagrBot, we have created a list of places that are within your budget where you might like to stay. If you'd like to see the list click on the button below.</p>
-                <button type="button" class="btn btn-warning text-center" data-toggle="modal" data-target="#hotelModal">Lodgings</button>
+
+              <p> <%= @hotel["results"][0]["name"] %></p>
+              <p> <%= @hotel["results"][0]["vicinity"] %></p>
+              <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="">
+              <!-- <p> <%# @hotel["results"][0]["photos"][0]["photo_reference"] %></p> -->
               </div>
             </div>
           </div>
+        
           <div class="info-card food" >
             <h2>Food</h2>
             <div class="image-and-text">
@@ -29,6 +34,7 @@
               </div>
             </div>
           </div>
+        
           <div class="info-card entertainment">
             <h2>Entertainment</h2>
             <div class="image-and-text">
@@ -39,6 +45,7 @@
               </div>
             </div>
           </div>
+        
           <div class="info-card sightseeing">
           <h2>Sightseeing</h2>
             <div class="image-and-text">
@@ -52,6 +59,7 @@
         </div>
       </div>
     </div>
+  
     <div class="col-xs-3 show-map">
       <div id="map" style="width: 100%; height: 100vh;" data-markers="<%= @markers.to_json %>">
       </div>
@@ -206,3 +214,4 @@
       </div>
     </div>
   </div>
+
