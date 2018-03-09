@@ -25,10 +25,7 @@ class CitiesController < ApplicationController
         lng: @city.longitude,
         icon: "http://res.cloudinary.com/dm2e6swvo/image/upload/c_scale,w_50/v1520525872/voyagr/black-pin.png"#,
         # infoWindow: { content: render_to_string(partial: "/cities/map_box", locals: { city: city }) }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a842231a98b28acfbe57ace5a41ed9a036fdf9ee
+<<<<<<<<< Temporary merge branch 1
       }]
 
     params = {
@@ -41,8 +38,7 @@ class CitiesController < ApplicationController
     response =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params})
     @hotel = JSON.parse(response)
 
-<<<<<<< HEAD
-=======
+=========
       }
     ]
     # check_in_date = 2.weeks.from_now
@@ -65,10 +61,8 @@ class CitiesController < ApplicationController
     # check_in: check_in_date,
     # check_out: check_out_date}
   end
->>>>>>> c3aa0782c9fb72e01ba6c8b4a280641bc718aa7e
+>>>>>>>>> Temporary merge branch 2
 
-=======
->>>>>>> a842231a98b28acfbe57ace5a41ed9a036fdf9ee
 
   end
 end
