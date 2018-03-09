@@ -70,7 +70,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427422/voyagr/Venice.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427422/voyagr/Venice.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
     name: 'Seville, Spain',
@@ -78,7 +82,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:   'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427346/voyagr/Seville.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427346/voyagr/Seville.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
     {
     name: 'Santorini, Greece',
@@ -86,7 +94,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:   'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427331/voyagr/Santorini.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427331/voyagr/Santorini.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
     {
     name: ' Rio De Janeiro, Brazil',
@@ -94,7 +106,11 @@ cities_attributes_1 = [
     location:      'Outside',
     type_of_evening:  'Bar',
     type_of_city:   'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427292/voyagr/Rio.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427292/voyagr/Rio.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
     {
     name: 'Gdansk, Poland',
@@ -102,7 +118,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426892/voyagr/Gdansk.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426892/voyagr/Gdansk.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
      {
     name: 'Canary Islands, Spain',
@@ -110,28 +130,44 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426780/voyagr/Canary_Islands.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426780/voyagr/Canary_Islands.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },   {
     name: 'Dublin, Ireland',
     budget:         'low',
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426869/voyagr/Dublin.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426869/voyagr/Dublin.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },   {
     name: 'Budapest, Hungary',
     budget:         'low',
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426756/voyagr/Budapest.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426756/voyagr/Budapest.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },   {
     name: 'Berlin, Germany',
     budget:         'low',
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426671/voyagr/Berlin.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426671/voyagr/Berlin.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
     name: ' Prague, Czech Republic',
@@ -139,7 +175,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427263/voyagr/Prague.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427263/voyagr/Prague.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
     name: 'Dubrovnik, Croatia',
@@ -147,7 +187,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426874/voyagr/Dubrovnik.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426874/voyagr/Dubrovnik.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Krakow, Poland',
@@ -155,7 +199,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427018/voyagr/Krakow.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427018/voyagr/Krakow.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
     {
     name: 'Madeira, Portugal',
@@ -163,7 +211,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427105/voyagr/Madiera.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427105/voyagr/Madiera.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Stari Grad, Croatia',
@@ -171,7 +223,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427376/voyagr/Stari_Grad.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427376/voyagr/Stari_Grad.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Malta Island, Malta',
@@ -179,7 +235,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427113/voyagr/Malta_Island.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427113/voyagr/Malta_Island.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Glasgow, UK',
@@ -187,7 +247,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426900/voyagr/Glasgow.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426900/voyagr/Glasgow.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Sarajevo, Bosnia and Herzegovina',
@@ -195,7 +259,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427335/voyagr/Sarajevo.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427335/voyagr/Sarajevo.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Prague, Czech Republic',
@@ -203,7 +271,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427263/voyagr/Prague.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427263/voyagr/Prague.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Bruges, Belgium',
@@ -211,7 +283,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426737/voyagr/Bruges.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426737/voyagr/Bruges.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Brighton, UK',
@@ -219,7 +295,11 @@ cities_attributes_1 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426721/voyagr/Brighton.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426721/voyagr/Brighton.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   }
 ]
 
@@ -230,7 +310,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427430/voyagr/Vienna.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427430/voyagr/Vienna.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
  {
     name: 'Madeira, Portugal',
@@ -238,7 +322,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427105/voyagr/Madiera.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427105/voyagr/Madiera.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Canary Islands, Spain',
@@ -246,7 +334,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426780/voyagr/Canary_Islands.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426780/voyagr/Canary_Islands.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Kotor, Montenegro',
@@ -254,7 +346,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427011/voyagr/Kotor.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427011/voyagr/Kotor.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
      {
     name: 'Sofia, Bulgaria',
@@ -262,7 +358,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520436347/voyagr/Sofia.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520436347/voyagr/Sofia.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
      {
     name: 'Minsk, Belarus',
@@ -270,7 +370,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427144/voyagr/Minsk.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427144/voyagr/Minsk.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
      {
     name: 'Madrid, Spain',
@@ -278,7 +382,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427109/voyagr/Madrid.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427109/voyagr/Madrid.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Sozopol, Bulgaria',
@@ -286,7 +394,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427363/voyagr/Sozopol.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427363/voyagr/Sozopol.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Granada, Spain',
@@ -294,7 +406,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426919/voyagr/Grenada.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426919/voyagr/Grenada.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Paphos, Cyprus',
@@ -302,31 +418,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427242/voyagr/Paphos.jpg"
-  },
-   {
-    name: 'Sozopol, Bulgaria',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Meet the locals',
-    type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427363/voyagr/Sozopol.jpg"
-  },
-   {
-    name: 'Granada, Spain',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Meet the locals',
-    type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426919/voyagr/Grenada.jpg"
-  },
-   {
-    name: 'Paphos, Cyprus',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Meet the locals',
-    type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427242/voyagr/Paphos.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427242/voyagr/Paphos.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
      {
     name: ' Cartagena, Colombia',
@@ -334,7 +430,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426804/voyagr/Cartagena.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426804/voyagr/Cartagena.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
     {
     name: 'Bangkok, Thailand',
@@ -342,7 +442,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426655/voyagr/Bangkok.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426655/voyagr/Bangkok.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
     {
     name: ' Antigua Guatemala, Guatemala',
@@ -350,7 +454,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426641/voyagr/Antigua.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426641/voyagr/Antigua.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
  {
     name: 'Cusco, Peru',
@@ -358,7 +466,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426861/voyagr/Cusco.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426861/voyagr/Cusco.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Valparaiso, Chile',
@@ -366,7 +478,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427409/voyagr/Valparaiso.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427409/voyagr/Valparaiso.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Kuala Lumpa, Malaysia',
@@ -374,7 +490,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427033/voyagr/Kuala-Lumpur.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427033/voyagr/Kuala-Lumpur.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Boracay, Philippines',
@@ -382,7 +502,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520433047/voyagr/Boracay.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520433047/voyagr/Boracay.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Recife, Brazil',
@@ -390,7 +514,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427275/voyagr/Recife.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427275/voyagr/Recife.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Bogota, Columbia',
@@ -398,7 +526,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426700/voyagr/Bogota.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426700/voyagr/Bogota.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
     {
     name: 'Delhi, India',
@@ -406,7 +538,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426863/voyagr/Delhi.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426863/voyagr/Delhi.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Oaxaca, Mexico',
@@ -414,7 +550,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427222/voyagr/Oaxaca.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427222/voyagr/Oaxaca.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Addis Ababa, Ethiopia',
@@ -422,7 +562,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426633/voyagr/Addis_Ababa.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426633/voyagr/Addis_Ababa.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Mumbai, India',
@@ -430,7 +574,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427188/voyagr/Mumbai.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427188/voyagr/Mumbai.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
     {
     name: 'Angkor Wat, Cambodia',
@@ -438,7 +586,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426638/voyagr/Angkor_Wat.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426638/voyagr/Angkor_Wat.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
     {
     name: 'Casablanca, Morocco',
@@ -446,7 +598,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426811/voyagr/Casablanca.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426811/voyagr/Casablanca.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
  {
     name: 'Tunis, Tunisia',
@@ -454,7 +610,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427404/voyagr/Tunis.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427404/voyagr/Tunis.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
  {
     name: 'Cancun, Mexico',
@@ -462,7 +622,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426783/voyagr/Cancun.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426783/voyagr/Cancun.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
  {
     name: 'Jaipur, India',
@@ -470,7 +634,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426993/voyagr/Jaipur.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426993/voyagr/Jaipur.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Lahore, Pakistan',
@@ -478,7 +646,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427060/voyagr/Lahore.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427060/voyagr/Lahore.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Caracas, Venezuela',
@@ -486,7 +658,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426796/voyagr/Caracas.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426796/voyagr/Caracas.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Tehran, Iran',
@@ -494,7 +670,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427398/voyagr/Tehran.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427398/voyagr/Tehran.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
     name: 'Angkor Wat, Cambodia',
@@ -502,7 +682,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426638/voyagr/Angkor_Wat.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426638/voyagr/Angkor_Wat.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
     name: 'Colombo, Sri Lanka',
@@ -510,7 +694,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426829/voyagr/Colombo.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426829/voyagr/Colombo.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
     name: 'Hội An, Vietnam',
@@ -518,7 +706,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426949/voyagr/Hoi_An.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426949/voyagr/Hoi_An.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Montevideo, Uruguay',
@@ -526,7 +718,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427166/voyagr/Montevideo.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427166/voyagr/Montevideo.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Vientiane, Laos',
@@ -534,7 +730,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427435/voyagr/Vientiane.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427435/voyagr/Vientiane.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Dublin, Ireland',
@@ -542,7 +742,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426869/voyagr/Dublin.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426869/voyagr/Dublin.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
     {
     name: 'Ibiza, Spain',
@@ -550,7 +754,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426968/voyagr/Ibiza.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426968/voyagr/Ibiza.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
     {
     name: 'Bonifacio, France',
@@ -558,7 +766,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426704/voyagr/Bonifacio.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426704/voyagr/Bonifacio.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
     {
     name: 'Vienna, Austria',
@@ -566,7 +778,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427430/voyagr/Vienna.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427430/voyagr/Vienna.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
       {
     name: 'Cambridge, England',
@@ -574,7 +790,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426775/voyagr/Cambridge.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426775/voyagr/Cambridge.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
       {
     name: 'Barcelona, Spain',
@@ -582,7 +802,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426659/voyagr/Barcelona.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426659/voyagr/Barcelona.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
     {
     name: 'Bilbao, Spain',
@@ -590,7 +814,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426677/voyagr/Bilbao.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426677/voyagr/Bilbao.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Lyon, France',
@@ -598,7 +826,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427094/voyagr/Lyon.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427094/voyagr/Lyon.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Bratislava, Slovakia',
@@ -606,7 +838,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426709/voyagr/Bratislava.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426709/voyagr/Bratislava.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
     {
     name: 'Lisbon, Portugal',
@@ -614,7 +850,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427072/voyagr/Lisbon.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427072/voyagr/Lisbon.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Mont Saint Michel, France',
@@ -622,7 +862,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427151/voyagr/Mont_Saint_Michel.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427151/voyagr/Mont_Saint_Michel.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Krk, Croatia',
@@ -630,7 +874,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427024/voyagr/Krk.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427024/voyagr/Krk.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
     {
     name: 'Athens, Greece',
@@ -638,7 +886,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426643/voyagr/Athens.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426643/voyagr/Athens.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
     name: 'Milan, Italy',
@@ -646,7 +898,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427140/voyagr/Milan.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427140/voyagr/Milan.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
     name: 'Bucharest, Romania',
@@ -654,7 +910,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426750/voyagr/Bucharest.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426750/voyagr/Bucharest.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
     {
     name: 'Lyon, France',
@@ -662,7 +922,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427094/voyagr/Lyon.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427094/voyagr/Lyon.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
      {
     name: 'Santorini, Greece',
@@ -670,7 +934,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427331/voyagr/Santorini.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427331/voyagr/Santorini.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Porto, Portugal',
@@ -678,7 +946,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427258/voyagr/Porto.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427258/voyagr/Porto.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
     {
     name: 'La Grave, France',
@@ -686,7 +958,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427045/voyagr/La_Grave.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427045/voyagr/La_Grave.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
     {
     name: 'Isle of Skye, UK',
@@ -694,7 +970,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426976/voyagr/Isle_of_Skye.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426976/voyagr/Isle_of_Skye.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Lisbon, Portugal',
@@ -702,7 +982,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427072/voyagr/Lisbon.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427072/voyagr/Lisbon.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Munich, Germany',
@@ -710,7 +994,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427200/voyagr/Munich.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427200/voyagr/Munich.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Burgos, Spain',
@@ -718,7 +1006,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426769/voyagr/Burgos.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426769/voyagr/Burgos.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Cork, Ireland',
@@ -726,7 +1018,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426845/voyagr/Cork.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426845/voyagr/Cork.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
      {
     name: 'Split, Croatia',
@@ -734,7 +1030,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427367/voyagr/Split.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427367/voyagr/Split.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
      {
     name: 'Helsinki, Finland',
@@ -742,7 +1042,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426951/voyagr/Helsinki.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426951/voyagr/Helsinki.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Rio De Janeiro, Brazil',
@@ -750,7 +1054,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427292/voyagr/Rio.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427292/voyagr/Rio.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
      {
     name: 'Chicago, Illinois',
@@ -758,7 +1066,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426820/voyagr/Chicago.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426820/voyagr/Chicago.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
      {
     name: 'Moorea, Tahiti',
@@ -766,7 +1078,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427182/voyagr/Moorea.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427182/voyagr/Moorea.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
      {
     name: 'Nairobi, Kenya',
@@ -774,7 +1090,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427205/voyagr/Nairobi.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427205/voyagr/Nairobi.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
     {
     name: 'St. Petersburg, Russia',
@@ -782,7 +1102,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427371/voyagr/St._Petersburg.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427371/voyagr/St._Petersburg.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
     name: 'Montreal, Canada',
@@ -790,7 +1114,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427173/voyagr/Montreal.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427173/voyagr/Montreal.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
        {
     name: 'Montego Bay, Jamaica',
@@ -798,7 +1126,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427160/voyagr/Montego_Bay.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427160/voyagr/Montego_Bay.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
 
      {
@@ -807,7 +1139,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427388/voyagr/Suva.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427388/voyagr/Suva.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Beirut, Lebanon',
@@ -815,7 +1151,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426666/voyagr/Beirut.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426666/voyagr/Beirut.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: ' Burlington, US',
@@ -823,7 +1163,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426627/voyagr/Burlington.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426627/voyagr/Burlington.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Jakarta, Indonesia',
@@ -831,7 +1175,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426998/voyagr/Jakarta.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426998/voyagr/Jakarta.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: ' Istanbul, Turkey',
@@ -839,7 +1187,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426990/voyagr/Istanbul.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426990/voyagr/Istanbul.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
     {
     name: 'Buenos Aires, Argentina',
@@ -847,7 +1199,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426764/voyagr/Buenos_Aires.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426764/voyagr/Buenos_Aires.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
     {
     name: 'Beijing, China',
@@ -855,7 +1211,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426663/voyagr/Beijing.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426663/voyagr/Beijing.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Marrakech, Morocco',
@@ -863,7 +1223,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427122/voyagr/Marrakech.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427122/voyagr/Marrakech.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
     {
     name: 'Hamilton, Burmuda',
@@ -871,7 +1235,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426933/voyagr/Hamilton.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426933/voyagr/Hamilton.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
     {
     name: 'Papeete, Bora Bora',
@@ -879,7 +1247,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427235/voyagr/Papeete.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427235/voyagr/Papeete.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
       {
     name: 'Kathmandu, Nepal',
@@ -887,7 +1259,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427003/voyagr/Kathmandu.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427003/voyagr/Kathmandu.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Zanzibar, Tanzania',
@@ -895,7 +1271,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427474/voyagr/Zanzibar.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427474/voyagr/Zanzibar.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Samarkand, Uzbekistan',
@@ -903,7 +1283,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427317/voyagr/Samarkand.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427317/voyagr/Samarkand.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Petra, Jordan',
@@ -911,7 +1295,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427252/voyagr/Petra.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427252/voyagr/Petra.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Lalibela, Ethiopia',
@@ -919,7 +1307,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427059/voyagr/Lalibela.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427059/voyagr/Lalibela.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Beijing, China',
@@ -927,7 +1319,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426663/voyagr/Beijing.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426663/voyagr/Beijing.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Cape Town, South Africa',
@@ -935,7 +1331,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426787/voyagr/Cape_Town.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426787/voyagr/Cape_Town.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Honolulu, Hawaii',
@@ -943,7 +1343,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426961/voyagr/Honolulu.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426961/voyagr/Honolulu.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Papeete, Bora Bora',
@@ -951,7 +1355,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427235/voyagr/Papeete.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427235/voyagr/Papeete.jpg",
+    price_answer: PriceAnswer.find_by(payload: '££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
  {
     name: 'Chamonix, France',
@@ -959,7 +1367,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426820/voyagr/Chamonix.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426820/voyagr/Chamonix.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Lucerne, Switzerland',
@@ -967,7 +1379,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427091/voyagr/Lucerne.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427091/voyagr/Lucerne.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Capri, Italy',
@@ -975,7 +1391,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426792/voyagr/Capri.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426792/voyagr/Capri.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
  {
     name: 'London, England',
@@ -983,7 +1403,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427081/voyagr/London.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427081/voyagr/London.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Florence, Italy',
@@ -991,7 +1415,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426884/voyagr/Florence.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426884/voyagr/Florence.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Paris, France',
@@ -999,7 +1427,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427247/voyagr/Paris.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427247/voyagr/Paris.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Geneva, Switzerland',
@@ -1007,7 +1439,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426896/voyagr/Geneva.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426896/voyagr/Geneva.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Manchester, UK',
@@ -1015,7 +1451,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427117/voyagr/Manchester.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427117/voyagr/Manchester.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Nice, France',
@@ -1023,7 +1463,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427216/voyagr/Nice.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427216/voyagr/Nice.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Mont Saint Michel, France',
@@ -1031,7 +1475,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427151/voyagr/Mont_Saint_Michel.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427151/voyagr/Mont_Saint_Michel.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Lausanne, Switzerland',
@@ -1039,7 +1487,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427066/voyagr/Lausanne.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427066/voyagr/Lausanne.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Bergen, Norway',
@@ -1047,7 +1499,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426669/voyagr/Bergen.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426669/voyagr/Bergen.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
     {
     name: 'Vatican City',
@@ -1055,7 +1511,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427416/voyagr/Vatican_City.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427416/voyagr/Vatican_City.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
     {
     name: 'Amsterdam, Netherlands',
@@ -1063,7 +1523,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426635/voyagr/Amsterdam.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426635/voyagr/Amsterdam.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
     {
     name: 'Rome, Italy',
@@ -1071,7 +1535,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427308/voyagr/Rome.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427308/voyagr/Rome.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Copenhagen, Denmark',
@@ -1079,7 +1547,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426835/voyagr/Copenhagen.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426835/voyagr/Copenhagen.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Zurich, Switzerland',
@@ -1087,7 +1559,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427480/voyagr/Zurich.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427480/voyagr/Zurich.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Wild Taiga, Finland',
@@ -1095,7 +1571,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427462/voyagr/Wild_Taiga.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427462/voyagr/Wild_Taiga.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Edinburgh, Scotland',
@@ -1103,7 +1583,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426880/voyagr/Edinburgh.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426880/voyagr/Edinburgh.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Gothenburg, Sweden',
@@ -1111,7 +1595,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426905/voyagr/Gothenburg.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426905/voyagr/Gothenburg.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Stockholm, Sweden',
@@ -1119,7 +1607,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427381/voyagr/Stockholm.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427381/voyagr/Stockholm.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Brussels, Belgium',
@@ -1127,7 +1619,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426746/voyagr/Brussels.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426746/voyagr/Brussels.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Maastricht, The Netherlands',
@@ -1135,7 +1631,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427100/voyagr/Maastricht.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427100/voyagr/Maastricht.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Rotterdam, Netherlands ',
@@ -1143,7 +1643,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427313/voyagr/Rotterdam.png"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427313/voyagr/Rotterdam.png",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Oslo, Norway',
@@ -1151,7 +1655,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427230/voyagr/Oslo.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427230/voyagr/Oslo.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Reykjavik, Iceland',
@@ -1159,7 +1667,11 @@ cities_attributes_2 = [
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427281/voyagr/Reykjavik.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427281/voyagr/Reykjavik.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Havana, Cuba',
@@ -1171,7 +1683,7 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
   },
   {
     name: 'Queenstown, New Zealand',
@@ -1203,7 +1715,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426655/voyagr/Bangkok.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426655/voyagr/Bangkok.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
   },
    {
     name: 'Osaka, Japan',
@@ -1211,7 +1727,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427227/voyagr/Osaka.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427227/voyagr/Osaka.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Shanghai, China',
@@ -1219,7 +1739,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427350/voyagr/Shanghai.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427350/voyagr/Shanghai.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
     name: 'Sydney, Australia',
@@ -1227,7 +1751,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427391/voyagr/Sydney.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427391/voyagr/Sydney.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Vancouver, Canada',
@@ -1235,7 +1763,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427413/voyagr/Vancouver.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427413/voyagr/Vancouver.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'San Diego, US',
@@ -1243,7 +1775,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427324/voyagr/San_Diego.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427324/voyagr/San_Diego.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'San Francisco, United States',
@@ -1251,7 +1787,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427328/voyagr/San_Francisco.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427328/voyagr/San_Francisco.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Bali, Indonesia',
@@ -1259,7 +1799,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426647/voyagr/Bali.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426647/voyagr/Bali.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Niagara Falls, US/ Canada',
@@ -1267,7 +1811,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427212/voyagr/Niagara_Falls.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427212/voyagr/Niagara_Falls.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Taipei, Taiwan',
@@ -1275,7 +1823,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427395/voyagr/Taipei.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427395/voyagr/Taipei.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Ulan Bator, Mongolia',
@@ -1283,7 +1835,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427406/voyagr/Ulan_Bator.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427406/voyagr/Ulan_Bator.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Seoul, South Korea',
@@ -1291,7 +1847,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427339/voyagr/Seoul.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427339/voyagr/Seoul.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
     name: 'Washington DC, US',
@@ -1299,7 +1859,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427443/voyagr/Washington_DC.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427443/voyagr/Washington_DC.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Dubai, United Arab Emirates',
@@ -1307,7 +1871,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426630/voyagr/Dubai.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426630/voyagr/Dubai.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Bern, Switzerland',
@@ -1315,7 +1883,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426673/voyagr/Bern.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426673/voyagr/Bern.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
   {
     name: 'Auckland, New Zealand',
@@ -1323,7 +1895,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426645/voyagr/Auckland.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426645/voyagr/Auckland.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Grand Canyon, US',
@@ -1331,7 +1907,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426913/voyagr/Grand_Canyon.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426913/voyagr/Grand_Canyon.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Banff, Canada',
@@ -1339,7 +1919,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426653/voyagr/Banff.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426653/voyagr/Banff.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
    {
     name: 'Kyoto, Japan',
@@ -1347,7 +1931,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427039/voyagr/Kyoto.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427039/voyagr/Kyoto.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Wellington, New Zealand',
@@ -1355,7 +1943,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427452/voyagr/Wellington.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427452/voyagr/Wellington.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Hong Kong',
@@ -1363,7 +1955,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426955/voyagr/Hong_Kong.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426955/voyagr/Hong_Kong.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
    {
     name: 'Victoria, Seychelles',
@@ -1371,7 +1967,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427426/voyagr/Vicroria.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427426/voyagr/Vicroria.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Honolulu, Hawaii',
@@ -1379,7 +1979,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426961/voyagr/Honolulu.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426961/voyagr/Honolulu.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
    {
     name: 'Dubai, UAE',
@@ -1387,7 +1991,11 @@ cities_attributes_2 = [
     location:      'Worldwide',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426630/voyagr/Dubai.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426630/voyagr/Dubai.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'locals'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   }
 ]
 
