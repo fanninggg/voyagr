@@ -1,4 +1,4 @@
 class Trip < ApplicationRecord
   validates :sender, presence: true
-  has_one :trip_answer
+  has_one :trip_answer, dependent: :destroy
 end
