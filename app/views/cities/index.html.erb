@@ -6,37 +6,13 @@
   </div>
   <br>
   <br>
-
-  <h1 class="text-center">Cities</h1>
-  <h2 class="text-center">Here are our suggestions for you trip...</h2>
-  <br>
-  <br>
-  <br>
-
-  <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>">
+  <div class="what">
+    <h1 class="text-center">Hey, what are you doing here!?</h1>
+    <h2 class="text-center">This page is not the page you are looking for</h2>
+    <br>
+    <br>
+    <%= cl_image_tag "voyagr/droids.png", :width=>580, :crop=>"scale" %>
   </div>
-
-
-  <br>
-  <div class="cards-box">
-  <% @cities.each do |city| %>
-    <div class="city-card"
-      data-aos="fade-up"
-      data-aos-duration="2000">
-    <%= cl_image_tag city.photo, height: 200, width: 300, crop: :fill %>
-      <h2 class="text-center"><%= city.name %></h2>
-    </div>
-  <% end %>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
   <br>
   <br>
   <br>
@@ -47,25 +23,3 @@
   <br>
   <br>
 
-
-<%= javascript_pack_tag 'home' %>
-
-  <script> // add as a javascript_pack_tag
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId            : 'your-app-id',
-        autoLogAppEvents : true,
-        xfbml            : true,
-        version          : 'v2.12'
-      });
-    };
-
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
-</div>

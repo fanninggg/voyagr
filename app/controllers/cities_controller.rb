@@ -7,7 +7,8 @@ class CitiesController < ApplicationController
        @markers = @cities.map do |city|
         {
           lat: city.latitude,
-          lng: city.longitude#,
+          lng: city.longitude,
+
         # infoWindow: { content: render_to_string(partial: "/cities/map_box", locals: { city: city }) }
         }
       end
