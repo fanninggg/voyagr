@@ -265,6 +265,7 @@
           <h4 class="modal-title">Things to feast your eyes on</h4>
         </div>
         <div class="modal-body">
+          <% if @sightseeing["results"].empty? %>
           <div class="suggestion">
             <%= cl_image_tag "voyagr/pexels-photo-670530.jpg", width: 150, height: 100 %>
             <div class="suggestion-text">
@@ -286,6 +287,32 @@
               <p id="modal-paragraph">1 mile from <%= @city.name %></p>
             </div>
           </div>
+
+      <% else %>
+            <div class="suggestion">
+              <p> <% ref_pic = @sightseeing["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <div class="suggestion-text">
+                <p style="font-weight: normal" id="modal-paragraph"> <%= @sightseeing["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%= @sightseeing["results"][0]["vicinity"] %></p>
+              </div>
+            </div>
+             <div class="suggestion">
+              <p> <% ref_pic = @sightseeing["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <div class="suggestion-text">
+                <p style="font-weight: normal" id="modal-paragraph"> <%= @sightseeing["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%= @sightseeing["results"][0]["vicinity"] %></p>
+            </div>
+             <div class="suggestion">
+              <p> <% ref_pic = @sightseeing["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <div class="suggestion-text">
+                <p style="font-weight: normal" id="modal-paragraph"> <%= @sightseeing["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%= @sightseeing["results"][0]["vicinity"] %></p>
+              </div>
+            </div>
+          <% end %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -293,5 +320,4 @@
       </div>
     </div>
   </div>
-</div>
 
