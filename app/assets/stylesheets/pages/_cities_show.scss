@@ -50,6 +50,22 @@
   margin-left: 10px;
   opacity: 1;
 }
-.info-card {
-  padding-bottom: 100px;
+.text-and-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+.info-card {
+  padding-bottom: 50px;
+}
+.suggestion {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.suggestion-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
