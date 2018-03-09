@@ -27,24 +27,31 @@ class WebhooksController < ApplicationController
           trip_answer = TripAnswer.create(sender: sender, trip: trip)
         end
         if messaging["read"]
+          puts "read"
           # do nothing
         elsif messaging["delivery"]
+          puts "delivery"
           #do nothing
         elsif messaging["postback"]
           if messaging["postback"]["payload"] == "Get Started!"
+            puts "i got the started"
             go_to_first_question(messaging, sender)
           end
         elsif messaging["message"]["text"] == "Hi"
+          puts "i got the hi"
           text = messaging["message"]["text"]
-          if text == "Help"
-            bot_reply = bot_help_reply(sender)
-          else
-            bot_reply = bot_welcome_reply(sender)
-          end
+          bot_reply = bot_welcome_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"] == "Redo"
+          Trip.where(sender: sender).destroy_all
+          bot_reply = bot_welcome_reply(sender)
           HTTP.post(url, json: bot_reply)
         elsif messaging["message"]["quick_reply"]
-          routing_questions(messaging, sender)
-          escape(messaging, sender)
+          puts 'I got the quick reply'
+          trip_answer = routing_questions(messaging, sender)
+          if messaging["message"]["quick_reply"]["payload"] == "results"
+            escape(messaging, sender, trip_answer)
+          end
         end
       end
       render plain: bot_reply
@@ -52,14 +59,13 @@ class WebhooksController < ApplicationController
   end
 
   def go_to_first_question(messaging, sender)
+    puts "i'm going to reply"
     bot_reply = bot_first_question(sender)
     HTTP.post(url, json: bot_reply)
   end
 
   def routing_questions(messaging, sender)
-    # store the response and mark the first question as answered
     trip_answer = TripAnswer.find_by(sender: sender)
-
     if trip_answer.price_answer.nil?
       trip_answer.price_answer = first_user_answer(messaging, sender)
       trip_answer.save
@@ -81,8 +87,9 @@ class WebhooksController < ApplicationController
       bot_reply = bot_escape_reply(sender)
       HTTP.post(url, json: bot_reply)
     end
-  end
 
+    trip_answer
+  end
 
   def first_user_answer(messaging, sender)
     return PriceAnswer.where(payload: messaging["message"]["quick_reply"]["payload"]).first
@@ -100,12 +107,14 @@ class WebhooksController < ApplicationController
     return CityTypeAnswer.where(payload: messaging["message"]["quick_reply"]["payload"]).first
   end
 
-  def escape(messaging, sender)
-    if messaging["message"]["quick_reply"]["payload"] == "continue"
-      bot_reply = bot_results_reply(sender)
-    elsif messaging["message"]["quick_reply"]["payload"] == "results"
-      bot_reply = bot_results_reply(sender)
-    end
+  def escape(messaging, sender, trip_answer)
+    trip_city = TripCity.create!(trip_answer_id: trip_answer.id)
+    trip_city.save
+    results = City.where(price_answer_id: trip_city.trip_answer.price_answer_id,
+                        location_answer_id: trip_city.trip_answer.location_answer_id,
+                        evening_answer_id: trip_city.trip_answer.evening_answer_id,
+                        city_type_answer: trip_city.trip_answer.city_type_answer_id)
+    bot_reply = bot_results_reply(sender, results)
     HTTP.post(url, json: bot_reply)
   end
 
