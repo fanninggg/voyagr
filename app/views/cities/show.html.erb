@@ -13,6 +13,8 @@
             <h2>Places to stay</h2>
             <div class="image-and-text">
               <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200 %>
+              <p> <%= @hotel["results"][0]["name"] %></p>
+
               <p>Based on the answers you gave to our friendly little chat bot, Graham, we have created a list of places that are within your budget where you might like to stay. If you'd like to see the list click on the incredibly subtle button over there.</p>
 
               <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#hotelModal">Hotels</button>
@@ -88,4 +90,6 @@
      }(document, 'script', 'facebook-jssdk'));
   </script>
 </div>
+
+
 
