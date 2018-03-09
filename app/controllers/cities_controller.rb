@@ -38,7 +38,6 @@ class CitiesController < ApplicationController
     @hotel = JSON.parse(response)
 
 
-
   end
 end
 

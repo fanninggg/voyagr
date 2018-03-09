@@ -18,142 +18,99 @@ class WebhooksController < ApplicationController
     entries = data["entry"]
     sender = nil
     text = nil
-    my_reply = nil
+    bot_reply = nil
     entries.each do |entry|
       entry["messaging"].each do |messaging|
         sender = messaging["sender"]["id"]
-        user = User.where(psid: sender).first
-        puts "DEBUG"
-        # user ||= User.create(psid: sender)
-        puts "DEBUG........"
-        trip = Trip.where(user: user).first
-        trip ||= Trip.create(user: user)
+        if Trip.find_by(sender: sender).nil?
+          trip = Trip.create(sender: sender)
+          trip_answer = TripAnswer.create(sender: sender, trip: trip)
+        end
         if messaging["read"]
           # do nothing
-          puts "read"
         elsif messaging["delivery"]
-          puts "delivery"
           #do nothing
         elsif messaging["postback"]
-          puts "postback"
-          trip = get_started(messaging, sender)
-        elsif messaging["message"]["quick_reply"]
-          routing_questions(messaging, sender, trip)
-          escape(messaging, sender)
-        elsif messaging["message"]
+          if messaging["postback"]["payload"] == "Get Started!"
+            go_to_first_question(messaging, sender)
+          end
+        elsif messaging["message"]["text"] == "Hi"
           text = messaging["message"]["text"]
           if text == "Help"
-            my_reply = help_reply(sender)
+            bot_reply = bot_help_reply(sender)
           else
-            my_reply = welcome_reply(sender)
+            bot_reply = bot_welcome_reply(sender)
           end
-          HTTP.post(url, json: my_reply)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["quick_reply"]
+          routing_questions(messaging, sender)
+          escape(messaging, sender)
         end
       end
-      render plain: my_reply
+      render plain: bot_reply
     end
   end
 
-  def get_started(messaging, sender)
-    if messaging["postback"]["payload"] == "Get Started!"
-      my_reply = first_question_reply(sender)
-      HTTP.post(url, json: my_reply)
+  def go_to_first_question(messaging, sender)
+    bot_reply = bot_first_question(sender)
+    HTTP.post(url, json: bot_reply)
+  end
+
+  def routing_questions(messaging, sender)
+    # store the response and mark the first question as answered
+    trip_answer = TripAnswer.find_by(sender: sender)
+
+    if trip_answer.price_answer.nil?
+      trip_answer.price_answer = first_user_answer(messaging, sender)
+      trip_answer.save
+      bot_reply = bot_second_question(sender)
+      HTTP.post(url, json: bot_reply)
+    elsif trip_answer.location_answer.nil?
+      trip_answer.location_answer = second_user_answer(messaging, sender)
+      trip_answer.save
+      bot_reply = bot_third_question(sender)
+      HTTP.post(url, json: bot_reply)
+    elsif trip_answer.evening_answer.nil?
+      trip_answer.evening_answer = third_user_answer(messaging, sender)
+      trip_answer.save
+      bot_reply = bot_fourth_question(sender)
+      HTTP.post(url, json: bot_reply)
+    elsif trip_answer.city_type_answer.nil?
+      trip_answer.city_type_answer = fourth_user_answer(messaging, sender)
+      trip_answer.save
+      bot_reply = bot_escape_reply(sender)
+      HTTP.post(url, json: bot_reply)
     end
   end
 
-  def first_question(messaging, sender)
-    if messaging["message"]["quick_reply"]["payload"] == "£"
-      price_answer_content = 'low'
-      my_reply = second_question_reply(sender)
-    elsif messaging["message"]["quick_reply"]["payload"]  == "££"
-      price_answer_content = 'Medium'
-      my_reply = second_question_reply(sender)
-    elsif  messaging["message"]["quick_reply"]["payload"] == "£££"
-      price_answer_content = 'Expensive'
-      my_reply = second_question_reply(sender)
-    end
-    HTTP.post(url, json: my_reply)
-    puts "end of first"
-    price_answer_content
+
+  def first_user_answer(messaging, sender)
+    return PriceAnswer.where(payload: messaging["message"]["quick_reply"]["payload"]).first
   end
 
-  def second_question(messaging, sender)
-    puts "start of second"
-    if messaging["message"]["quick_reply"]["payload"] == "europe"
-      location_answer_content = 'Europe'
-      my_reply = third_question_reply(sender)
-    elsif messaging["message"]["quick_reply"]["payload"] == "further"
-      location_answer_content = 'Worldwide'
-      my_reply = third_question_reply(sender)
-    end
-    HTTP.post(url, json: my_reply)
-    location_answer_content
+  def second_user_answer(messaging, sender)
+    return LocationAnswer.where(payload: messaging["message"]["quick_reply"]["payload"]).first
   end
 
-  def third_question(messaging, sender)
-    if messaging["message"]["quick_reply"]["payload"] == "bar"
-      evening_answer_content = 'Bar'
-      my_reply = fourth_question_reply(sender)
-    elsif messaging["message"]["quick_reply"]["payload"] == "restaurant"
-      evening_answer_content = 'Restaurant'
-      my_reply = fourth_question_reply(sender)
-    elsif messaging["message"]["quick_reply"]["payload"] == "locals"
-      evening_answer_content = 'Meet the locals'
-      my_reply = fourth_question_reply(sender)
-    end
-    HTTP.post(url, json: my_reply)
-    evening_answer_content
+  def third_user_answer(messaging, sender)
+    return EveningAnswer.where(payload: messaging["message"]["quick_reply"]["payload"]).first
   end
 
-  def fourth_question(messaging, sender)
-    if messaging["message"]["quick_reply"]["payload"] == "culture"
-      type_answer_content =  'Culturous'
-      my_reply = escape_reply(sender)
-    elsif messaging["message"]["quick_reply"]["payload"] == "adventure"
-      type_answer_content =  'Adventurous'
-      my_reply = escape_reply(sender)
-    elsif messaging["message"]["quick_reply"]["payload"] == "relax"
-      type_answer_content =  'Relaxing'
-      my_reply = escape_reply(sender)
-    end
-    HTTP.post(url, json: my_reply)
-    type_answer_content
+  def fourth_user_answer(messaging, sender)
+    return CityTypeAnswer.where(payload: messaging["message"]["quick_reply"]["payload"]).first
   end
 
   def escape(messaging, sender)
     if messaging["message"]["quick_reply"]["payload"] == "continue"
-      my_reply = results_reply(sender)
+      bot_reply = bot_results_reply(sender)
     elsif messaging["message"]["quick_reply"]["payload"] == "results"
-      my_reply = results_reply(sender)
+      bot_reply = bot_results_reply(sender)
     end
-    HTTP.post(url, json: my_reply)
+    HTTP.post(url, json: bot_reply)
   end
 
   def url
     "https://graph.facebook.com/v2.6/me/messages?access_token=#{ENV['ACCESS_TOKEN']}"
   end
-
-  def routing_questions(messaging, sender, trip)
-    puts "in the method"
-    price_answer_content = first_question(messaging, sender)
-    puts price_answer_content
-    if price_answer_content
-      puts "i am here mother"
-      location_answer_content = second_question(messaging, sender)
-      if location_answer_content
-        evening_answer_content = third_question(messaging, sender)
-        if evening_answer_content
-          type_answer_content = fourth_question(messaging, sender)
-          if city_type_answer
-            trip_answer = TripAnswer.create!(price_answer: PriceAnswer.where(content: price_answer_content).first,
-                                             location_answer: LocationAnswer.where(content: location_answer_content).first,
-                                             evening_answer: EveningAnswer.where(content: evening_answer_content).first,
-                                             city_type_answer: CityTypeAnswer.where(content: type_answer_content).first,
-                                             trip: trip)
-          end
-        end
-      end
-    end
-  end
-  end
 end
+
