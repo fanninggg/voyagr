@@ -222,7 +222,6 @@ cities_attributes_1 = [
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426721/voyagr/Brighton.jpg"
   }
 ]
-
 cities_attributes_2 = [
  {
     name: 'Vienna, Austria',
@@ -383,7 +382,9 @@ cities_attributes_2 = [
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520433047/voyagr/Boracay.jpg"
-  },
+  }
+]
+  cities_attributes_3 = [
    {
     name: 'Recife, Brazil',
     budget:         'low',
@@ -543,7 +544,9 @@ cities_attributes_2 = [
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426869/voyagr/Dublin.jpg"
-  },
+  }
+]
+  cities_attributes_4 = [
     {
     name: 'Ibiza, Spain',
     budget:         'Medium',
@@ -695,15 +698,16 @@ cities_attributes_2 = [
     type_of_evening:  'Meet the locals',
     type_of_city:        'Adventurous',
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426976/voyagr/Isle_of_Skye.jpg"
-  },
-   {
+  },    {
     name: 'Lisbon, Portugal',
     budget:         'Medium',
     location:      'Europe',
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427072/voyagr/Lisbon.jpg"
-  },
+  }
+]
+cities_attributes_5 = [
    {
     name: 'Munich, Germany',
     budget:         'Medium',
@@ -800,8 +804,7 @@ cities_attributes_2 = [
     type_of_city:        'Relaxing',
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427160/voyagr/Montego_Bay.jpg"
   },
-
-     {
+  {
     name: 'Suva, Fiji',
     budget:         'Medium',
     location:      'Worldwide',
@@ -864,7 +867,9 @@ cities_attributes_2 = [
     type_of_evening:  'Restaurant',
     type_of_city:        'Relaxing',
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427122/voyagr/Marrakech.jpg"
-  },
+  }
+]
+cities_attributes_6 = [
     {
     name: 'Hamilton, Burmuda',
     budget:         'Medium',
@@ -936,8 +941,7 @@ cities_attributes_2 = [
     type_of_evening:  'Meet the locals',
     type_of_city:        'Relaxing',
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426787/voyagr/Cape_Town.jpg"
-  },
-  {
+  },   {
     name: 'Honolulu, Hawaii',
     budget:         'Medium',
     location:      'Worldwide',
@@ -1024,7 +1028,9 @@ cities_attributes_2 = [
     type_of_evening:  'Bar',
     type_of_city:        'Relaxing',
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427216/voyagr/Nice.jpg"
-  },
+  }
+]
+cities_attributes_7 = [
    {
     name: 'Mont Saint Michel, France',
     budget:         'Expensive',
@@ -1184,8 +1190,10 @@ cities_attributes_2 = [
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427133/voyagr/Melbourne.jpg"
-  },
-   {
+  }
+]
+cities_attributes_8 = [
+  {
     name: 'Bangkok, Thailand',
     budget:         'Expensive',
     location:      'Worldwide',
@@ -1344,7 +1352,9 @@ cities_attributes_2 = [
     type_of_evening:  'Meet the locals',
     type_of_city:        'Culturous',
     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427452/voyagr/Wellington.jpg"
-  },
+  }
+]
+cities_attributes_9 = [
    {
     name: 'Hong Kong',
     budget:         'Expensive',
@@ -1379,8 +1389,52 @@ cities_attributes_2 = [
   }
 ]
 
-City.create!(cities_attributes_1)
-puts "finding more locations..."
-City.create!(cities_attributes_2)
+# City.create!(cities_attributes_1)
+cities_attributes_1.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_2.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_3.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_4.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_5.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_6.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_7.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_8.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_9.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+# City.create!(cities_attributes_2)
 puts "done"
 
