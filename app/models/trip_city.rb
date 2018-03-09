@@ -1,4 +1,4 @@
 class TripCity < ApplicationRecord
-  belongs_to :city
-  belongs_to :trip_answer
+  belongs_to :city, optional: true
+  belongs_to :trip_answer, optional: true
 end

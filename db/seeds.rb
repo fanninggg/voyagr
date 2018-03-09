@@ -1173,7 +1173,11 @@ cities_attributes_7 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426939/voyagr/Havana.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426939/voyagr/Havana.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Queenstown, New Zealand',
@@ -1181,7 +1185,11 @@ cities_attributes_7 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427269/voyagr/Queenstown.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427269/voyagr/Queenstown.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
   {
     name: 'Melbourne, Australia',
@@ -1189,11 +1197,15 @@ cities_attributes_7 = [
     location:      'Worldwide',
     type_of_evening:  'Bar',
     type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427133/voyagr/Melbourne.jpg"
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427133/voyagr/Melbourne.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£££'),
+    location_answer: LocationAnswer.find_by(payload: 'further'),
+    evening_answer: EveningAnswer.find_by(payload: 'bar'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   }
 ]
 cities_attributes_8 = [
-  {
+   {
     name: 'Bangkok, Thailand',
     budget:         'Expensive',
     location:      'Worldwide',

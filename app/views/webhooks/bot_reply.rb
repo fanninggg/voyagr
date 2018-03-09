@@ -94,17 +94,12 @@ end
 
 def bot_escape_reply(sender)
   response = {
-              "text": "We have your results! Would you like to see them now, or narrow them further with more questions",
+              "text": "We have your results! If you want to redo the quiz, type 'Redo' to start over",
               "quick_replies": [
                 {
                   "content_type": "text",
                   "title": "See my results \u{1F389}",
                   "payload": "results",
-                },
-                {
-                  "content_type": "text",
-                  "title": "Continue \u{1F3CA}",
-                  "payload": "continue",
                 }
               ]
             }
@@ -112,42 +107,39 @@ def bot_escape_reply(sender)
   bot_standard_reply(response, sender)
 end
 
-def bot_results_reply(sender)
+def bot_results_reply(sender, results)
   response = {
               "attachment": {
               "type": "template",
               "payload": {
               "template_type": "generic",
                 "elements": [{
-                "title": "First Result",
-                  "subtitle": "This is the first result",
-                  "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg",
+                "title": results.first.name,
+                  "image_url": results.first.photo,
                   "buttons":
                   [{
                     "type": "web_url",
-                    "url": "https://www.voyagr.co.uk/",
+                    "url": "https://www.voyagr.co.uk/cities/#{results.first.id}",
                     "title": "More information"
                   }],
                 },
                 {
-                  "title": "Second result",
-                  "subtitle": "This is the second result",
-                  "image_url": "https://media.wired.com/photos/59e644e21a7a784c71f7d86d/2:1/w_2500,c_limit/TorontoSkyline-HP-553395387.jpg",
+                  "title": results.second.name,
+                  "image_url": results.second.photo,
                   "buttons":
                   [{
                     "type": "web_url",
-                    "url": "https://www.voyagr.co.uk/",
+                    "url": "https://www.voyagr.co.uk/cities/#{results.second.id}",
                     "title": "More information"
                   }],
                 },
                 {
-                  "title": "Third result",
-                  "subtitle": "This is the third result",
-                  "image_url": "https://www.birdlife.org/sites/default/files/styles/1600/public/bialowieza_forest_c_tomasz_wilk_0.jpg?itok=iXRoJtoL",
+                  "title": results.third.name,
+                  "image_url": results.third.photo,
                   "buttons":
                   [{
                     "type": "web_url",
-                    "url": "https://www.voyagr.co.uk/",
+                    "url": "https://www.voyagr.co.uk/cities/#{results.third.id}",
                     "title": "More information"
                   }],
                 }]
