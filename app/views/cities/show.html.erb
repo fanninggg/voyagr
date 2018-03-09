@@ -13,17 +13,13 @@
             <h2>Places to stay</h2>
             <div class="image-and-text">
               <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200 %>
-
-              <p> <%= @hotel["results"][0]["name"] %></p>
-              <p> <%= @hotel["results"][0]["vicinity"] %></p>
-              <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="">
-              <!-- <p> <%# @hotel["results"][0]["photos"][0]["photo_reference"] %></p> -->
+              <div class="text-and-button">
+                <p>Based on the answers you gave to our friendly little VoyagrBot, he has suggested that you might like to stay at some of these hotels/rooms/hostels.</p>
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#hotelModal">Lodgings</button>
               </div>
             </div>
           </div>
-        
+
           <div class="info-card food" >
             <h2>Food</h2>
             <div class="image-and-text">
@@ -34,7 +30,7 @@
               </div>
             </div>
           </div>
-        
+
           <div class="info-card entertainment">
             <h2>Entertainment</h2>
             <div class="image-and-text">
@@ -45,7 +41,7 @@
               </div>
             </div>
           </div>
-        
+
           <div class="info-card sightseeing">
           <h2>Sightseeing</h2>
             <div class="image-and-text">
@@ -59,7 +55,7 @@
         </div>
       </div>
     </div>
-  
+
     <div class="col-xs-3 show-map">
       <div id="map" style="width: 100%; height: 100vh;" data-markers="<%= @markers.to_json %>">
       </div>
@@ -75,24 +71,27 @@
         </div>
         <div class="modal-body">
           <div class="suggestion">
-            <%= cl_image_tag "voyagr/pexels-photo-295824.jpg", width: 150, height: 100 %>
+            <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
             <div class="suggestion-text">
-              <p style="font-weight: normal" id="modal-paragraph">Romain's Rooms</p>
-              <p id="modal-paragraph">0 miles from <%= @city.name %></p>
+              <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][0]["name"] %></p>
+              <p id="modal-paragraph"> <%= @hotel["results"][0]["vicinity"] %></p>
             </div>
           </div>
-           <div class="suggestion">
-            <%= cl_image_tag "voyagr/pexels-photo-295824.jpg", width: 150, height: 100 %>
+          <div class="suggestion">
+            <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
             <div class="suggestion-text">
-              <p style="font-weight: normal" id="modal-paragraph">Littmann Lodging</p>
-              <p id="modal-paragraph">0.5 miles from <%= @city.name %></p>
+              <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][0]["name"] %></p>
+              <p id="modal-paragraph"> <%= @hotel["results"][0]["vicinity"] %></p>
             </div>
           </div>
-           <div class="suggestion">
-            <%= cl_image_tag "voyagr/pexels-photo-295824.jpg", width: 150, height: 100 %>
+          <div class="suggestion">
+            <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
             <div class="suggestion-text">
-              <p style="font-weight: normal" id="modal-paragraph">Sam's Sleepy Snoozers</p>
-              <p id="modal-paragraph">1 mile from <%= @city.name %></p>
+              <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][0]["name"] %></p>
+              <p id="modal-paragraph"> <%= @hotel["results"][0]["vicinity"] %></p>
             </div>
           </div>
         </div>
