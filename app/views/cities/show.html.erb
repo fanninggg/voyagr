@@ -14,6 +14,11 @@
             <div class="image-and-text">
               <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200 %>
               <p> <%= @hotel["results"][0]["name"] %></p>
+              <p> <%= @hotel["results"][0]["vicinity"] %></p>
+              <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="">
+              <!-- <p> <%# @hotel["results"][0]["photos"][0]["photo_reference"] %></p> -->
               <p>Based on the answers you gave to our friendly little chat bot, Graham, we have created a list of places that are within your budget where you might like to stay. If you'd like to see the list click on the incredibly subtle button over there.</p>
 
               <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#hotelModal">Hotels</button>
@@ -34,11 +39,6 @@
                   </div>
                 </div>
               </div>
-
-<<<<<<< HEAD
->>>>>>> c3aa0782c9fb72e01ba6c8b4a280641bc718aa7e
-=======
->>>>>>> a842231a98b28acfbe57ace5a41ed9a036fdf9ee
             </div>
           </div>
           <div class="info-card entertainment">
