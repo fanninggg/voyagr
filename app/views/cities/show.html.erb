@@ -266,29 +266,28 @@
         </div>
         <div class="modal-body">
           <% if @sightseeing["results"].empty? %>
-          <div class="suggestion">
-            <%= cl_image_tag "voyagr/pexels-photo-670530.jpg", width: 150, height: 100 %>
-            <div class="suggestion-text">
-              <p style="font-weight: normal" id="modal-paragraph">Tanguy Towers</p>
-              <p id="modal-paragraph">0 miles from <%= @city.name %></p>
+            <div class="suggestion">
+              <%= cl_image_tag "voyagr/pexels-photo-670530.jpg", width: 150, height: 100 %>
+              <div class="suggestion-text">
+                <p style="font-weight: normal" id="modal-paragraph">Tanguy Towers</p>
+                <p id="modal-paragraph">0 miles from <%= @city.name %></p>
+              </div>
             </div>
-          </div>
-           <div class="suggestion">
-            <%= cl_image_tag "voyagr/pexels-photo-670530.jpg", width: 150, height: 100 %>
-            <div class="suggestion-text">
-              <p style="font-weight: normal" id="modal-paragraph">Shirley Statue</p>
-              <p id="modal-paragraph">0.5 miles from <%= @city.name %></p>
+             <div class="suggestion">
+              <%= cl_image_tag "voyagr/pexels-photo-670530.jpg", width: 150, height: 100 %>
+              <div class="suggestion-text">
+                <p style="font-weight: normal" id="modal-paragraph">Shirley Statue</p>
+                <p id="modal-paragraph">0.5 miles from <%= @city.name %></p>
+              </div>
             </div>
-          </div>
-           <div class="suggestion">
-            <%= cl_image_tag "voyagr/pexels-photo-670530.jpg", width: 150, height: 100 %>
-            <div class="suggestion-text">
-              <p style="font-weight: normal" id="modal-paragraph">Vincent Viewpoint</p>
-              <p id="modal-paragraph">1 mile from <%= @city.name %></p>
+             <div class="suggestion">
+              <%= cl_image_tag "voyagr/pexels-photo-670530.jpg", width: 150, height: 100 %>
+              <div class="suggestion-text">
+                <p style="font-weight: normal" id="modal-paragraph">Vincent Viewpoint</p>
+                <p id="modal-paragraph">1 mile from <%= @city.name %></p>
+              </div>
             </div>
-          </div>
-
-      <% else %>
+          <% else %>
             <div class="suggestion">
               <p> <% ref_pic = @sightseeing["results"][0]["photos"][0]["photo_reference"] %></p>
               <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
@@ -297,14 +296,15 @@
                 <p id="modal-paragraph"> <%= @sightseeing["results"][0]["vicinity"] %></p>
               </div>
             </div>
-             <div class="suggestion">
+            <div class="suggestion">
               <p> <% ref_pic = @sightseeing["results"][0]["photos"][0]["photo_reference"] %></p>
               <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
                 <p style="font-weight: normal" id="modal-paragraph"> <%= @sightseeing["results"][0]["name"] %></p>
                 <p id="modal-paragraph"> <%= @sightseeing["results"][0]["vicinity"] %></p>
+              </div>
             </div>
-             <div class="suggestion">
+            <div class="suggestion">
               <p> <% ref_pic = @sightseeing["results"][0]["photos"][0]["photo_reference"] %></p>
               <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
