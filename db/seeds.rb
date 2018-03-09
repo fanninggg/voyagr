@@ -302,7 +302,6 @@ cities_attributes_1 = [
     city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   }
 ]
-
 cities_attributes_2 = [
  {
     name: 'Vienna, Austria',
@@ -507,7 +506,9 @@ cities_attributes_2 = [
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
-  },
+     }
+]
+cities_attributes_3 = [
    {
     name: 'Recife, Brazil',
     budget:         'low',
@@ -747,7 +748,10 @@ cities_attributes_2 = [
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
-  },
+  }
+]
+  cities_attributes_4 = [
+
     {
     name: 'Ibiza, Spain',
     budget:         'Medium',
@@ -976,7 +980,7 @@ cities_attributes_2 = [
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
   },
-   {
+  {
     name: 'Lisbon, Portugal',
     budget:         'Medium',
     location:      'Europe',
@@ -987,7 +991,10 @@ cities_attributes_2 = [
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
-  },
+  }
+]
+cities_attributes_5 = [
+
    {
     name: 'Munich, Germany',
     budget:         'Medium',
@@ -1132,8 +1139,7 @@ cities_attributes_2 = [
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
-
-     {
+  {
     name: 'Suva, Fiji',
     budget:         'Medium',
     location:      'Worldwide',
@@ -1228,7 +1234,9 @@ cities_attributes_2 = [
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
-  },
+  }
+]
+cities_attributes_6 = [
     {
     name: 'Hamilton, Burmuda',
     budget:         'Medium',
@@ -1336,8 +1344,7 @@ cities_attributes_2 = [
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
-  },
-  {
+  },   {
     name: 'Honolulu, Hawaii',
     budget:         'Medium',
     location:      'Worldwide',
@@ -1468,7 +1475,9 @@ cities_attributes_2 = [
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
-  },
+  }
+]
+cities_attributes_7 = [
    {
     name: 'Mont Saint Michel, France',
     budget:         'Expensive',
@@ -1708,7 +1717,9 @@ cities_attributes_2 = [
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
-  },
+  }
+]
+cities_attributes_8 = [
    {
     name: 'Bangkok, Thailand',
     budget:         'Expensive',
@@ -1948,7 +1959,9 @@ cities_attributes_2 = [
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
-  },
+  }
+]
+cities_attributes_9 = [
    {
     name: 'Hong Kong',
     budget:         'Expensive',
@@ -1999,8 +2012,52 @@ cities_attributes_2 = [
   }
 ]
 
-City.create!(cities_attributes_1)
-puts "finding more locations..."
-City.create!(cities_attributes_2)
+# City.create!(cities_attributes_1)
+cities_attributes_1.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_2.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_3.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_4.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_5.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_6.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_7.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_8.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+cities_attributes_9.each do |attr|
+  c = City.create!(attr)
+  puts c.name + " created"
+  sleep(1)
+end
+# City.create!(cities_attributes_2)
 puts "done"
 
