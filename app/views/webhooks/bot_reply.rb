@@ -1,3 +1,11 @@
+def set_up_get_started_button(sender)
+ response =  {
+  "get_started": {"payload": "<postback_payload>"}
+}
+
+bot_standard_reply(response, sender)
+end
+
 def bot_standard_reply(response, sender)
   bot_standard_reply = {
                 "messaging_type": "RESPONSE",
@@ -15,12 +23,12 @@ def bot_welcome_reply(sender)
                   "payload": {
                     "template_type": "generic",
                     "elements": [{
-                      "title": "Welcome to Voyagr, to find your next holiday destination press 'Get Started!",
+                      "title": "Welcome to Voyagr, to find your next holiday destination press 'Let's go!",
                       "buttons": [
                         {
                           "type": "postback",
-                          "title": "Get Started!",
-                          "payload": "Get Started!",
+                          "title": "Let's go!",
+                          "payload": "Let's go!",
                         }
                       ],
                     }]

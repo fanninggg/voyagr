@@ -33,7 +33,10 @@ class WebhooksController < ApplicationController
           puts "delivery"
           #do nothing
         elsif messaging["postback"]
-          if messaging["postback"]["payload"] == "Get Started!"
+          if messaging["postback"]["payload"] == "Get Started"
+            bot_reply = bot_welcome_reply(sender)
+            HTTP.post(url, json: bot_reply)
+          elsif messaging["postback"]["payload"] == "Let's go!"
             puts "i got the started"
             go_to_first_question(messaging, sender)
           end
