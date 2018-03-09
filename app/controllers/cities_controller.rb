@@ -36,8 +36,7 @@ class CitiesController < ApplicationController
 
     response_hotel =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_hotel})
     @hotel = JSON.parse(response_hotel)
-    # rescue
-      # @hotel = "Not found"
+
 
     params_restaurant = {
       key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
@@ -48,20 +47,28 @@ class CitiesController < ApplicationController
 
     response_restaurant =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_restaurant})
     @restaurant = JSON.parse(response_restaurant)
-    # rescue
-      # @restaurant = "Not found"
+
 
     params_entertainment = {
       key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
       location: "#{@city.latitude},#{@city.longitude}",
       radius: 50000,
-      keyword: "night_club" || "amusement_park"
+      keyword: "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "spa" || "casino"
     }
 
     response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment})
     @entertainment = JSON.parse(response_entertainment)
-    # rescue
-      # @entertainment = "Not found"
+
+
+    params_sightseeing = {
+      key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
+      location: "#{@city.latitude},#{@city.longitude}",
+      radius: 50000,
+      keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue"
+    }
+
+    response_sightseeing =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_sightseeing})
+    @sightseeing = JSON.parse(response_sightseeing)
   end
 end
 
