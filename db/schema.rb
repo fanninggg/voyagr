@@ -96,6 +96,17 @@ ActiveRecord::Schema.define(version: 20180312095106) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "suggestions", force: :cascade do |t|
+    t.bigint "city_id"
+    t.string "name"
+    t.string "type"
+    t.string "description"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_suggestions_on_city_id"
+  end
+
   create_table "trip_answers", force: :cascade do |t|
     t.bigint "price_answer_id"
     t.bigint "location_answer_id"
@@ -153,6 +164,7 @@ ActiveRecord::Schema.define(version: 20180312095106) do
   add_foreign_key "evening_answers", "evening_questions"
   add_foreign_key "location_answers", "location_questions"
   add_foreign_key "price_answers", "price_questions"
+  add_foreign_key "suggestions", "cities"
   add_foreign_key "trip_answers", "city_type_answers"
   add_foreign_key "trip_answers", "evening_answers"
   add_foreign_key "trip_answers", "location_answers"

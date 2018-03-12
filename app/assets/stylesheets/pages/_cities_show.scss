@@ -75,6 +75,11 @@
   height: 100px;
 }
 
+#map {
+  width: 300px;
+  height: 665px;
+}
+
 .modal-button {
   color: #fff;
   background-color: rgba(248,157,41,0.6);
@@ -82,21 +87,27 @@
   border-radius: 20px;
 }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (max-width: 500px) {
   .show-background {
     width: 100%
+  }
+
+  #map {
+    height: 300px;
+    width: 100vw;
+    bottom: 190px;
   }
 
   .image-and-text {
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 250px;
+    height: 245px;
   }
 
   .show-page {
     h1 {
-      font-size: 25px;
+      font-size: 42px;
 
     } h2 {
       font-size: 18px;
@@ -105,10 +116,15 @@
       margin: 15px;
     }
   }
+
+  .show-map {
+    position: static;
+    bottom: 0px;
+  }
   .gen-image {
     width: 225px;
     height: 120px;
-    margin-top: 15px;
+    margin-top: 13px;
   }
 
   .modal-button {
