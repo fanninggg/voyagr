@@ -23,7 +23,7 @@ def bot_welcome_reply(sender)
                   "payload": {
                     "template_type": "generic",
                     "elements": [{
-                      "title": "Welcome to Voyagr! To find your next holiday destination press 'Let's go!",
+                      "title": "Welcome to Voyagr! I'm here to give you inspiration for your next holiday destination",
                       "buttons": [
                         {
                           "type": "postback",
@@ -189,6 +189,40 @@ def bot_results_reply(sender, results)
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{results.third.id}",
                     "title": "More information"
+                  }],
+                }]
+              }
+            }
+          }
+
+  bot_standard_reply(response, sender)
+end
+
+def bot_choices_reply(sender)
+  response = {
+              "attachment": {
+              "type": "template",
+              "payload": {
+              "template_type": "generic",
+                "elements":
+                [{
+                "title": "Get a random selection of holiday destinations",
+                "image_url": "http://www.hometohomecalls.com/wp-content/uploads/2015/11/Holiday.jpg",
+                  "buttons":
+                  [{
+                    "type": "postback",
+                    "title": "Random!",
+                    "payload": "random",
+                  }],
+                },
+                {
+                  "title": "Take our quiz to find a more tailored destination",
+                  "image_url": "http://home.bt.com/images/test-your-knowledge-of-2016-with-our-jumbo-trivia-quiz-136412309722203901-161222142527.jpg",
+                  "buttons":
+                  [{
+                    "type": "postback",
+                    "title": "Take the quiz!",
+                    "payload": "quiz",
                   }],
                 }]
               }
