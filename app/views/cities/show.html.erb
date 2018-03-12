@@ -32,23 +32,12 @@
           </div>
 
           <div class="info-card entertainment">
-            <h2>Entertainment</h2>
+            <h2>Things to do</h2>
             <div class="image-and-text">
               <%= cl_image_tag "voyagr/entertainment.jpg", width: 350, height: 200 %>
               <div class="text-and-button">
                 <p>VoyagrBot recommends these places for you to entertain yourself while exploring <%= @city.name %>. These are places which should be uniquely suited to you, based on your answers.</p>
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#entertainmentModal">Entertainment</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-card sightseeing">
-          <h2>Sightseeing</h2>
-            <div class="image-and-text">
-              <%= cl_image_tag "voyagr/sightseeing.jpg", width: 350, height: 200 %>
-              <div class="text-and-button">
-                <p>Below is a list of places which VoyagrBot suggests that you might enjoy looking at with your human eyeballs. Thanks VoyagrBot, you friendly little bundle of code and errors you. </p>
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#sightseeingModal">Sightseeing</button>
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#entertainmentModal">Things to do</button>
               </div>
             </div>
           </div>
@@ -256,68 +245,5 @@
       </div>
     </div>
   </div>
-
-  <div id="sightseeingModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Things to feast your eyes on</h4>
-        </div>
-        <div class="modal-body">
-          <% if @sightseeing["results"].empty? %>
-            <div class="suggestion">
-              <%= cl_image_tag "voyagr/pexels-photo-670530.jpg", width: 150, height: 100 %>
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph">Tanguy Towers</p>
-                <p id="modal-paragraph">0 miles from <%= @city.name %></p>
-              </div>
-            </div>
-             <div class="suggestion">
-              <%= cl_image_tag "voyagr/pexels-photo-670530.jpg", width: 150, height: 100 %>
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph">Shirley Statue</p>
-                <p id="modal-paragraph">0.5 miles from <%= @city.name %></p>
-              </div>
-            </div>
-             <div class="suggestion">
-              <%= cl_image_tag "voyagr/pexels-photo-670530.jpg", width: 150, height: 100 %>
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph">Vincent Viewpoint</p>
-                <p id="modal-paragraph">1 mile from <%= @city.name %></p>
-              </div>
-            </div>
-          <% else %>
-            <div class="suggestion">
-              <p> <% ref_pic = @sightseeing["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%= @sightseeing["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @sightseeing["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-            <div class="suggestion">
-              <p> <% ref_pic = @sightseeing["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%= @sightseeing["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @sightseeing["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-            <div class="suggestion">
-              <p> <% ref_pic = @sightseeing["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%= @sightseeing["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @sightseeing["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-          <% end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
 
