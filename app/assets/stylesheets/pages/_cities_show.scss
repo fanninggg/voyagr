@@ -28,12 +28,14 @@
   padding: 0;
 }
 .show-map {
-  padding: 0;
   position: fixed;
-  right: 0;
+  left: 1050px;
+  top: 80px;
+  border-radius: 20px;
 }
 .city-information {
   margin: 45px;
+  margin-top: 0px;
   padding-bottom: 50px;
 }
 .show-background {
