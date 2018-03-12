@@ -15,6 +15,8 @@
     font-weight: lighter;
     color: rgb(255, 255, 255);
     opacity: 1;
+  } a:hover {
+    text-decoration: none;
   }
 }
 #modal-paragraph {
@@ -28,12 +30,13 @@
   padding: 0;
 }
 .show-map {
-  padding: 0;
   position: fixed;
-  right: 0;
+  left: 1050px;
+  top: 80px;
 }
 .city-information {
   margin: 45px;
+  margin-top: 0px;
   padding-bottom: 50px;
 }
 .show-background {
@@ -71,5 +74,74 @@
 .suggestion-image {
   width: 150px;
   height: 100px;
+}
+
+#map {
+  width: 300px;
+  height: 665px;
+}
+
+.modal-button {
+  color: #fff;
+  background-color: rgba(248,157,41,0.6);
+  border-color: #f79210;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .show-background {
+    width: 100%
+  }
+
+  #map {
+    height: 300px;
+    width: 100vw;
+    bottom: 190px;
+  }
+
+  .image-and-text {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 245px;
+  }
+
+  .show-page {
+    h1 {
+      font-size: 42px;
+
+    } h2 {
+      font-size: 18px;
+    } p {
+      font-size: 12px;
+      margin: 15px;
+    }
+  }
+
+  .show-map {
+    position: static;
+    bottom: 0px;
+  }
+  .gen-image {
+    width: 225px;
+    height: 120px;
+    margin-top: 13px;
+  }
+
+  .modal-button {
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+
+}
+
+@media only screen and (min-width: 500px) {
+
+}
+
+@media only screen and (min-width: 800px) {
+
 }
 

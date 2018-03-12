@@ -102,18 +102,6 @@ cities_attributes_1 = [
     city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
   },
     {
-    name: ' Rio De Janeiro, Brazil',
-    budget:         'Medium',
-    location:      'Outside',
-    type_of_evening:  'Bar',
-    type_of_city:   'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427292/voyagr/Rio.jpg",
-    price_answer: PriceAnswer.find_by(payload: '££'),
-    location_answer: LocationAnswer.find_by(payload: 'further'),
-    evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
-  },
-    {
     name: 'Gdansk, Poland',
     budget:         'low',
     location:      'Europe',
@@ -171,7 +159,7 @@ cities_attributes_1 = [
     city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
   },
   {
-    name: ' Prague, Czech Republic',
+    name: 'Prague, Czech Republic',
     budget:         'low',
     location:      'Europe',
     type_of_evening:  'Bar',

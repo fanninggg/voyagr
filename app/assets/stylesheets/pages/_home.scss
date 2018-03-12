@@ -17,6 +17,11 @@ body {
     margin: 0px 200px;
     color: rgb(220,220,220);
     font-size: 40px;
+  } a {
+    text-decoration: none;
+    color: rgb(255,255,255);
+  } a:hover {
+    font-weight: bold;
   }
 }
 
@@ -49,7 +54,6 @@ body {
     height: 35px !important;
   }
 }
-
 
 .banner {
   color: white;
@@ -88,8 +92,8 @@ body {
 }
 
 #icon-container {
-    position: sticky;
-    top: 80%;
+  position: sticky;
+  top: 80%;
 }
 
 .messenger-button {
@@ -108,9 +112,9 @@ body {
 }
 
 .test {
-    margin: 10px auto;
-    position:relative;
-    text-align:center
+  margin: 10px auto;
+  position:relative;
+  text-align:center
 }
 
 .team {
