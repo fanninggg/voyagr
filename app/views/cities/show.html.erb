@@ -44,14 +44,15 @@
                 </div>
               </div>
             </div>
+
           </div>
+
           <div class="col-xs-3 show-map">
             <div id="map" style="width: 300px; height: 665px;" data-markers="<%= @markers.to_json %>">
             </div>
           </div>
 
         </div>
-
       </div>
     </div>
   </div>
@@ -64,57 +65,57 @@
           <h4 class="modal-title">Places to rest your head</h4>
         </div>
           <div class="modal-body">
-            <% if @hotel["results"].empty? %>
+            <%# if @hotel["results"].empty? %>
             <div class="suggestion">
-              <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @hotel["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
               </div>
             </div>
             <div class="suggestion">
-              <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @hotel["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
               </div>
             </div>
             <div class="suggestion">
-              <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @hotel["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
               </div>
             </div>
-          <% else %>
+          <%# else %>
             <div class="suggestion">
-              <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @hotel["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-            <div class="suggestion">
-              <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @hotel["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
               </div>
             </div>
             <div class="suggestion">
-              <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @hotel["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
               </div>
             </div>
-          <% end %>
+            <div class="suggestion">
+              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <div class="suggestion-text">
+                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
+              </div>
+            </div>
+          <%# end %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -132,54 +133,54 @@
           <h4 class="modal-title">High quality food and bevs</h4>
         </div>
         <div class="modal-body">
-          <% if @restaurant["results"].empty? %>
+          <%# if @restaurant["results"].empty? %>
             <div class="suggestion">
-              <%= cl_image_tag "voyagr/food-salad-restaurant-person.jpg", width: 150, height: 100 %>
+              <%#= cl_image_tag "voyagr/food-salad-restaurant-person.jpg", width: 150, height: 100 %>
               <div class="suggestion-text">
                 <p style="font-weight: normal" id="modal-paragraph">The Dunleavy Diner</p>
-                <p id="modal-paragraph">0 miles from <%= @city.name %></p>
+                <p id="modal-paragraph">0 miles from <%#= @city.name %></p>
               </div>
             </div>
              <div class="suggestion">
-              <%= cl_image_tag "voyagr/food-salad-restaurant-person.jpg", width: 150, height: 100 %>
+              <%#= cl_image_tag "voyagr/food-salad-restaurant-person.jpg", width: 150, height: 100 %>
               <div class="suggestion-text">
                 <p style="font-weight: normal" id="modal-paragraph">Rito's Restaurant</p>
-                <p id="modal-paragraph">0.5 miles from <%= @city.name %></p>
+                <p id="modal-paragraph">0.5 miles from <%#= @city.name %></p>
               </div>
             </div>
              <div class="suggestion">
-              <%= cl_image_tag "voyagr/food-salad-restaurant-person.jpg", width: 150, height: 100 %>
+              <%#= cl_image_tag "voyagr/food-salad-restaurant-person.jpg", width: 150, height: 100 %>
               <div class="suggestion-text">
                 <p style="font-weight: normal" id="modal-paragraph">Gregoire's Gastro-pub</p>
-                <p id="modal-paragraph">1 mile from <%= @city.name %></p>
+                <p id="modal-paragraph">1 mile from <%#= @city.name %></p>
               </div>
             </div>
-          <% else %>
+          <%# else %>
             <div class="suggestion">
-              <p> <% ref_pic = @restaurant["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <p> <%# ref_pic = @restaurant["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%= @restaurant["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @restaurant["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"> <%#= @restaurant["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @restaurant["results"][0]["vicinity"] %></p>
               </div>
             </div>
              <div class="suggestion">
-              <p> <% ref_pic = @restaurant["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <p> <%# ref_pic = @restaurant["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%= @restaurant["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @restaurant["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"> <%#= @restaurant["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @restaurant["results"][0]["vicinity"] %></p>
               </div>
             </div>
              <div class="suggestion">
-              <p> <% ref_pic = @restaurant["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <p> <%# ref_pic = @restaurant["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%= @restaurant["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @restaurant["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"> <%#= @restaurant["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @restaurant["results"][0]["vicinity"] %></p>
               </div>
             </div>
-          <% end %>
+          <%# end %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -196,53 +197,53 @@
           <h4 class="modal-title">Things to see and do</h4>
         </div>
         <div class="modal-body">
-          <% if @entertainment["results"].empty? %>
+          <%# if @entertainment["results"].empty? %>
             <div class="suggestion">
-              <%= cl_image_tag "voyagr/SW_Dylan_Rives.jpg", width: 150, height: 100 %>
+              <%#= cl_image_tag "voyagr/SW_Dylan_Rives.jpg", width: 150, height: 100 %>
               <div class="suggestion-text">
                 <p style="font-weight: normal" id="modal-paragraph">The Cai Club</p>
-                <p id="modal-paragraph">0 miles from <%= @city.name %></p>
+                <p id="modal-paragraph">0 miles from <%#= @city.name %></p>
               </div>
             </div>
              <div class="suggestion">
-              <%= cl_image_tag "voyagr/SW_Dylan_Rives.jpg", width: 150, height: 100 %>
+              <%#= cl_image_tag "voyagr/SW_Dylan_Rives.jpg", width: 150, height: 100 %>
               <div class="suggestion-text">
                 <p style="font-weight: normal" id="modal-paragraph">Morley's Manic Music</p>
-                <p id="modal-paragraph">0.5 miles from <%= @city.name %></p>
+                <p id="modal-paragraph">0.5 miles from <%#= @city.name %></p>
               </div>
             </div>
              <div class="suggestion">
-              <%= cl_image_tag "voyagr/SW_Dylan_Rives.jpg", width: 150, height: 100 %>
+              <%#= cl_image_tag "voyagr/SW_Dylan_Rives.jpg", width: 150, height: 100 %>
               <div class="suggestion-text">
                 <p style="font-weight: normal" id="modal-paragraph">Ben[1]'s Bar</p>
-                <p id="modal-paragraph">1 mile from <%= @city.name %></p>
+                <p id="modal-paragraph">1 mile from <%#= @city.name %></p>
               </div>
             </div>
-          <% else %>
+          <%# else %>
             <div class="suggestion">
-              <p> <% ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <p> <%# ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%= @entertainment["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @entertainment["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"> <%#= @entertainment["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @entertainment["results"][0]["vicinity"] %></p>
               </div>
             </div>
              <div class="suggestion">
-              <p> <% ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <p> <%# ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%= @entertainment["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @entertainment["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"> <%#= @entertainment["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @entertainment["results"][0]["vicinity"] %></p>
             </div>
              <div class="suggestion">
-              <p> <% ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+              <p> <%# ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
+              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%= @entertainment["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @entertainment["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"> <%#= @entertainment["results"][0]["name"] %></p>
+                <p id="modal-paragraph"> <%#= @entertainment["results"][0]["vicinity"] %></p>
               </div>
             </div>
-          <% end %>
+          <%# end %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
