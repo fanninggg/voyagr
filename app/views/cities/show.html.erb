@@ -7,7 +7,7 @@
             <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
           <% end %>
         </div>
-
+        
         <div class="row">
 
           <div class="col-xs-8 city-information">
@@ -15,33 +15,35 @@
             <div class="info-card hotels">
               <h2>Places to stay</h2>
               <div class="image-and-text">
-                <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200 %>
-                <div class="text-and-button">
-                  <p>Based on the answers you gave to our friendly little VoyagrBot, he has suggested that you might like to stay at some of these hotels/rooms/hostels.</p>
-                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#hotelModal">Lodgings</button>
-                </div>
+              <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200, class: "gen-image" %>
+              <div class="text-and-button">
+                <p>Based on the answers you gave to our friendly little VoyagrBot, he has suggested that you might like to stay here.</p>
+                <button type="button" class="modal-button" data-toggle="modal" data-target="#hotelModal">Lodgings</button>
               </div>
             </div>
+
 
             <div class="info-card food" >
               <h2>Food</h2>
               <div class="image-and-text">
-                <%= cl_image_tag "voyagr/food.jpg", width: 350, height: 200 %>
-                <div class="text-and-button">
-                  <p>Here's a list of places that VoyagrBot thinks you might enjoy eating. As a robot he doesn't know a great deal about food and drink so he's stolen these suggestions from elsewhere.</p>
-                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#foodModal">Food & Drink</button>
-                </div>
+              <%= cl_image_tag "voyagr/food.jpg", width: 350, height: 200, class: "gen-image" %>
+              <div class="text-and-button">
+                <p>Here's a list of places that VoyagrBot thinks you might enjoy eating. As a robot he doesn't know a great deal about food and drink so he's stolen these suggestions from elsewhere.</p>
+                <button type="button" class="modal-button" data-toggle="modal" data-target="#foodModal">Food & Drink</button>
               </div>
             </div>
+
 
             <div class="info-card entertainment">
               <h2>Things to do</h2>
               <div class="image-and-text">
-                <%= cl_image_tag "voyagr/entertainment.jpg", width: 350, height: 200 %>
-                <div class="text-and-button">
-                  <p>VoyagrBot recommends these places for you to entertain yourself while exploring <%= @city.name %>. These are places which should be uniquely suited to you, based on your answers.</p>
-                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#entertainmentModal">Things to do</button>
-                </div>
+              <%= cl_image_tag "voyagr/entertainment.jpg", width: 350, height: 200, class: "gen-image" %>
+              <div class="text-and-button">
+                <p>VoyagrBot recommends these places for you to entertain yourself while exploring <%= @city.name %>. These are places which are uniquely suited to you, based on your answers.</p>
+                <button type="button" class="modal-button" data-toggle="modal" data-target="#entertainmentModal">Entertainment</button>
+              </div>
+            </div>
+          </div>
               </div>
             </div>
           </div>
@@ -74,11 +76,11 @@
               </div>
             </div>
             <div class="suggestion">
-              <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+              <p> <% ref_pic = @hotel["results"][1]["photos"][0]["photo_reference"] %></p>
               <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @hotel["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][1]["name"] %></p>
+                <p id="modal-paragraph"> <%= @hotel["results"][1]["vicinity"] %></p>
               </div>
             </div>
             <div class="suggestion">
