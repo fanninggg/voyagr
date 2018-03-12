@@ -99,7 +99,10 @@ ActiveRecord::Schema.define(version: 20180312125455) do
   create_table "suggestions", force: :cascade do |t|
     t.bigint "city_id"
     t.string "name"
+<<<<<<< HEAD
 
+=======
+>>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
     t.string "result_type"
     t.string "description"
     t.string "photo"
