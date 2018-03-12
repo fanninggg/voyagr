@@ -4,6 +4,7 @@ class City < ApplicationRecord
   belongs_to :evening_answer, optional: true
   belongs_to :city_type_answer, optional: true
   has_many :trip_cities
+  has_many :suggestions
 
   geocoded_by :name
   after_validation :geocode, if: :will_save_change_to_name?
