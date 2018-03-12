@@ -60,8 +60,7 @@ class WebhooksController < ApplicationController
           HTTP.post(url, json: bot_reply)
         elsif messaging["message"]["text"] == "Redo"
           Trip.where(sender: sender).destroy_all
-          bot_reply = bot_welcome_reply(sender)
-          HTTP.post(url, json: bot_reply)
+          go_to_first_question(messaging, sender)
         elsif messaging["message"]["text"].include? "love"
           bot_reply = bot_love_reply(sender)
           HTTP.post(url, json: bot_reply)

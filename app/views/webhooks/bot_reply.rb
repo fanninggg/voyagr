@@ -164,31 +164,28 @@ def bot_results_reply(sender, results)
                 "elements": [{
                 "title": results.first.name,
                 "image_url": results.first.photo,
+                "subtitle": "https://www.voyagr.co.uk/cities/#{results.first.id}",
                   "buttons":
                   [{
-                    "type": "web_url",
-                    "url": "https://www.voyagr.co.uk/cities/#{results.first.id}",
-                    "title": "More information"
+                    "type": "element_share",
                   }],
                 },
                 {
                   "title": results.second.name,
                   "image_url": results.second.photo,
+                  "subtitle": "https://www.voyagr.co.uk/cities/#{results.second.id}",
                   "buttons":
                   [{
-                    "type": "web_url",
-                    "url": "https://www.voyagr.co.uk/cities/#{results.second.id}",
-                    "title": "More information"
+                    "type": "element_share",
                   }],
                 },
                 {
                   "title": results.third.name,
                   "image_url": results.third.photo,
+                  "subtitle": "https://www.voyagr.co.uk/cities/#{results.second.id}",
                   "buttons":
                   [{
-                    "type": "web_url",
-                    "url": "https://www.voyagr.co.uk/cities/#{results.third.id}",
-                    "title": "More information"
+                    "type": "element_share",
                   }],
                 }]
               }
