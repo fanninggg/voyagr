@@ -12,10 +12,10 @@
           <div class="info-card hotels">
             <h2>Places to stay</h2>
             <div class="image-and-text">
-              <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200 %>
+              <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200, class: "gen-image" %>
               <div class="text-and-button">
-                <p>Based on the answers you gave to our friendly little VoyagrBot, he has suggested that you might like to stay at some of these hotels/rooms/hostels.</p>
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#hotelModal">Lodgings</button>
+                <p>Based on the answers you gave to our friendly little VoyagrBot, he has suggested that you might like to stay here.</p>
+                <button type="button" class="modal-button" data-toggle="modal" data-target="#hotelModal">Lodgings</button>
               </div>
             </div>
           </div>
@@ -23,10 +23,10 @@
           <div class="info-card food" >
             <h2>Food</h2>
             <div class="image-and-text">
-              <%= cl_image_tag "voyagr/food.jpg", width: 350, height: 200 %>
+              <%= cl_image_tag "voyagr/food.jpg", width: 350, height: 200, class: "gen-image" %>
               <div class="text-and-button">
                 <p>Here's a list of places that VoyagrBot thinks you might enjoy eating. As a robot he doesn't know a great deal about food and drink so he's stolen these suggestions from elsewhere.</p>
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#foodModal">Food & Drink</button>
+                <button type="button" class="modal-button" data-toggle="modal" data-target="#foodModal">Food & Drink</button>
               </div>
             </div>
           </div>
@@ -34,10 +34,10 @@
           <div class="info-card entertainment">
             <h2>Entertainment</h2>
             <div class="image-and-text">
-              <%= cl_image_tag "voyagr/entertainment.jpg", width: 350, height: 200 %>
+              <%= cl_image_tag "voyagr/entertainment.jpg", width: 350, height: 200, class: "gen-image" %>
               <div class="text-and-button">
-                <p>VoyagrBot recommends these places for you to entertain yourself while exploring <%= @city.name %>. These are places which should be uniquely suited to you, based on your answers.</p>
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#entertainmentModal">Entertainment</button>
+                <p>VoyagrBot recommends these places for you to entertain yourself while exploring <%= @city.name %>. These are places which are uniquely suited to you, based on your answers.</p>
+                <button type="button" class="modal-button" data-toggle="modal" data-target="#entertainmentModal">Entertainment</button>
               </div>
             </div>
           </div>
@@ -45,10 +45,10 @@
           <div class="info-card sightseeing">
           <h2>Sightseeing</h2>
             <div class="image-and-text">
-              <%= cl_image_tag "voyagr/sightseeing.jpg", width: 350, height: 200 %>
+              <%= cl_image_tag "voyagr/sightseeing.jpg", width: 350, height: 200, class: "gen-image" %>
               <div class="text-and-button">
                 <p>Below is a list of places which VoyagrBot suggests that you might enjoy looking at with your human eyeballs. Thanks VoyagrBot, you friendly little bundle of code and errors you. </p>
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#sightseeingModal">Sightseeing</button>
+                <button type="button" class="modal-button" data-toggle="modal" data-target="#sightseeingModal">Sightseeing</button>
               </div>
             </div>
           </div>
