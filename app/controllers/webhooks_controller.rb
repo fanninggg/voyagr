@@ -38,6 +38,13 @@ class WebhooksController < ApplicationController
             HTTP.post(url, json: bot_reply)
           elsif messaging["postback"]["payload"] == "Let's go!"
             puts "i got the started"
+            bot_reply = bot_choices_reply(sender)
+            HTTP.post(url, json: bot_reply)
+          elsif messaging["postback"]["payload"] == "random"
+            puts "i got the started"
+            go_to_first_question(messaging, sender)
+          elsif messaging["postback"]["payload"] == "quiz"
+            puts "i got the started"
             go_to_first_question(messaging, sender)
           end
         elsif messaging["message"]["attachments"]
