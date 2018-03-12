@@ -19,9 +19,7 @@
     text-decoration: none;
   }
 }
-#modal-paragraph {
-  color: rgb(150,150,150)
-}
+
 .show-link-logo {
   margin-left: 10px;
   opacity: 1 !important;
@@ -29,15 +27,17 @@
 .show-banner {
   padding: 0;
 }
-.show-map {
-  position: fixed;
-  left: 1050px;
-  top: 80px;
-}
+// .show-map {
+//   position: fixed;
+//   left: 1050px;
+//   top: 80px;
+// }
 .city-information {
   margin: 45px;
   margin-top: 0px;
   padding-bottom: 50px;
+  display:flex;
+  justify-content: space-around;
 }
 .show-background {
   background-size: cover !important;
@@ -46,7 +46,7 @@
 }
 .image-and-text {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   background: rgba(150,150,150,0.7)
 } p {
