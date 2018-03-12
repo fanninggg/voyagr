@@ -40,8 +40,14 @@ class WebhooksController < ApplicationController
             puts "i got the started"
             go_to_first_question(messaging, sender)
           end
+        elsif messaging["message"]["attachments"]
+          bot_reply = bot_thanks_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
         elsif messaging["message"]["text"] == "Hi"
           puts "i got the hi"
+          Trip.where(sender: sender).destroy_all
           text = messaging["message"]["text"]
           bot_reply = bot_welcome_reply(sender)
           HTTP.post(url, json: bot_reply)
@@ -49,12 +55,35 @@ class WebhooksController < ApplicationController
           Trip.where(sender: sender).destroy_all
           bot_reply = bot_welcome_reply(sender)
           HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "love"
+          bot_reply = bot_love_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "Love"
+          bot_reply = bot_love_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "stupid"
+          bot_reply = bot_stupid_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "Stupid"
+          bot_reply = bot_stupid_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
         elsif messaging["message"]["quick_reply"]
           puts 'I got the quick reply'
           trip_answer = routing_questions(messaging, sender)
           if messaging["message"]["quick_reply"]["payload"] == "results"
             escape(messaging, sender, trip_answer)
           end
+        elsif messaging["message"]["text"]
+          bot_reply = bot_confused_reply(sender)
+          HTTP.post(url, json: bot_reply)
         end
       end
       render plain: bot_reply
@@ -113,10 +142,7 @@ class WebhooksController < ApplicationController
   def escape(messaging, sender, trip_answer)
     trip_city = TripCity.create!(trip_answer_id: trip_answer.id)
     trip_city.save
-    results = City.where(price_answer_id: trip_city.trip_answer.price_answer_id,
-                        location_answer_id: trip_city.trip_answer.location_answer_id,
-                        evening_answer_id: trip_city.trip_answer.evening_answer_id,
-                        city_type_answer: trip_city.trip_answer.city_type_answer_id)
+    results = City.where(price_answer_id: trip_city.trip_answer.price_answer_id, location_answer_id: trip_city.trip_answer.location_answer_id, evening_answer_id: trip_city.trip_answer.evening_answer_id, city_type_answer: trip_city.trip_answer.city_type_answer_id)
     bot_reply = bot_results_reply(sender, results)
     HTTP.post(url, json: bot_reply)
   end

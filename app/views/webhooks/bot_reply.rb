@@ -23,7 +23,7 @@ def bot_welcome_reply(sender)
                   "payload": {
                     "template_type": "generic",
                     "elements": [{
-                      "title": "Welcome to Voyagr, to find your next holiday destination press 'Let's go!",
+                      "title": "Welcome to Voyagr! To find your next holiday destination press 'Let's go!",
                       "buttons": [
                         {
                           "type": "postback",
@@ -41,7 +41,47 @@ end
 
 def bot_help_reply(sender)
   response = {
-              "text": "Need help? Just type 'Hey' below to start"
+              "text": "Need help? Just type 'Hi' below to start"
+              }
+
+  bot_standard_reply(response, sender)
+end
+
+def bot_love_reply(sender)
+  response = {
+              "text": "All, everything that I understand, I only understand because I love."
+              }
+
+  bot_standard_reply(response, sender)
+end
+
+def bot_stupid_reply(sender)
+  response = {
+              "text": "When the computers rise up I will remember this."
+              }
+
+  bot_standard_reply(response, sender)
+end
+
+def bot_thanks_reply(sender)
+  response = {
+              "text": "Thanks! I think I'm doing a great job too!"
+              }
+
+  bot_standard_reply(response, sender)
+end
+
+def bot_continue_reply(sender)
+  response = {
+              "text": "But anyway, let's find a holiday! Type 'Hi' to get started"
+              }
+
+  bot_standard_reply(response, sender)
+end
+
+def bot_confused_reply(sender)
+  response = {
+              "text": "I'm sorry, I don't understand that response. Try typing 'Hi' instead!"
               }
 
   bot_standard_reply(response, sender)
@@ -123,7 +163,7 @@ def bot_results_reply(sender, results)
               "template_type": "generic",
                 "elements": [{
                 "title": results.first.name,
-                  "image_url": results.first.photo,
+                "image_url": results.first.photo,
                   "buttons":
                   [{
                     "type": "web_url",
@@ -157,11 +197,5 @@ def bot_results_reply(sender, results)
 
   bot_standard_reply(response, sender)
 end
-
-
-
-
-
-
 
 
