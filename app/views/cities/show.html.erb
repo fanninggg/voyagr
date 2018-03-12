@@ -80,11 +80,11 @@
               </div>
             </div>
             <div class="suggestion">
-              <p> <% ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
+              <p> <% ref_pic = @hotel["results"][1]["photos"][0]["photo_reference"] %></p>
               <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
               <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%= @hotel["results"][0]["vicinity"] %></p>
+                <p style="font-weight: normal" id="modal-paragraph"><%= @hotel["results"][1]["name"] %></p>
+                <p id="modal-paragraph"> <%= @hotel["results"][1]["vicinity"] %></p>
               </div>
             </div>
             <div class="suggestion">
