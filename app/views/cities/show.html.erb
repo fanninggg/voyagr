@@ -7,7 +7,7 @@
             <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
           <% end %>
         </div>
-        
+
         <div class="row">
 
           <div class="col-xs-9 col-sm-8 city-information">
@@ -17,7 +17,7 @@
               <div class="image-and-text">
               <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200, class: "gen-image" %>
               <div class="text-and-button">
-                <p>Based on the answers you gave to our friendly little VoyagrBot, he has suggested that you might like to stay here.</p>
+                <p>Based on the answers you gave to our friendly little VoyagrBot, he suggests that you might like to rest your head in these beautiful places.</p>
                 <button type="button" class="modal-button" data-toggle="modal" data-target="#hotelModal">Lodgings</button>
               </div>
             </div>
@@ -28,7 +28,7 @@
               <div class="image-and-text">
               <%= cl_image_tag "voyagr/food.jpg", width: 350, height: 200, class: "gen-image" %>
               <div class="text-and-button">
-                <p>Here's a list of places that VoyagrBot thinks you might enjoy eating. As a robot he doesn't know a great deal about food and drink so he's stolen these suggestions from elsewhere.</p>
+                <p>Here's a list of places that VoyagrBot thinks you might enjoy eating. As a robot he knows a lot about food and drink.</p>
                 <button type="button" class="modal-button" data-toggle="modal" data-target="#foodModal">Food & Drink</button>
               </div>
             </div>
@@ -39,8 +39,8 @@
               <div class="image-and-text">
               <%= cl_image_tag "voyagr/entertainment.jpg", width: 350, height: 200, class: "gen-image" %>
               <div class="text-and-button">
-                <p>VoyagrBot recommends these places for you to entertain yourself while exploring <%= @city.name %>. These are places which are uniquely suited to you, based on your answers.</p>
-                <button type="button" class="modal-button" data-toggle="modal" data-target="#entertainmentModal">Entertainment</button>
+                <p>VoyagrBot recommends these places for you to entertain yourself while exploring <%= @city.name %>. These are suggestions based on your answers.</p>
+                <button type="button" class="modal-button" data-toggle="modal" data-target="#entertainmentModal">To do</button>
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@
           </div>
 
           <div class="col-xs-3 show-map">
-            <div id="map" style="width: 300px; height: 665px;" data-markers="<%= @markers.to_json %>">
+            <div id="map" data-markers="<%= @markers.to_json %>">
             </div>
           </div>
 
