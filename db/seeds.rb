@@ -2091,33 +2091,45 @@ cities.each do |city|
 #   sleep(1)
 
 
-puts 'Now for the entertainment'
+  puts 'Now for the entertainment'
 
 
-#keyword_sample = ["museum", "city_hall", "hindu_temple", "church", "mosque", "synagogue", "night_club", "amusement_park", "aquarium", "art_gallery", "movie_theater", "spa", "casino"].sample
+  #keyword_sample = ["museum", "city_hall", "hindu_temple", "church", "mosque", "synagogue", "night_club", "amusement_park", "aquarium", "art_gallery", "movie_theater", "spa", "casino"].sample
 
 
-params_entertainment = {
-       key: "AIzaSyAGYBhluHCFSVj320yVTgBqkcw93HUgfL0",
-       location: "#{city.latitude},#{city.longitude}",
-       radius: 50000,
-       keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue" || "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "spa" || "casino"
-}
+  params_entertainment = {
+         key: "AIzaSyAGYBhluHCFSVj320yVTgBqkcw93HUgfL0",
+         location: "#{city.latitude},#{city.longitude}",
+         radius: 50000,
+         keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue" || "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "spa" || "casino"
+  }
 
-response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment})
-entertainments = JSON.parse(response_entertainment)
+  response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment})
+  entertainments = JSON.parse(response_entertainment)
 
-entertainment = entertainments["results"][0]
-entertainment_1 = entertainments["results"][1]
+  entertainment = entertainments["results"][0]
+  entertainment_1 = entertainments["results"][1]
 
 
-photos = entertainment["photos"] if entertainment
+  photos = entertainment["photos"] if entertainment
 
-photo = photos[0] if photos
-ref_pic = photo["photo_reference"] if photo
-ref_pic ||= ''
-entertainment_name = entertainment["name"] if entertainment
-entertainment_1_name = entertainment_1["name"] if entertainment_1
+  photo = photos[0] if photos
+  ref_pic = photo["photo_reference"] if photo
+  ref_pic ||= ''
+  entertainment_name = entertainment["name"] if entertainment
+  entertainment_1_name = entertainment_1["name"] if entertainment_1
+
+  entertainment_description = entertainment["vicinity"] if entertainment
+  entertainment_1_description = entertainment_1["vicinity"] if entertainment_1
+
+  entertainment = Suggestion.new(city: city, name: entertainment_name, description: entertainment_description, photo:ref_pic, result_type: "entertainment")
+  entertainment_1 = Suggestion.new(city: city, name: entertainment_1_name, description: entertainment_1_description, photo:ref_pic, result_type: "entertainment")
+
+  entertainment.save!
+  entertainment_1.save!
+  sleep(1)
+
+  puts 'Now for the photos'
 
   params_photos = {
       key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
@@ -2136,25 +2148,9 @@ entertainment_1_name = entertainment_1["name"] if entertainment_1
   photo = CityPhoto.new(city: city, photo:ref_pic)
   photo.save!
   sleep(1)
-
 end
 
 
-# City.create!(cities_attributes_2)
-puts "done"
-
-entertainment_description = entertainment["vicinity"] if entertainment
-entertainment_1_description = entertainment_1["vicinity"] if entertainment_1
-
-entertainment = Suggestion.new(city: city, name: entertainment_name, description: entertainment_description, photo:ref_pic, result_type: "entertainment")
-entertainment_1 = Suggestion.new(city: city, name: entertainment_1_name, description: entertainment_1_description, photo:ref_pic, result_type: "entertainment")
-
-entertainment.save!
-entertainment_1.save!
-sleep(1)
-
-# also ?
-end
 
 #entertainments.each do |entertainment|
 #   entertainment["results"]
@@ -2168,56 +2164,3 @@ end
 #   entertainment = Suggestion.new(city: city, name: entertainment_name, description: entertainment_description, photo:ref_pic, result_type: "entertainment")
 #   entertainment.save!
 # end
-
-
-# # City.create!(cities_attributes_2)
-# puts "done"
-
-
-  # params_hotel = {
-  #     key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-  #     location: "#{city.latitude},#{city.longitude}",
-  #     radius: 50000,
-  #     keyword: "hotel"
-  #   }
-
-  # response_hotel =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_hotel})
-  # hotels = JSON.parse(response_hotel)
-  # hotel = hotels["results"][0]
-  # photos = hotel["photos"] if hotel
-  # photo = photos[0] if photos
-  # ref_pic = photo["photo_reference"] if photo
-  # ref_pic ||= ''
-  # hotel_name = hotel["name"] if hotel
-  # hotel_description = hotel["vicinity"] if hotel
-
-  # hotel = Suggestion.new(city: city, name: hotel_name, description: hotel_description, photo:ref_pic, result_type: "hotel")
-  # hotel.save!
-  # sleep(1)
-
-  # params_restaurant = {
-  #     key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-  #     location: "#{city.latitude},#{city.longitude}",
-  #     radius: 50000,
-  #     keyword: "restaurant" || "cafe"
-  #   }
-
-  # response_restaurant =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_restaurant})
-  # restaurants = JSON.parse(response_restaurant)
-  # restaurant = restaurants["results"][0]
-  # photos = restaurant["photos"] if restaurant
-  # photo = photos[0] if photos
-  # ref_pic = photo["photo_reference"] if photo
-  # ref_pic ||= ''
-  # restaurant_name = restaurant["name"] if restaurant
-  # restaurant_description = restaurant["vicinity"] if restaurant
-
-  # restaurant = Suggestion.new(city: city, name: restaurant_name, description: restaurant_description, photo:ref_pic, result_type: "restaurant")
-  # restaurant.save!
-  # sleep(1)
-
-  # city_first_name = city.name.split(',')[0]
-  # url = 'https://pixabay.com/api/?key=8346705-c9f65efaba1bc0019bfb2c655&q=#{city_first_name}&image_type=photo'
-  # serialized_cities = open(url).read
-  # cities_results = JSON.parse(serialized_cities)
-  # p cities_results
