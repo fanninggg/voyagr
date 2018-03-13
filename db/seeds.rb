@@ -205,91 +205,91 @@ cities_attributes_1 = [
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
- }#,
-  # {
-  #   name: 'Stari Grad, Croatia',
-  #   budget:         'low',
-  #   location:      'Europe',
-  #   type_of_evening:  'Restaurant',
-  #   type_of_city:        'Adventurous',
-  #   photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427376/voyagr/Stari_Grad.jpg",
-  #   price_answer: PriceAnswer.find_by(payload: '£'),
-  #   location_answer: LocationAnswer.find_by(payload: 'europe'),
-  #   evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-  #   city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
-  # },
-  # {
-  #   name: 'Malta Island, Malta',
-  #   budget:         'low',
-  #   location:      'Europe',
-  #   type_of_evening:  'Restaurant',
-  #   type_of_city:        'Adventurous',
-  #   photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427113/voyagr/Malta_Island.jpg",
-  #   price_answer: PriceAnswer.find_by(payload: '£'),
-  #   location_answer: LocationAnswer.find_by(payload: 'europe'),
-  #   evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-  #   city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
-  # },
-  #  {
-  #   name: 'Glasgow, UK',
-  #   budget:         'low',
-  #   location:      'Europe',
-  #   type_of_evening:  'Restaurant',
-  #   type_of_city:        'Culturous',
-  #   photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426900/voyagr/Glasgow.jpg",
-  #   price_answer: PriceAnswer.find_by(payload: '£'),
-  #   location_answer: LocationAnswer.find_by(payload: 'europe'),
-  #   evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-  #   city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
-  # },
-  #  {
-  #   name: 'Sarajevo, Bosnia and Herzegovina',
-  #   budget:         'low',
-  #   location:      'Europe',
-  #   type_of_evening:  'Restaurant',
-  #   type_of_city:        'Culturous',
-  #   photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427335/voyagr/Sarajevo.jpg",
-  #   price_answer: PriceAnswer.find_by(payload: '£'),
-  #   location_answer: LocationAnswer.find_by(payload: 'europe'),
-  #   evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-  #   city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
-  # },
-  #  {
-  #   name: 'Prague, Czech Republic',
-  #   budget:         'low',
-  #   location:      'Europe',
-  #   type_of_evening:  'Restaurant',
-  #   type_of_city:        'Culturous',
-  #   photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427263/voyagr/Prague.jpg",
-  #   price_answer: PriceAnswer.find_by(payload: '£'),
-  #   location_answer: LocationAnswer.find_by(payload: 'europe'),
-  #   evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-  #   city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
-  # },
-  #  {
-  #   name: 'Bruges, Belgium',
-  #   budget:         'low',
-  #   location:      'Europe',
-  #   type_of_evening:  'Restaurant',
-  #   type_of_city:        'Relaxing',
-  #   photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426737/voyagr/Bruges.jpg",
-  #   price_answer: PriceAnswer.find_by(payload: '£'),
-  #   location_answer: LocationAnswer.find_by(payload: 'europe'),
-  #   evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-  #   city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
-  # },
-  #  {
-  #   name: 'Brighton, UK',
-  #   budget:         'low',
-  #   location:      'Europe',
-  #   type_of_evening:  'Restaurant',
-  #   type_of_city:        'Relaxing',
-  #   photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426721/voyagr/Brighton.jpg",
-  #   price_answer: PriceAnswer.find_by(payload: '£'),
-  #   location_answer: LocationAnswer.find_by(payload: 'europe'),
-  #   evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-  #   city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
-  # }
+ },
+  {
+    name: 'Stari Grad, Croatia',
+    budget:         'low',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Adventurous',
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427376/voyagr/Stari_Grad.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+  },
+  {
+    name: 'Malta Island, Malta',
+    budget:         'low',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Adventurous',
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427113/voyagr/Malta_Island.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+  },
+   {
+    name: 'Glasgow, UK',
+    budget:         'low',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Culturous',
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426900/voyagr/Glasgow.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+  },
+   {
+    name: 'Sarajevo, Bosnia and Herzegovina',
+    budget:         'low',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Culturous',
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427335/voyagr/Sarajevo.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+  },
+   {
+    name: 'Prague, Czech Republic',
+    budget:         'low',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Culturous',
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427263/voyagr/Prague.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+  },
+   {
+    name: 'Bruges, Belgium',
+    budget:         'low',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Relaxing',
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426737/voyagr/Bruges.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+  },
+   {
+    name: 'Brighton, UK',
+    budget:         'low',
+    location:      'Europe',
+    type_of_evening:  'Restaurant',
+    type_of_city:        'Relaxing',
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426721/voyagr/Brighton.jpg",
+    price_answer: PriceAnswer.find_by(payload: '£'),
+    location_answer: LocationAnswer.find_by(payload: 'europe'),
+    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+  }
 ]
 cities_attributes_2 = [
  {
@@ -2007,114 +2007,147 @@ cities_attributes_1.each do |attr|
   puts c.name + " created"
   sleep(1)
 end
-cities_attributes_2.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_3.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_4.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_5.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_6.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_7.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_8.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_9.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
+# cities_attributes_2.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_3.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_4.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_5.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_6.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_7.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_8.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_9.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
 
 cities = City.all
 cities.each do |city|
-  params_hotel = {
-      key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-      location: "#{city.latitude},#{city.longitude}",
-      radius: 50000,
-      keyword: "hotel"
-    }
+#   params_hotel = {
+#       key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
+#       location: "#{city.latitude},#{city.longitude}",
+#       radius: 50000,
+#       keyword: "hotel"
+#     }
 
-  response_hotel =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_hotel})
-  hotels = JSON.parse(response_hotel)
-  hotel = hotels["results"][0]
-  photos = hotel["photos"] if hotel
-  photo = photos[0] if photos
-  ref_pic = photo["photo_reference"] if photo
-  ref_pic ||= ''
-  hotel_name = hotel["name"] if hotel
-  hotel_description = hotel["vicinity"] if hotel
+#   response_hotel =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_hotel})
+#   hotels = JSON.parse(response_hotel)
+#   hotel = hotels["results"][0]
+#   photos = hotel["photos"] if hotel
+#   photo = photos[0] if photos
+#   ref_pic = photo["photo_reference"] if photo
+#   ref_pic ||= ''
+#   hotel_name = hotel["name"] if hotel
+#   hotel_description = hotel["vicinity"] if hotel
 
-  hotel = Suggestion.new(city: city, name: hotel_name, description: hotel_description, photo:ref_pic, result_type: "hotel")
-  hotel.save!
-  sleep(1)
+#   hotel = Suggestion.new(city: city, name: hotel_name, description: hotel_description, photo:ref_pic, result_type: "hotel")
+#   hotel.save!
+#   sleep(1)
 
-  params_restaurant = {
-      key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-      location: "#{city.latitude},#{city.longitude}",
-      radius: 50000,
-      keyword: "restaurant" || "cafe"
-    }
+#   params_restaurant = {
+#       key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
+#       location: "#{city.latitude},#{city.longitude}",
+#       radius: 50000,
+#       keyword: "restaurant" || "cafe"
+#     }
 
-  response_restaurant =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_restaurant})
-  restaurants = JSON.parse(response_restaurant)
-  restaurant = restaurants["results"][0]
-  photos = restaurant["photos"] if restaurant
-  photo = photos[0] if photos
-  ref_pic = photo["photo_reference"] if photo
-  ref_pic ||= ''
-  restaurant_name = restaurant["name"] if restaurant
-  restaurant_description = restaurant["vicinity"] if restaurant
+#   response_restaurant =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_restaurant})
+#   restaurants = JSON.parse(response_restaurant)
+#   restaurant = restaurants["results"][0]
+#   photos = restaurant["photos"] if restaurant
+#   photo = photos[0] if photos
+#   ref_pic = photo["photo_reference"] if photo
+#   ref_pic ||= ''
+#   restaurant_name = restaurant["name"] if restaurant
+#   restaurant_description = restaurant["vicinity"] if restaurant
 
-  restaurant = Suggestion.new(city: city, name: restaurant_name, description: restaurant_description, photo:ref_pic, result_type: "restaurant")
-  restaurant.save!
-  sleep(1)
+#   restaurant = Suggestion.new(city: city, name: restaurant_name, description: restaurant_description, photo:ref_pic, result_type: "restaurant")
+#   restaurant.save!
+#   sleep(1)
 
- params_entertainment = {
-      key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-      location: "#{city.latitude},#{city.longitude}",
-      radius: 50000,
-      keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue"
+puts 'Now for the entertainment'
+
+
+#keyword_sample = ["museum", "city_hall", "hindu_temple", "church", "mosque", "synagogue", "night_club", "amusement_park", "aquarium", "art_gallery", "movie_theater", "spa", "casino"].sample
+
+
+params_entertainment = {
+       key: "AIzaSyAGYBhluHCFSVj320yVTgBqkcw93HUgfL0",
+       location: "#{city.latitude},#{city.longitude}",
+       radius: 50000,
+       keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue" || "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "spa" || "casino"
 }
 
-  response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment})
-  entertainments = JSON.parse(response_entertainment)
-  entertainment = entertainments["results"][0]
-  photos = entertainment["photos"] if entertainment
-  photo = photos[0] if photos
-  ref_pic = photo["photo_reference"] if photo
-  ref_pic ||= ''
-  entertainment_name = entertainment["name"] if entertainment
-  entertainment_description = entertainment["vicinity"] if entertainment
+response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment})
+entertainments = JSON.parse(response_entertainment)
 
-  entertainment = Suggestion.new(city: city, name: entertainment_name, description: entertainment_description, photo:ref_pic, result_type: "entertainment")
-  entertainment.save!
-  sleep(1)
+entertainment = entertainments["results"][0]
+entertainment_1 = entertainments["results"][1]
 
+
+photos = entertainment["photos"] if entertainment
+
+photo = photos[0] if photos
+ref_pic = photo["photo_reference"] if photo
+ref_pic ||= ''
+entertainment_name = entertainment["name"] if entertainment
+entertainment_1_name = entertainment_1["name"] if entertainment_1
+
+
+entertainment_description = entertainment["vicinity"] if entertainment
+entertainment_1_description = entertainment_1["vicinity"] if entertainment_1
+
+entertainment = Suggestion.new(city: city, name: entertainment_name, description: entertainment_description, photo:ref_pic, result_type: "entertainment")
+entertainment_1 = Suggestion.new(city: city, name: entertainment_1_name, description: entertainment_1_description, photo:ref_pic, result_type: "entertainment")
+
+entertainment.save!
+entertainment_1.save!
+sleep(1)
+
+# also ?
 end
 
-# City.create!(cities_attributes_2)
-puts "done"
+#entertainments.each do |entertainment|
+#   entertainment["results"]
+#   photos = entertainment["photos"] if entertainment
+#   photo = photos if photos
+#   ref_pic = photo["photo_reference"] if photo
+#   ref_pic ||= ''
+#   entertainment_name = entertainment["name"] if entertainment
+#   entertainment_description = entertainment["vicinity"] if entertainment
+
+#   entertainment = Suggestion.new(city: city, name: entertainment_name, description: entertainment_description, photo:ref_pic, result_type: "entertainment")
+#   entertainment.save!
+# end
+
+
+# # City.create!(cities_attributes_2)
+# puts "done"
 
