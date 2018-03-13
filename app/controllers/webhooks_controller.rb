@@ -43,7 +43,7 @@ class WebhooksController < ApplicationController
             HTTP.post(url, json: bot_reply)
           elsif messaging["postback"]["payload"] == "random"
             go_to_random_suggestion(sender)
-         elsif messaging["postback"]["payload"] == "quiz"
+          elsif messaging["postback"]["payload"] == "quiz"
             Trip.where(sender: sender).destroy_all
             go_to_first_question(messaging, sender)
           elsif messaging["postback"]["payload"] == "menu"

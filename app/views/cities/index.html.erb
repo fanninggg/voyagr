@@ -6,13 +6,18 @@
   </div>
   <br>
   <br>
-  <div class="what">
-    <h1 class="text-center">Hey, what are you doing here!?</h1>
-    <h2 class="text-center">This page is not the page you are looking for</h2>
-    <br>
-    <br>
-    <%= cl_image_tag "voyagr/droids.png", :width=>580, :crop=>"scale" %>
-    <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.find_by_id(20).photo}" %>
+  <div class="game">
+    <h1 class="text-center">Game</h1>
+    <%= cl_image_tag @city.first.photo, :width=>300 %>
+
+    <h2 class="text-center">Where is this?</h2>
+    <ul class="list-unstyled text-center">
+      <a href="#"><li id="sweet-alert-demo"><%= @city.first.name %></li></a>
+      <a href="#"><li id="sweet-alert-demo2"> <%= @cities.sample(1).first.name %></li></a>
+      <a href="#"><li id="sweet-alert-demo3"> <%= @cities.sample(1).first.name %> </li></a>
+    </ul>
+
+    <%= link_to 'Play again', cities_path %>
   </div>
   <br>
   <br>
@@ -23,3 +28,4 @@
   <br>
   <br>
   <br>
+ <%= javascript_pack_tag 'index' %>

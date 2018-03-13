@@ -23,7 +23,7 @@
     <meta property="og:image" content="<%= meta_image %>" />
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
-
+    <script src="node_modules/confetti-js/dist/index.min.js"></script>
     <%# stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
@@ -33,6 +33,7 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'index' %>
     <%= javascript_pack_tag "map" %>
   </body>
 </html>
