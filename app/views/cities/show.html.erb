@@ -2,7 +2,6 @@
   <div class="row">
     <div class="show-banner">
       <div class="col-xs-12 show-background">
-        <!-- style= "background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.photo %>')" -->
         <div class="link-logo show-link-logo">
           <%= link_to root_path do %>
             <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
@@ -24,19 +23,21 @@
                 </div>
               </div>
 
-
               <div id="slideshow">
                 <div>
-                  <%#= image_tag "Angele.jpeg", width: 350, height: 200 %>
+                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
                 </div>
                 <div>
-                  <%#= image_tag "Ben.jpg", width: 350, height: 200 %>
+                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
                 </div>
                 <div>
-                  <%#= image_tag "Celia.jpg", width: 350, height: 200 %>
+                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
                 </div>
                 <div>
-                  <%#= image_tag "Hen.jpg", width: 350, height: 200 %>
+                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
+                </div>
+                <div>
+                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
                 </div>
               </div>
 
