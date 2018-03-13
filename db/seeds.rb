@@ -2045,6 +2045,7 @@ end
 #   sleep(1)
 # end
 
+
 cities = City.all
 cities.each do |city|
 
@@ -2130,6 +2131,7 @@ cities.each do |city|
   photo_3 = photos_3[0] if photos_3
   ref_pic_3 = photo_3["photo_reference"] if photo_3
   ref_pic_3 ||= ''
+
 
   photo_3 = CityPhoto.new(city: city, photo:ref_pic_3)
   photo_3.save!
