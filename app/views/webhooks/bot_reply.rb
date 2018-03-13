@@ -87,6 +87,49 @@ def bot_confused_reply(sender)
   bot_standard_reply(response, sender)
 end
 
+def bot_suggestions(sender, suggestions)
+   response = {
+              "attachment": {
+              "type": "template",
+              "payload": {
+              "template_type": "generic",
+                "elements": [{
+                "title": suggestions.first.first[:name],
+                "image_url": suggestions.first.first[:photo],
+                  "buttons":
+                  [{
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/cities/#{suggestions.first.first[:id]}",
+                    "title": "More information"
+                  }],
+                },
+                {
+                  "title": suggestions.second.first[:name],
+                  "image_url": suggestions.second.first[:photo],
+                  "buttons":
+                  [{
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/cities/#{suggestions.second.first[:id]}",
+                    "title": "More information"
+                  }],
+                },
+                {
+                  "title": suggestions.third.first[:name],
+                  "image_url": suggestions.third.first[:photo],
+                  "buttons":
+                  [{
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/cities/#{suggestions.third.first[:id]}",
+                    "title": "More information"
+                  }],
+                }]
+              }
+            }
+          }
+
+  bot_standard_reply(response, sender)
+end
+
 def bot_first_question(sender)
   response = {
               "text": PriceQuestion.first.content,
