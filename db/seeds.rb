@@ -1,11 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
+require 'open-uri'
+
 Suggestion.destroy_all
+CityPhoto.destroy_all
 City.destroy_all
 PriceQuestion.destroy_all
 LocationQuestion.destroy_all
@@ -2050,6 +2047,7 @@ end
 
 cities = City.all
 cities.each do |city|
+
 #   params_hotel = {
 #       key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
 #       location: "#{city.latitude},#{city.longitude}",
@@ -2092,6 +2090,7 @@ cities.each do |city|
 #   restaurant.save!
 #   sleep(1)
 
+
 puts 'Now for the entertainment'
 
 
@@ -2120,6 +2119,29 @@ ref_pic ||= ''
 entertainment_name = entertainment["name"] if entertainment
 entertainment_1_name = entertainment_1["name"] if entertainment_1
 
+  params_photos = {
+      key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
+      location: "#{city.latitude},#{city.longitude}",
+      radius: 50000,
+  }
+
+  response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
+  photos = JSON.parse(response_photos)
+  photo = photos["results"][0]
+  photos = photo["photos"] if photo
+  photo = photos[0] if photos
+  ref_pic = photo["photo_reference"] if photo
+  ref_pic ||= ''
+
+  photo = CityPhoto.new(city: city, photo:ref_pic)
+  photo.save!
+  sleep(1)
+
+end
+
+
+# City.create!(cities_attributes_2)
+puts "done"
 
 entertainment_description = entertainment["vicinity"] if entertainment
 entertainment_1_description = entertainment_1["vicinity"] if entertainment_1
@@ -2151,3 +2173,51 @@ end
 # # City.create!(cities_attributes_2)
 # puts "done"
 
+
+  # params_hotel = {
+  #     key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
+  #     location: "#{city.latitude},#{city.longitude}",
+  #     radius: 50000,
+  #     keyword: "hotel"
+  #   }
+
+  # response_hotel =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_hotel})
+  # hotels = JSON.parse(response_hotel)
+  # hotel = hotels["results"][0]
+  # photos = hotel["photos"] if hotel
+  # photo = photos[0] if photos
+  # ref_pic = photo["photo_reference"] if photo
+  # ref_pic ||= ''
+  # hotel_name = hotel["name"] if hotel
+  # hotel_description = hotel["vicinity"] if hotel
+
+  # hotel = Suggestion.new(city: city, name: hotel_name, description: hotel_description, photo:ref_pic, result_type: "hotel")
+  # hotel.save!
+  # sleep(1)
+
+  # params_restaurant = {
+  #     key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
+  #     location: "#{city.latitude},#{city.longitude}",
+  #     radius: 50000,
+  #     keyword: "restaurant" || "cafe"
+  #   }
+
+  # response_restaurant =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_restaurant})
+  # restaurants = JSON.parse(response_restaurant)
+  # restaurant = restaurants["results"][0]
+  # photos = restaurant["photos"] if restaurant
+  # photo = photos[0] if photos
+  # ref_pic = photo["photo_reference"] if photo
+  # ref_pic ||= ''
+  # restaurant_name = restaurant["name"] if restaurant
+  # restaurant_description = restaurant["vicinity"] if restaurant
+
+  # restaurant = Suggestion.new(city: city, name: restaurant_name, description: restaurant_description, photo:ref_pic, result_type: "restaurant")
+  # restaurant.save!
+  # sleep(1)
+
+  # city_first_name = city.name.split(',')[0]
+  # url = 'https://pixabay.com/api/?key=8346705-c9f65efaba1bc0019bfb2c655&q=#{city_first_name}&image_type=photo'
+  # serialized_cities = open(url).read
+  # cities_results = JSON.parse(serialized_cities)
+  # p cities_results

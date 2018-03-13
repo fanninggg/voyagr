@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+A Travel app/chatbot created to provide inspiration to those wanting to travel but with no set destination in mind. Created by https://github.com/Angelel, https://github.com/fanninggg, https://github.com/cdccollins and https://github.com/henbrand.

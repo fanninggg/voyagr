@@ -8,8 +8,8 @@
             <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
           <% end %>
         </div>
-
         <div class="row">
+
 
           <div class="col-xs-9 col-sm-12">
             <h1 class="text-center"><%= @city.name %></h1>
@@ -121,6 +121,7 @@
 
           </div>
 
+
           <div class="col-xs-9 col-sm-8 city-information">
             <h1 class="text-center"><%= @city.name %></h1>
             <div class="info-card hotels">
@@ -128,44 +129,29 @@
               <div class="image-and-text">
               <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200, class: "gen-image" %>
               <div class="text-and-button">
-
                 <p>Based on the answers you gave to our friendly little VoyagrBot, he suggests that you might like to rest your head in these beautiful places.</p>
-
-                <button type="button" class="modal-button" data-toggle="modal" data-target="#hotelModal">Lodgings</button>
               </div>
             </div>
-
-
             <div class="info-card food" >
               <h2>Food</h2>
               <div class="image-and-text">
               <%= cl_image_tag "voyagr/food.jpg", width: 350, height: 200, class: "gen-image" %>
               <div class="text-and-button">
                 <p>Here's a list of places that VoyagrBot thinks you might enjoy eating. As a robot he knows a lot about food and drink.</p>
-
-                <button type="button" class="modal-button" data-toggle="modal" data-target="#foodModal">Food & Drink</button>
               </div>
             </div>
-
 
             <div class="info-card entertainment">
               <h2>Things to do</h2>
               <div class="image-and-text">
               <%= cl_image_tag "voyagr/entertainment.jpg", width: 350, height: 200, class: "gen-image" %>
               <div class="text-and-button">
-
                 <p>VoyagrBot recommends these places for you to entertain yourself while exploring <%= @city.name %>. These are suggestions based on your answers.</p>
-                <button type="button" class="modal-button" data-toggle="modal" data-target="#entertainmentModal">To do</button>
-
               </div>
             </div>
           </div>
-              </div>
-            </div>
-
-          </div>
-
           <div class="col-xs-3 show-map">
+
             <div id="map" data-markers="<%= @markers.to_json %>">
             </div>
           </div>
@@ -376,6 +362,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
 
         </div>
       </div>
