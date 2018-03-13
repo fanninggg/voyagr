@@ -23,7 +23,7 @@ def bot_welcome_reply(sender)
                   "payload": {
                     "template_type": "generic",
                     "elements": [{
-                      "title": "Welcome to Voyagr! I'm here to give you inspiration for your next holiday destination",
+                      "title": "Welcome to Voyagr! I'm here to give you inspiration for your next holiday",
                       "buttons": [
                         {
                           "type": "postback",
@@ -142,7 +142,7 @@ end
 
 def bot_escape_reply(sender)
   response = {
-              "text": "We have your results! If you want to redo the quiz, type 'Redo' to start over",
+              "text": "We have your results!",
               "quick_replies": [
                 {
                   "content_type": "text",
@@ -164,28 +164,46 @@ def bot_results_reply(sender, results)
                 "elements": [{
                 "title": results.first.name,
                 "image_url": results.first.photo,
-                "subtitle": "https://www.voyagr.co.uk/cities/#{results.first.id}",
                   "buttons":
                   [{
-                    "type": "element_share",
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/cities/#{results.first.id}",
+                    "title": "See more",
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
                   }],
                 },
                 {
                   "title": results.second.name,
                   "image_url": results.second.photo,
-                  "subtitle": "https://www.voyagr.co.uk/cities/#{results.second.id}",
                   "buttons":
                   [{
-                    "type": "element_share",
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/cities/#{results.second.id}",
+                    "title": "See more",
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
                   }],
                 },
                 {
                   "title": results.third.name,
                   "image_url": results.third.photo,
-                  "subtitle": "https://www.voyagr.co.uk/cities/#{results.second.id}",
                   "buttons":
                   [{
-                    "type": "element_share",
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/cities/#{results.third.id}",
+                    "title": "See more",
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
                   }],
                 }]
               }
