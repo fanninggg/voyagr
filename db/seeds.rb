@@ -21,7 +21,7 @@ puts "Seeding"
 
 price_questions_attributes =
 {
-  content: 'How much do you want to spend?'
+  content: 'How much do you want to spend whilst there?'
   }
 price = PriceQuestion.create!(price_questions_attributes)
 
@@ -33,14 +33,14 @@ location = LocationQuestion.create!(location_questions_attributes)
 
 evening_questions_attributes =
 {
-  content: 'What would be your perfect evening on holidays?'
+  content: 'What would be your perfect evening on a holiday?'
   }
 
 evening = EveningQuestion.create!(evening_questions_attributes)
 
 city_type_attributes =
 {
-  content: 'What kind of holiday do you want ?'
+  content: 'What kind of holiday do you want?'
   }
 city_type = CityTypeQuestion.create!(city_type_attributes)
 
