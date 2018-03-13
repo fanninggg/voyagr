@@ -13,6 +13,7 @@ class CitiesController < ApplicationController
     else
       @cities = City.all
     end
+    @city = City.all.sample(3)
   end
 
   def show
