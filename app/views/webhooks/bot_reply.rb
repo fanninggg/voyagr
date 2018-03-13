@@ -23,7 +23,7 @@ def bot_welcome_reply(sender)
                   "payload": {
                     "template_type": "generic",
                     "elements": [{
-                      "title": "Welcome to Voyagr! To find your next holiday destination press 'Let's go!",
+                      "title": "Welcome to Voyagr! I'm here to give you inspiration for your next holiday",
                       "buttons": [
                         {
                           "type": "postback",
@@ -87,6 +87,64 @@ def bot_confused_reply(sender)
   bot_standard_reply(response, sender)
 end
 
+def bot_suggestions(sender, suggestions)
+   response = {
+              "attachment": {
+              "type": "template",
+              "payload": {
+              "template_type": "generic",
+                "elements": [{
+                "title": suggestions.first.first[:name],
+                "image_url": suggestions.first.first[:photo],
+                  "buttons":
+                  [{
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/cities/#{suggestions.first.first[:id]}",
+                    "title": "More information"
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
+                  }],
+                },
+                {
+                  "title": suggestions.second.first[:name],
+                  "image_url": suggestions.second.first[:photo],
+                  "buttons":
+                  [{
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/cities/#{suggestions.second.first[:id]}",
+                    "title": "More information"
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
+                  }],
+                },
+                {
+                  "title": suggestions.third.first[:name],
+                  "image_url": suggestions.third.first[:photo],
+                  "buttons":
+                  [{
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/cities/#{suggestions.third.first[:id]}",
+                    "title": "More information"
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
+                  }],
+                }]
+              }
+            }
+          }
+
+  bot_standard_reply(response, sender)
+end
+
 def bot_first_question(sender)
   response = {
               "text": PriceQuestion.first.content,
@@ -142,7 +200,7 @@ end
 
 def bot_escape_reply(sender)
   response = {
-              "text": "We have your results! If you want to redo the quiz, type 'Redo' to start over",
+              "text": "We have your results!",
               "quick_replies": [
                 {
                   "content_type": "text",
@@ -168,7 +226,12 @@ def bot_results_reply(sender, results)
                   [{
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{results.first.id}",
-                    "title": "More information"
+                    "title": "See more",
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
                   }],
                 },
                 {
@@ -178,7 +241,12 @@ def bot_results_reply(sender, results)
                   [{
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{results.second.id}",
-                    "title": "More information"
+                    "title": "See more",
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
                   }],
                 },
                 {
@@ -188,7 +256,46 @@ def bot_results_reply(sender, results)
                   [{
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{results.third.id}",
-                    "title": "More information"
+                    "title": "See more",
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
+                  }],
+                }]
+              }
+            }
+          }
+
+  bot_standard_reply(response, sender)
+end
+
+def bot_choices_reply(sender)
+  response = {
+              "attachment": {
+              "type": "template",
+              "payload": {
+              "template_type": "generic",
+                "elements":
+                [{
+                "title": "Get a random selection of holiday destinations",
+                "image_url": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb",
+                  "buttons":
+                  [{
+                    "type": "postback",
+                    "title": "Random!",
+                    "payload": "random",
+                  }],
+                },
+                {
+                  "title": "Take our quiz to find a more tailored destination",
+                  "image_url": "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/28828573_601862200156340_5594842116490865147_o.jpg?oh=aecb14db7403f287b0d0740e2536c8a6&oe=5B03A5C9",
+                  "buttons":
+                  [{
+                    "type": "postback",
+                    "title": "Take the quiz!",
+                    "payload": "quiz",
                   }],
                 }]
               }
