@@ -8,8 +8,6 @@ class CitiesController < ApplicationController
         {
           lat: city.latitude,
           lng: city.longitude,
-
-        # infoWindow: { content: render_to_string(partial: "/cities/map_box", locals: { city: city }) }
         }
       end
     else
@@ -25,7 +23,6 @@ class CitiesController < ApplicationController
         lat: @city.latitude,
         lng: @city.longitude,
         icon: "http://res.cloudinary.com/dm2e6swvo/image/upload/c_scale,w_50/v1520525872/voyagr/black-pin.png"}]
-        # infoWindow: { content: render_to_string(partial: "/cities/map_box", locals: { city: city }) }
 
     params_hotel = {
       key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",

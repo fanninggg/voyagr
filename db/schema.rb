@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312125455) do
+ActiveRecord::Schema.define(version: 20180313112136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 20180312125455) do
     t.index ["evening_answer_id"], name: "index_cities_on_evening_answer_id"
     t.index ["location_answer_id"], name: "index_cities_on_location_answer_id"
     t.index ["price_answer_id"], name: "index_cities_on_price_answer_id"
+  end
+
+  create_table "city_photos", force: :cascade do |t|
+    t.string "photo"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_city_photos_on_city_id"
   end
 
   create_table "city_type_answers", force: :cascade do |t|
@@ -99,7 +107,6 @@ ActiveRecord::Schema.define(version: 20180312125455) do
   create_table "suggestions", force: :cascade do |t|
     t.bigint "city_id"
     t.string "name"
-
     t.string "result_type"
     t.string "description"
     t.string "photo"
@@ -161,6 +168,7 @@ ActiveRecord::Schema.define(version: 20180312125455) do
   add_foreign_key "cities", "evening_answers"
   add_foreign_key "cities", "location_answers"
   add_foreign_key "cities", "price_answers"
+  add_foreign_key "city_photos", "cities"
   add_foreign_key "city_type_answers", "city_type_questions"
   add_foreign_key "evening_answers", "evening_questions"
   add_foreign_key "location_answers", "location_questions"
