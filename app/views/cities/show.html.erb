@@ -13,6 +13,24 @@
           <img src="https://images.pexels.com/photos/53146/brandenburg-gate-potsdam-place-night-clouds-53146.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb" style="width:100%">
         </div>
 
+                <div>
+                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
+                </div>
+                <div>
+                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
+                </div>
+                <div>
+                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
+                </div>
+                <div>
+                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
+                </div>
+                <div>
+                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
+                </div>
+              </div>
+
+
         <div class="mySlides">
           <img src="https://images.pexels.com/photos/109630/pexels-photo-109630.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb" style="width:100%">
         </div>
