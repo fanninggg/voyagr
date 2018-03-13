@@ -42,8 +42,8 @@ class WebhooksController < ApplicationController
             bot_reply = bot_choices_reply(sender)
             HTTP.post(url, json: bot_reply)
           elsif messaging["postback"]["payload"] == "random"
-            go_to_first_question(messaging, sender)
-          elsif messaging["postback"]["payload"] == "quiz"
+            go_to_random_suggestion(sender)
+         elsif messaging["postback"]["payload"] == "quiz"
             Trip.where(sender: sender).destroy_all
             go_to_first_question(messaging, sender)
           elsif messaging["postback"]["payload"] == "menu"
@@ -94,6 +94,19 @@ class WebhooksController < ApplicationController
       end
       render plain: bot_reply
     end
+  end
+
+  def go_to_random_suggestion(sender)
+    suggestions = [];
+    arr_one = City.all.sample(1)
+    arr_two = City.all.sample(1)
+    arr_three = City.all.sample(1)
+    suggestions << arr_one
+    suggestions << arr_two
+    suggestions << arr_three
+    p suggestions
+    bot_reply = bot_suggestions(sender, suggestions)
+    HTTP.post(url, json: bot_reply)
   end
 
   def go_to_first_question(messaging, sender)
