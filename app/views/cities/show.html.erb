@@ -23,6 +23,22 @@
                 </div>
               </div>
 
+
+              <div id="slideshow">
+                <div>
+                  <%#= image_tag "Angele.jpeg", width: 350, height: 200 %>
+                </div>
+                <div>
+                  <%#= image_tag "Ben.jpg", width: 350, height: 200 %>
+                </div>
+                <div>
+                  <%#= image_tag "Celia.jpg", width: 350, height: 200 %>
+                </div>
+                <div>
+                  <%#= image_tag "Hen.jpg", width: 350, height: 200 %>
+                </div>
+              </div>
+
               <div class="info-card entertainment text-center">
                 <h2>Things to do</h2>
                 <div class="image-and-text">
@@ -36,11 +52,71 @@
                 <div id="map" data-markers="<%= @markers.to_json %>">
                 </div>
               </div>
-
             </div>
 
+            <div id="entertainment">
+              <div class="suggestion">
+                <!-- for all suggestions do : -->
+                <%=image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{@city.suggestions.first.photo}"%>
+                <%=image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{@city.suggestions.last.photo}"%>
+                <p>
+                <%= @city.suggestions.first.name %> - near: <%= @city.suggestions.first.description %>
+                </p>
+                 <p>
+                  <%= @city.suggestions.last.name %> - near: <%= @city.suggestions.last.description %>
+                 </p>
+              </div>
+            </div>
+<!--
+                <p> <%# ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
+                <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+                <div class="suggestion-text">
+                <p style="font-weight: normal" id="modal-paragraph"> <%#= @entertainment["results"][0]["name"] %></p>
+                          <p id="modal-paragraph"> <%#= @entertainment["results"][0]["vicinity"] %></p>
+                        </div>
+                      </div>
+                       <div class="suggestion">
+                        <p> <%# ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
+                        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+                        <div class="suggestion-text">
+                          <p style="font-weight: normal" id="modal-paragraph"> <%#= @entertainment["results"][0]["name"] %></p>
+                          <p id="modal-paragraph"> <%#= @entertainment["results"][0]["vicinity"] %></p>
+                      </div>
+                       <div class="suggestion">
+                        <p> <%# ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
+                        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
+                        <div class="suggestion-text">
+                          <p style="font-weight: normal" id="modal-paragraph"> <%#= @entertainment["results"][0]["name"] %></p>
+                          <p id="modal-paragraph"> <%#= @entertainment["results"][0]["vicinity"] %></p>
+                        </div>
+                      </div>
+                    <%# end %> -->
+                  </div>
 
             <button type="button" class="modal-button" data-toggle="modal" data-target="#entertainmentModal">To do</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
 
           </div>
         </div>
@@ -48,4 +124,18 @@
     </div>
   </div>
 </div>
+
+<%#= javascript_pack_tag 'slideshow' %>
+<script>
+  $("#slideshow > div:gt(0)").hide();
+
+  setInterval(function() {
+    $('#slideshow > div:first')
+      .fadeOut(1000)
+      .next()
+      .fadeIn(1000)
+      .end()
+      .appendTo('#slideshow');
+  },  3000);
+</script>
 
