@@ -61,6 +61,11 @@ class WebhooksController < ApplicationController
           Trip.where(sender: sender).destroy_all
           bot_reply = bot_choices_reply(sender)
           HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"] == "hi"
+          puts "i got the hi"
+          Trip.where(sender: sender).destroy_all
+          bot_reply = bot_choices_reply(sender)
+          HTTP.post(url, json: bot_reply)
         elsif messaging["message"]["text"].include? "love"
           bot_reply = bot_love_reply(sender)
           HTTP.post(url, json: bot_reply)

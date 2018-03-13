@@ -101,6 +101,11 @@ def bot_suggestions(sender, suggestions)
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{suggestions.first.first[:id]}",
                     "title": "More information"
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
                   }],
                 },
                 {
@@ -111,6 +116,11 @@ def bot_suggestions(sender, suggestions)
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{suggestions.second.first[:id]}",
                     "title": "More information"
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
                   }],
                 },
                 {
@@ -121,6 +131,11 @@ def bot_suggestions(sender, suggestions)
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{suggestions.third.first[:id]}",
                     "title": "More information"
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Main menu",
+                    "payload": "menu"
                   }],
                 }]
               }
@@ -265,7 +280,7 @@ def bot_choices_reply(sender)
                 "elements":
                 [{
                 "title": "Get a random selection of holiday destinations",
-                "image_url": "http://www.hometohomecalls.com/wp-content/uploads/2015/11/Holiday.jpg",
+                "image_url": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb",
                   "buttons":
                   [{
                     "type": "postback",
@@ -275,7 +290,7 @@ def bot_choices_reply(sender)
                 },
                 {
                   "title": "Take our quiz to find a more tailored destination",
-                  "image_url": "http://home.bt.com/images/test-your-knowledge-of-2016-with-our-jumbo-trivia-quiz-136412309722203901-161222142527.jpg",
+                  "image_url": "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/28828573_601862200156340_5594842116490865147_o.jpg?oh=aecb14db7403f287b0d0740e2536c8a6&oe=5B03A5C9",
                   "buttons":
                   [{
                     "type": "postback",
