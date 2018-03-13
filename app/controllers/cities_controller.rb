@@ -11,24 +11,24 @@ class CitiesController < ApplicationController
         {
           lat: city.latitude,
           lng: city.longitude,
-
-        # infoWindow: { content: render_to_string(partial: "/cities/map_box", locals: { city: city }) }
         }
       end
     else
       @cities = City.all
     end
+    @city = City.all.sample(3)
   end
 
   def show
-    # @city = City.find(params[:id])
 
-    # @markers = [
-    #   {
-    #     lat: @city.latitude,
-    #     lng: @city.longitude,
-    #     icon: "http://res.cloudinary.com/dm2e6swvo/image/upload/c_scale,w_50/v1520525872/voyagr/black-pin.png"}]
-    #     # infoWindow: { content: render_to_string(partial: "/cities/map_box", locals: { city: city }) }
+    @city = City.find(params[:id])
+
+    @markers = [
+      {
+        lat: @city.latitude,
+        lng: @city.longitude,
+        icon: "http://res.cloudinary.com/dm2e6swvo/image/upload/c_scale,w_50/v1520525872/voyagr/black-pin.png"}]
+
 
     # params_hotel = {
     #   key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
@@ -73,7 +73,7 @@ class CitiesController < ApplicationController
 
     # response_sightseeing =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_sightseeing})
     # @sightseeing = JSON.parse(response_sightseeing)
-end
+
 
 def find_flight_next_weekend
   @city = City.find(params[:id])
