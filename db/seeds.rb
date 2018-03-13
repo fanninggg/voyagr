@@ -2048,57 +2048,10 @@ end
 cities = City.all
 cities.each do |city|
 
-#   params_hotel = {
-#       key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-#       location: "#{city.latitude},#{city.longitude}",
-#       radius: 50000,
-#       keyword: "hotel"
-#     }
-
-#   response_hotel =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_hotel})
-#   hotels = JSON.parse(response_hotel)
-#   hotel = hotels["results"][0]
-#   photos = hotel["photos"] if hotel
-#   photo = photos[0] if photos
-#   ref_pic = photo["photo_reference"] if photo
-#   ref_pic ||= ''
-#   hotel_name = hotel["name"] if hotel
-#   hotel_description = hotel["vicinity"] if hotel
-
-#   hotel = Suggestion.new(city: city, name: hotel_name, description: hotel_description, photo:ref_pic, result_type: "hotel")
-#   hotel.save!
-#   sleep(1)
-
-#   params_restaurant = {
-#       key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-#       location: "#{city.latitude},#{city.longitude}",
-#       radius: 50000,
-#       keyword: "restaurant" || "cafe"
-#     }
-
-#   response_restaurant =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_restaurant})
-#   restaurants = JSON.parse(response_restaurant)
-#   restaurant = restaurants["results"][0]
-#   photos = restaurant["photos"] if restaurant
-#   photo = photos[0] if photos
-#   ref_pic = photo["photo_reference"] if photo
-#   ref_pic ||= ''
-#   restaurant_name = restaurant["name"] if restaurant
-#   restaurant_description = restaurant["vicinity"] if restaurant
-
-#   restaurant = Suggestion.new(city: city, name: restaurant_name, description: restaurant_description, photo:ref_pic, result_type: "restaurant")
-#   restaurant.save!
-#   sleep(1)
-
-
   puts 'Now for the entertainment'
 
-
-  #keyword_sample = ["museum", "city_hall", "hindu_temple", "church", "mosque", "synagogue", "night_club", "amusement_park", "aquarium", "art_gallery", "movie_theater", "spa", "casino"].sample
-
-
   params_entertainment = {
-         key: "AIzaSyAGYBhluHCFSVj320yVTgBqkcw93HUgfL0",
+         key: "AIzaSyBeVIa8GiYs9RKRzD48GRmI2qooeUa1yPU",
          location: "#{city.latitude},#{city.longitude}",
          radius: 50000,
          keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue" || "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "spa" || "casino"
@@ -2132,7 +2085,7 @@ cities.each do |city|
   puts 'Now for the photos'
 
   params_photos = {
-      key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
+      key: "AIzaSyA-vaF-ixGMJmG8OSsxB6gpKG-sxdukp5I",
       location: "#{city.latitude},#{city.longitude}",
       radius: 50000,
   }
@@ -2150,17 +2103,3 @@ cities.each do |city|
   sleep(1)
 end
 
-
-
-#entertainments.each do |entertainment|
-#   entertainment["results"]
-#   photos = entertainment["photos"] if entertainment
-#   photo = photos if photos
-#   ref_pic = photo["photo_reference"] if photo
-#   ref_pic ||= ''
-#   entertainment_name = entertainment["name"] if entertainment
-#   entertainment_description = entertainment["vicinity"] if entertainment
-
-#   entertainment = Suggestion.new(city: city, name: entertainment_name, description: entertainment_description, photo:ref_pic, result_type: "entertainment")
-#   entertainment.save!
-# end
