@@ -27,12 +27,12 @@ class CitiesController < ApplicationController
         lat: @city.latitude,
         lng: @city.longitude,
         icon: "http://res.cloudinary.com/dm2e6swvo/image/upload/c_scale,w_50/v1520525872/voyagr/black-pin.png"}]
-  
+
     city_flights_in
     city_flights_out
     total_price
   end
-  
+
   private
 
   def city_flights_out
@@ -49,12 +49,13 @@ class CitiesController < ApplicationController
       price: [],
       logo: [],
       departure: [],
-      arrival: []
+      arrival: [],
+      time: []
     }
     until counter  >= 4
       next_friday = start_date.next_week.advance(:days=>4)
       next_saturday = start_date.next_week.advance(:days=>5)
-      url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{next_friday.strftime("%d/%m/%Y")}&dateTo=#{next_saturday.strftime("%d/%m/%Y")}&directFlights=0&partner=picky&partner_market=eur&curr=GBP&limit=1"
+      url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{next_friday.strftime("%d/%m/%Y")}&dateTo=#{next_saturday.strftime("%d/%m/%Y")}&curr=GBP&limit=1"
       response_flight = RestClient.get(url)
       flight = JSON.parse(response_flight)
       airline = flight["data"].first["airlines"].first
@@ -63,6 +64,7 @@ class CitiesController < ApplicationController
       @hash_out[:logo] << "https://images.kiwi.com/airlines/64/#{airline}.png"
       @hash_out[:departure] << flight["data"].first["routes"].first.first
       @hash_out[:arrival] << flight["data"].first["routes"].first.second
+      @hash_out[:time] << flight["data"].first["route"].first["dTimeUTC"]
       counter += 1
       start_date = start_date.next_week
     end
@@ -82,12 +84,13 @@ class CitiesController < ApplicationController
       price: [],
       logo: [],
       departure: [],
-      arrival: []
+      arrival: [],
+      time: []
     }
     until counter  >= 4
       next_sunday = start_date.next_week.advance(:days=>6)
       next_monday = start_date.next_week.advance(:days=>6)
-      url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{next_sunday.strftime("%d/%m/%Y")}&dateTo=#{next_monday.strftime("%d/%m/%Y")}&directFlights=0&partner=picky&partner_market=eur&curr=GBP&limit=1"
+      url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{next_sunday.strftime("%d/%m/%Y")}&dateTo=#{next_monday.strftime("%d/%m/%Y")}&curr=GBP&limit=1"
       response_flight = RestClient.get(url)
       flight = JSON.parse(response_flight)
       airline = flight["data"].first["airlines"].first
@@ -96,6 +99,7 @@ class CitiesController < ApplicationController
       @hash_in[:logo] << "https://images.kiwi.com/airlines/64/#{airline}.png"
       @hash_in[:departure] << flight["data"].first["routes"].first.first
       @hash_in[:arrival] << flight["data"].first["routes"].first.second
+      @hash_in[:time] << flight["data"].first["route"].first["dTimeUTC"]
       counter += 1
       start_date = start_date.next_week
     end
