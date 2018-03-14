@@ -28,6 +28,7 @@ class CitiesController < ApplicationController
         lng: @city.longitude,
         icon: "http://res.cloudinary.com/dm2e6swvo/image/upload/c_scale,w_50/v1520525872/voyagr/black-pin.png"}]
 
+
     city_flights_in
     city_flights_out
     total_price

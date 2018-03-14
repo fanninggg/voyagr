@@ -46,6 +46,7 @@
               <div class="column-three">
               <p id="monospace"><%= @hash_in[:arrival].first %></p>
               <p id="monospace"><%= Time.at(@hash_in[:atime].first) %></p>
+
               </div>
             </div>
           </div>
@@ -175,31 +176,33 @@
   <div class="ttd-and-slideshow">
     <div class="info-card things-to-do">
       <div class="thing">
-        <h2>Three word test </h2>
+        <h2><%= @city.top_attractions_1 %></h2>
+
       </div>
       <div class="thing">
-        <h2>Four word test title</h2>
+        <h2><%= @city.top_attractions_2 %></h2>
       </div>
       <div class="thing">
-        <h2>Five word long test title</h2>
+        <h2><%= @city.top_attractions_3 %></h2>
+
       </div>
     </div>
 
     <div class="slideshow-container info-card">
       <div class="mySlides1">
-        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyCzpWPzoF6HKClrmzSFbTKoHDlaTGrsTbI", class: "slideshow-images"%>
       </div>
       <div class="mySlides1">
-        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyCzpWPzoF6HKClrmzSFbTKoHDlaTGrsTbI", class: "slideshow-images"%>
       </div>
       <div class="mySlides1">
-        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyCzpWPzoF6HKClrmzSFbTKoHDlaTGrsTbI", class: "slideshow-images"%>
       </div>
       <div class="mySlides1">
-        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyCzpWPzoF6HKClrmzSFbTKoHDlaTGrsTbI", class: "slideshow-images"%>
       </div>
        <div class="mySlides1">
-        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyCzpWPzoF6HKClrmzSFbTKoHDlaTGrsTbI", class: "slideshow-images"%>
       </div>
       <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
       <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
@@ -234,5 +237,24 @@ function showSlides(n, no) {
      x[i].style.display = "none";
   }
   x[slideIndex[no]-1].style.display = "block";
+}
+</script>
+
+<p>Click the button below to trigger a Share Dialog</p>
+
+<div id="shareBtn" class="btn btn-success clearfix">Share</div>
+
+<p style="margin-top: 50px">
+  <hr />
+  <a class="btn btn-small"  href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>
+</p>
+
+<script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: 'https://www.voyagr.co.uk/cities/#{@city.id}',
+  }, function(response){});
 }
 </script>
