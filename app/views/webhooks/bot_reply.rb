@@ -1,6 +1,6 @@
 def set_up_get_started_button(sender)
  response =  {
-  "get_started": {"payload": "<postback_payload>"}
+  "get_started": {"payload": "Get Started"}
 }
 
 bot_standard_reply(response, sender)
@@ -297,17 +297,17 @@ def bot_choices_reply(sender)
                     "title": "Take the quiz!",
                     "payload": "quiz",
                   }],
-                }],
-                # {
-                #   "title": "Play guess the destination!",
-                #   "image_url": "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/28828573_601862200156340_5594842116490865147_o.jpg?oh=aecb14db7403f287b0d0740e2536c8a6&oe=5B03A5C9",
-                #   "buttons":
-                #   [{
-                #     "type": "web_url",
-                #     "url": "https://www.voyagr.co.uk/cities",
-                #     "title": "Play!",
-                #   }],
-                # }]
+                },
+                {
+                  "title": "Play guess the destination!",
+                  "image_url": "https://images.pexels.com/photos/185933/pexels-photo-185933.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb",
+                  "buttons":
+                  [{
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/cities",
+                    "title": "Play!",
+                  }],
+                }]
               }
             }
           }

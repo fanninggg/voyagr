@@ -2046,106 +2046,106 @@ end
 # end
 
 
-cities = City.all
-cities.each do |city|
+# cities = City.all
+# cities.each do |city|
 
-  puts 'Now for the entertainment'
+#   puts 'Now for the entertainment'
 
-  params_entertainment = {
-         key: "AIzaSyBeVIa8GiYs9RKRzD48GRmI2qooeUa1yPU",
-         location: "#{city.latitude},#{city.longitude}",
-         radius: 50000,
-         keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue" || "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "spa" || "casino"
-  }
+#   params_entertainment = {
+#          key: "AIzaSyBeVIa8GiYs9RKRzD48GRmI2qooeUa1yPU",
+#          location: "#{city.latitude},#{city.longitude}",
+#          radius: 50000,
+#          keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue" || "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "spa" || "casino"
+#   }
 
-  response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment})
-  entertainments = JSON.parse(response_entertainment)
+#   response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment})
+#   entertainments = JSON.parse(response_entertainment)
 
-  entertainment = entertainments["results"][0]
-  entertainment_1 = entertainments["results"][1]
-
-
-  photos = entertainment["photos"] if entertainment
-
-  photo = photos[0] if photos
-  ref_pic = photo["photo_reference"] if photo
-  ref_pic ||= ''
-  entertainment_name = entertainment["name"] if entertainment
-  entertainment_1_name = entertainment_1["name"] if entertainment_1
-
-  entertainment_description = entertainment["vicinity"] if entertainment
-  entertainment_1_description = entertainment_1["vicinity"] if entertainment_1
-
-  entertainment = Suggestion.new(city: city, name: entertainment_name, description: entertainment_description, photo:ref_pic, result_type: "entertainment")
-  entertainment_1 = Suggestion.new(city: city, name: entertainment_1_name, description: entertainment_1_description, photo:ref_pic, result_type: "entertainment")
-
-  entertainment.save!
-  entertainment_1.save!
-  sleep(1)
-
-  puts 'Now for the photos'
-
-  params_photos = {
-      key: "AIzaSyA-vaF-ixGMJmG8OSsxB6gpKG-sxdukp5I",
-      location: "#{city.latitude},#{city.longitude}",
-      radius: 50000,
-  }
-
-  response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
-  photos = JSON.parse(response_photos)
-  photo = photos["results"][0]
-  photos = photo["photos"] if photo
-  photo = photos[0] if photos
-  ref_pic = photo["photo_reference"] if photo
-  ref_pic ||= ''
-
-  photo = CityPhoto.new(city: city, photo:ref_pic)
-  photo.save!
-
-  response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
-  photos = JSON.parse(response_photos)
-  photo_1 = photos["results"][1]
-  photos_1 = photo_1["photos"] if photo_1
-  photo_1 = photos_1[0] if photos_1
-  ref_pic_1 = photo_1["photo_reference"] if photo_1
-  ref_pic_1 ||= ''
-
-  photo_1 = CityPhoto.new(city: city, photo:ref_pic_1)
-  photo_1.save!
-
-  response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
-  photos = JSON.parse(response_photos)
-  photo_2 = photos["results"][2]
-  photos_2 = photo_2["photos"] if photo_2
-  photo_2 = photos_2[0] if photos_2
-  ref_pic_2 = photo_2["photo_reference"] if photo_2
-  ref_pic_2 ||= ''
-
-  photo_2 = CityPhoto.new(city: city, photo:ref_pic_2)
-  photo_2.save!
-
-  response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
-  photos = JSON.parse(response_photos)
-  photo_3 = photos["results"][3]
-  photos_3 = photo_3["photos"] if photo_3
-  photo_3 = photos_3[0] if photos_3
-  ref_pic_3 = photo_3["photo_reference"] if photo_3
-  ref_pic_3 ||= ''
+#   entertainment = entertainments["results"][0]
+#   entertainment_1 = entertainments["results"][1]
 
 
-  photo_3 = CityPhoto.new(city: city, photo:ref_pic_3)
-  photo_3.save!
+#   photos = entertainment["photos"] if entertainment
 
-  response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
-  photos = JSON.parse(response_photos)
-  photo_4 = photos["results"][4]
-  photos_4 = photo_4["photos"] if photo_4
-  photo_4 = photos_4[0] if photos_4
-  ref_pic_4 = photo_4["photo_reference"] if photo_4
-  ref_pic_4 ||= ''
+#   photo = photos[0] if photos
+#   ref_pic = photo["photo_reference"] if photo
+#   ref_pic ||= ''
+#   entertainment_name = entertainment["name"] if entertainment
+#   entertainment_1_name = entertainment_1["name"] if entertainment_1
 
-  photo_4 = CityPhoto.new(city: city, photo:ref_pic_4)
-  photo_4.save!
-  sleep(1)
-end
+#   entertainment_description = entertainment["vicinity"] if entertainment
+#   entertainment_1_description = entertainment_1["vicinity"] if entertainment_1
+
+#   entertainment = Suggestion.new(city: city, name: entertainment_name, description: entertainment_description, photo:ref_pic, result_type: "entertainment")
+#   entertainment_1 = Suggestion.new(city: city, name: entertainment_1_name, description: entertainment_1_description, photo:ref_pic, result_type: "entertainment")
+
+#   entertainment.save!
+#   entertainment_1.save!
+#   sleep(1)
+
+#   puts 'Now for the photos'
+
+#   params_photos = {
+#       key: "AIzaSyA-vaF-ixGMJmG8OSsxB6gpKG-sxdukp5I",
+#       location: "#{city.latitude},#{city.longitude}",
+#       radius: 50000,
+#   }
+
+#   response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
+#   photos = JSON.parse(response_photos)
+#   photo = photos["results"][0]
+#   photos = photo["photos"] if photo
+#   photo = photos[0] if photos
+#   ref_pic = photo["photo_reference"] if photo
+#   ref_pic ||= ''
+
+#   photo = CityPhoto.new(city: city, photo:ref_pic)
+#   photo.save!
+
+#   response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
+#   photos = JSON.parse(response_photos)
+#   photo_1 = photos["results"][1]
+#   photos_1 = photo_1["photos"] if photo_1
+#   photo_1 = photos_1[0] if photos_1
+#   ref_pic_1 = photo_1["photo_reference"] if photo_1
+#   ref_pic_1 ||= ''
+
+#   photo_1 = CityPhoto.new(city: city, photo:ref_pic_1)
+#   photo_1.save!
+
+#   response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
+#   photos = JSON.parse(response_photos)
+#   photo_2 = photos["results"][2]
+#   photos_2 = photo_2["photos"] if photo_2
+#   photo_2 = photos_2[0] if photos_2
+#   ref_pic_2 = photo_2["photo_reference"] if photo_2
+#   ref_pic_2 ||= ''
+
+#   photo_2 = CityPhoto.new(city: city, photo:ref_pic_2)
+#   photo_2.save!
+
+#   response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
+#   photos = JSON.parse(response_photos)
+#   photo_3 = photos["results"][3]
+#   photos_3 = photo_3["photos"] if photo_3
+#   photo_3 = photos_3[0] if photos_3
+#   ref_pic_3 = photo_3["photo_reference"] if photo_3
+#   ref_pic_3 ||= ''
+
+
+#   photo_3 = CityPhoto.new(city: city, photo:ref_pic_3)
+#   photo_3.save!
+
+#   response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
+#   photos = JSON.parse(response_photos)
+#   photo_4 = photos["results"][4]
+#   photos_4 = photo_4["photos"] if photo_4
+#   photo_4 = photos_4[0] if photos_4
+#   ref_pic_4 = photo_4["photo_reference"] if photo_4
+#   ref_pic_4 ||= ''
+
+#   photo_4 = CityPhoto.new(city: city, photo:ref_pic_4)
+#   photo_4.save!
+#   sleep(1)
+# end
 
