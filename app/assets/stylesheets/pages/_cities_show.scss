@@ -11,20 +11,24 @@
     opacity: 1;
     } h3 {
     color: #F89D29;
+    font-weight: lighter;
     font-size: 32px;
     } h4 {
     font-size: 32px;
     color: rgb(150, 150, 150);
     opacity: 1;
   } p {
-    font-family: 'Roboto Mono', monospace;
-    font-weight: bold;
     font-size: 16px;
+    font-weight: lighter;
     color: rgb(150, 150, 150);
     opacity: 1;
   } a:hover {
     text-decoration: none;
-}
+  }
+#monospace {
+  font-family: 'Roboto Mono', monospace;
+
+  }
 .show-link-logo {
   margin-left: 10px;
   opacity: 1 !important;
@@ -55,8 +59,8 @@
   align-items: center;
   margin: 0 auto 15px auto;
   background-color: rgb(255,255,255);
-  height: 200px;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.07)
+  height: 300px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0);
 }
 .ticket-card-body {
   display: flex;
