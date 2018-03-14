@@ -39,7 +39,7 @@
 .answers {
   display: flex;
   justify-content: space-around;
-  margin-top: 400px;
+  margin-top: 500px;
   align-items: center;
 }
 
@@ -49,14 +49,17 @@
 }
 
 .index-page-content {
-  p {
+  a.city-option {
     border-radius: 60px;
     padding: 10px;
     border: solid 2px rgb(255, 255, 255);
     color: white;
     font-size: 24px;
-  } p:hover {
-    background-color: rgba(230, 230, 230, .2)
+    text-align: center;
+  }
+  a.city-option:hover {
+    background-color: rgba(230, 230, 230, .2);
+    text-decoration: none;
   }
 }
 
@@ -67,10 +70,12 @@
 
 
 
-@media only screen and (max-width: 415px) {
-  .index-page p {
+@media(max-width: 415px) {
+  .index-page a.city-option {
     font-size: 12px;
-    margin: 0px 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
   }
   .index-page a {
     font-size: 18px;

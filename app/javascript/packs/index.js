@@ -1,37 +1,28 @@
 import swal from 'sweetalert';
 
-function bindSweetAlertButtonDemo() {
-  document.getElementById('sweet-alert-demo').addEventListener('click', () => {
+const options = document.querySelectorAll('.city-option')
+
+options.forEach(function(option, index) {
+  option.addEventListener('click', function() {
+    addSweetAlert(option)
+  })
+})
+
+
+function addSweetAlert(option) {
+  if (option.classList.contains('valid')) {
     swal({
-      title: "Correct",
-      text: "Well done!",
-      icon: "success"
+        title: "Correct",
+        text: "Well done!",
+        icon: "success"
+    }).then(function() {
+    window.location = "cities";
     })
-  });
-}
-
-bindSweetAlertButtonDemo()
-
-function bindSweetAlertButtonDemo2() {
-  document.getElementById('sweet-alert-demo2').addEventListener('click', () => {
-    swal({
-      title: "Nope",
-      text: "Didn't get it this time",
-      icon: "error"
-    })
-  });
-}
-
-bindSweetAlertButtonDemo2()
-
-function bindSweetAlertButtonDemo3() {
-  document.getElementById('sweet-alert-demo3').addEventListener('click', () => {
+  } else {
     swal({
       title: "Nope",
       text: "Didn't get it this time",
       icon: "error"
     })
-  });
+  }
 }
-
-bindSweetAlertButtonDemo3()
