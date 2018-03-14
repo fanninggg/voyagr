@@ -1,7 +1,7 @@
 <div class="show-page">
 
   <div class="banner-holder">
-    <div class="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)),
+    <div class="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)),
     url('<%= cl_image_path @city.photo %>')";>
     <div class="link-logo show-link-logo">
       <%= link_to root_path do %>
@@ -13,7 +13,7 @@
   </div>
 
   <div class="ticket-box">
-    <h3>Flight Tickets</h3>
+    <h3 class="text-center">Tempted? Here are some flight prices</h3>
     <div class="tickets">
       <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>
       <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>

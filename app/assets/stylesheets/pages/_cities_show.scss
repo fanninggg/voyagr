@@ -3,18 +3,19 @@
 } h1 {
     color: rgb(220,220,220);
     font-weight: lighter;
-    font-size: 72px;
+    font-size: 80px;
   } h2 {
     font-size: 40px;
     color: rgb(255, 255, 255);
     opacity: 1;
   } h3 {
-    color: #F89D29;
-    font-size: 30px;
+    color: rgb(150,150,150);
+    font-weight: lighter;
+    font-size: 32px;
     } p {
     font-size: 16px;
     font-weight: lighter;
-    color: rgb(180, 180, 180);
+    color: rgb(150, 150, 150);
     opacity: 1;
   } a:hover {
     text-decoration: none;
@@ -32,18 +33,19 @@
   width: 100vw;
   height: 80vh;
   background-size: cover !important;
+  background-position: center;
 }
 .city-title {
-  padding-top: 50px;
+  padding-top: 20px;
   z-index: 5;
 }
 .tickets {
   display: flex;
   justify-content: space-around;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 .ticket-box {
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 .info-card {
