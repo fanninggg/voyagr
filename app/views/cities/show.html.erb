@@ -157,32 +157,32 @@
     <div class="info-card things-to-do">
       <div class="thing">
         <h2><%= @city.top_attractions_1 %></h2>
-        
+
       </div>
       <div class="thing">
         <h2><%= @city.top_attractions_2 %></h2>
       </div>
       <div class="thing">
         <h2><%= @city.top_attractions_3 %></h2>
-       
+
       </div>
     </div>
 
     <div class="slideshow-container info-card">
       <div class="mySlides1">
-        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyCzpWPzoF6HKClrmzSFbTKoHDlaTGrsTbI", class: "slideshow-images"%>
       </div>
       <div class="mySlides1">
-        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyCzpWPzoF6HKClrmzSFbTKoHDlaTGrsTbI", class: "slideshow-images"%>
       </div>
       <div class="mySlides1">
-        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyCzpWPzoF6HKClrmzSFbTKoHDlaTGrsTbI", class: "slideshow-images"%>
       </div>
       <div class="mySlides1">
-        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyCzpWPzoF6HKClrmzSFbTKoHDlaTGrsTbI", class: "slideshow-images"%>
       </div>
        <div class="mySlides1">
-        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyCzpWPzoF6HKClrmzSFbTKoHDlaTGrsTbI", class: "slideshow-images"%>
       </div>
       <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
       <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
