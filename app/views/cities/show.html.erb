@@ -1,329 +1,78 @@
 <div class="show-page">
+
+  <div class="banner-holder">
+    <div class="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)),
+    url('<%= cl_image_path @city.photo %>')";>
+    <div class="link-logo show-link-logo">
+      <%= link_to root_path do %>
+        <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
+      <% end %>
+    </div>
+      <h1 class="city-title text-center"><%= @city.name %></h1>
+    </div>
+  </div>
+
+  <div class="ticket-box">
+    <h3>Flight Tickets</h3>
+    <div class="tickets">
+      <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>
+      <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>
+      <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>
+      <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>
+    </div>
+  </div>
+
+  <div class="ttd-and-slideshow">
+    <div class="info-card things-to-do">
+      <h3>Top Sights in <%= @city.name %></h3>
+      <div class="things-group">
+        <div class="thing">
+          <p>Thing 1</p>
+          <%= cl_image_tag "voyagr/sightseeing.jpg", width: 180, height: 120 %>
+        </div>
+        <div class="thing">
+          <p>Thing 2</p>
+          <%= cl_image_tag "voyagr/sightseeing.jpg", width: 180, height: 120 %>
+        </div>
+      </div>
+      <div class="things-group">
+        <div class="thing">
+          <p>Thing 3</p>
+          <%= cl_image_tag "voyagr/sightseeing.jpg", width: 180, height: 120 %>
+        </div>
+        <div class="thing">
+          <p>Thing 4</p>
+          <%= cl_image_tag "voyagr/sightseeing.jpg", width: 180, height: 120 %>
+        </div>
+      </div>
+    </div>
+
+    <div class="slideshow-container info-card">
+      <h3>Some more pictures</h3>
+      <div class="mySlides1">
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 400, height: 300%>
+      </div>
+      <div class="mySlides1">
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 400, height: 300%>
+      </div>
+      <div class="mySlides1">
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 400, height: 300%>
+      </div>
+      <div class="mySlides1">
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 400, height: 300%>
+      </div>
+       <div class="mySlides1">
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 400, height: 300%>
+      </div>
+      <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
+
+  </div>
+
   <div class="row">
-    <div class="show-banner">
-      <div class="col-xs-12 show-background" style= "background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.photo %>')";>
-        <div class="link-logo show-link-logo">
-          <%= link_to root_path do %>
-            <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
-          <% end %>
-        </div>
-
-        <div class="row">
-<<<<<<< HEAD
-          <div class="col-xs-9 col-sm-8 city-information">
-=======
-
-
-          <div class="col-xs-9 col-sm-8 city-information">
-
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-            <h1 class="text-center"><%= @city.name %></h1>
-            <div class="info-card hotels">
-              <h2>Places to stay</h2>
-              <div class="image-and-text">
-              <%= cl_image_tag "voyagr/hotel.jpg", width: 350, height: 200, class: "gen-image" %>
-              <div class="text-and-button">
-<<<<<<< HEAD
-                <p>Based on the answers you gave to our friendly little VoyagrBot, he suggests that you might like to rest your head in these beautiful places.</p>
-=======
-
-                <p>Based on the answers you gave to our friendly little VoyagrBot, he suggests that you might like to rest your head in these beautiful places.</p>
-
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-                <button type="button" class="modal-button" data-toggle="modal" data-target="#hotelModal">Lodgings</button>
-              </div>
-            </div>
-
-
-            <div class="info-card food" >
-              <h2>Food</h2>
-              <div class="image-and-text">
-              <%= cl_image_tag "voyagr/food.jpg", width: 350, height: 200, class: "gen-image" %>
-              <div class="text-and-button">
-<<<<<<< HEAD
-                <p>Here's a list of places that VoyagrBot thinks you might enjoy eating. As a robot he knows a lot about food and drink.</p>
-=======
-
-                <p>Here's a list of places that VoyagrBot thinks you might enjoy eating. As a robot he knows a lot about food and drink.</p>
-
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-                <button type="button" class="modal-button" data-toggle="modal" data-target="#foodModal">Food & Drink</button>
-              </div>
-            </div>
-
-
-            <div class="info-card entertainment">
-              <h2>Things to do</h2>
-              <div class="image-and-text">
-              <%= cl_image_tag "voyagr/entertainment.jpg", width: 350, height: 200, class: "gen-image" %>
-              <div class="text-and-button">
-<<<<<<< HEAD
-                <p>VoyagrBot recommends these places for you to entertain yourself while exploring <%= @city.name %>. These are suggestions based on your answers.</p>
-                <button type="button" class="modal-button" data-toggle="modal" data-target="#entertainmentModal">To do</button>
-=======
-
-                <p>VoyagrBot recommends these places for you to entertain yourself while exploring <%= @city.name %>. These are suggestions based on your answers.</p>
-                <button type="button" class="modal-button" data-toggle="modal" data-target="#entertainmentModal">To do</button>
-
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-              </div>
-            </div>
-          </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-xs-3 show-map">
-<<<<<<< HEAD
-=======
-            <div id="map" style="width: 300px; height: 665px;" data-markers="<%= @markers.to_json %>">
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-
-            <div id="map" data-markers="<%= @markers.to_json %>">
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="hotelModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Places to rest your head</h4>
-        </div>
-          <div class="modal-body">
-            <%# if @hotel["results"].empty? %>
-            <div class="suggestion">
-              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-            <div class="suggestion">
-              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-<<<<<<< HEAD
-
-=======
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
-
-              </div>
-            </div>
-            <div class="suggestion">
-              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-<<<<<<< HEAD
-
-=======
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-          <%# else %>
-            <div class="suggestion">
-              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-<<<<<<< HEAD
-=======
-
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-            <div class="suggestion">
-              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-<<<<<<< HEAD
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-=======
-
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-            <div class="suggestion">
-              <p> <%# ref_pic = @hotel["results"][0]["photos"][0]["photo_reference"] %></p>
-<<<<<<< HEAD
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-=======
-
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"><%#= @hotel["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @hotel["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-          <%# end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div id="foodModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">High quality food and bevs</h4>
-        </div>
-        <div class="modal-body">
-          <%# if @restaurant["results"].empty? %>
-            <div class="suggestion">
-              <%#= cl_image_tag "voyagr/food-salad-restaurant-person.jpg", width: 150, height: 100 %>
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph">The Dunleavy Diner</p>
-                <p id="modal-paragraph">0 miles from <%#= @city.name %></p>
-              </div>
-            </div>
-             <div class="suggestion">
-              <%#= cl_image_tag "voyagr/food-salad-restaurant-person.jpg", width: 150, height: 100 %>
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph">Rito's Restaurant</p>
-                <p id="modal-paragraph">0.5 miles from <%#= @city.name %></p>
-              </div>
-            </div>
-             <div class="suggestion">
-              <%#= cl_image_tag "voyagr/food-salad-restaurant-person.jpg", width: 150, height: 100 %>
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph">Gregoire's Gastro-pub</p>
-                <p id="modal-paragraph">1 mile from <%#= @city.name %></p>
-              </div>
-            </div>
-          <%# else %>
-            <div class="suggestion">
-              <p> <%# ref_pic = @restaurant["results"][0]["photos"][0]["photo_reference"] %></p>
-<<<<<<< HEAD
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-=======
-
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%#= @restaurant["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @restaurant["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-             <div class="suggestion">
-              <p> <%# ref_pic = @restaurant["results"][0]["photos"][0]["photo_reference"] %></p>
-<<<<<<< HEAD
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-=======
-
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%#= @restaurant["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @restaurant["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-             <div class="suggestion">
-              <p> <%# ref_pic = @restaurant["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-<<<<<<< HEAD
-=======
-
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%#= @restaurant["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @restaurant["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-          <%# end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="entertainmentModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Things to see and do</h4>
-        </div>
-        <div class="modal-body">
-          <%# if @entertainment["results"].empty? %>
-            <div class="suggestion">
-              <%#= cl_image_tag "voyagr/SW_Dylan_Rives.jpg", width: 150, height: 100 %>
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph">The Cai Club</p>
-                <p id="modal-paragraph">0 miles from <%#= @city.name %></p>
-              </div>
-            </div>
-             <div class="suggestion">
-              <%#= cl_image_tag "voyagr/SW_Dylan_Rives.jpg", width: 150, height: 100 %>
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph">Morley's Manic Music</p>
-                <p id="modal-paragraph">0.5 miles from <%#= @city.name %></p>
-              </div>
-            </div>
-             <div class="suggestion">
-              <%#= cl_image_tag "voyagr/SW_Dylan_Rives.jpg", width: 150, height: 100 %>
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph">Ben[1]'s Bar</p>
-                <p id="modal-paragraph">1 mile from <%#= @city.name %></p>
-              </div>
-            </div>
-          <%# else %>
-            <div class="suggestion">
-              <p> <%# ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%#= @entertainment["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @entertainment["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-             <div class="suggestion">
-              <p> <%# ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%#= @entertainment["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @entertainment["results"][0]["vicinity"] %></p>
-            </div>
-             <div class="suggestion">
-              <p> <%# ref_pic = @entertainment["results"][0]["photos"][0]["photo_reference"] %></p>
-              <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%#= ref_pic %>&key=AIzaSyClwwweH4aJCRFYX5Q5gEjz8dZ8N6yW574" alt="" class="suggestion-image">
-              <div class="suggestion-text">
-                <p style="font-weight: normal" id="modal-paragraph"> <%#= @entertainment["results"][0]["name"] %></p>
-                <p id="modal-paragraph"> <%#= @entertainment["results"][0]["vicinity"] %></p>
-              </div>
-            </div>
-          <%# end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+    <div class="col-xs-12 map-holder">
+      <div id="map" data-markers="<%= @markers.to_json %>"></div>
     </div>
   </div>
 </div>
@@ -334,7 +83,24 @@
   <% end %>
 <% end %>
 
-<<<<<<< HEAD
-=======
+<script>
+var slideIndex = [1,1];
+var slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
 
->>>>>>> cd8dabca79e920394c8b570c8efe6ad2b8662bac
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex[no]-1].style.display = "block";
+}
+</script>

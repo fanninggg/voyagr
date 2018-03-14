@@ -11,16 +11,16 @@ class CitiesController < ApplicationController
         {
           lat: city.latitude,
           lng: city.longitude,
-
-        # infoWindow: { content: render_to_string(partial: "/cities/map_box", locals: { city: city }) }
         }
       end
     else
       @cities = City.all
     end
+    @city = City.all.sample(3)
   end
 
   def show
+
     city_flights_in
   end
 
