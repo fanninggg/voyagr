@@ -299,7 +299,7 @@ def bot_choices_reply(sender)
                   }],
                 },
                 {
-                  "title": "Guess the destination based on a picture!",
+                  "title": "Play guess the destination!",
                   "image_url": "https://images.pexels.com/photos/185933/pexels-photo-185933.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb",
                   "buttons":
                   [{

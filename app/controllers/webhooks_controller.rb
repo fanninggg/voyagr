@@ -35,7 +35,6 @@ class WebhooksController < ApplicationController
           #do nothing
         elsif messaging["postback"]
           if messaging["postback"]["payload"] == "Get Started"
-            puts "i got the get started"
             Trip.where(sender: sender).destroy_all
             bot_reply = bot_welcome_reply(sender)
             puts "i've read the bot reply"
@@ -108,14 +107,13 @@ class WebhooksController < ApplicationController
   end
 
   def go_to_random_suggestion(sender)
-    suggestions = [];
+    suggestions = []
     arr_one = City.all.sample(1)
     arr_two = City.all.sample(1)
     arr_three = City.all.sample(1)
     suggestions << arr_one
     suggestions << arr_two
     suggestions << arr_three
-    p suggestions
     bot_reply = bot_suggestions(sender, suggestions)
     HTTP.post(url, json: bot_reply)
   end
@@ -172,10 +170,7 @@ class WebhooksController < ApplicationController
   def escape(messaging, sender, trip_answer)
     trip_city = TripCity.create!(trip_answer_id: trip_answer.id)
     trip_city.save
-    results = City.where(price_answer_id: trip_city.trip_answer.price_answer_id,
-                        location_answer_id: trip_city.trip_answer.location_answer_id,
-                        evening_answer_id: trip_city.trip_answer.evening_answer_id,
-                        city_type_answer: trip_city.trip_answer.city_type_answer_id)
+    results = City.where(price_answer_id: trip_city.trip_answer.price_answer_id, location_answer_id: trip_city.trip_answer.location_answer_id, evening_answer_id: trip_city.trip_answer.evening_answer_id, city_type_answer: trip_city.trip_answer.city_type_answer_id)
     bot_reply = bot_results_reply(sender, results)
     HTTP.post(url, json: bot_reply)
   end
