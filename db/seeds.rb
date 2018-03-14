@@ -2051,12 +2051,12 @@ end
 
 #   puts 'Now for the entertainment'
 
-#   params_entertainment = {
-#          key: "AIzaSyBeVIa8GiYs9RKRzD48GRmI2qooeUa1yPU",
-#          location: "#{city.latitude},#{city.longitude}",
-#          radius: 50000,
-#          keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue" || "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "spa" || "casino"
-#   }
+  params_entertainment = {
+         key: "AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw",
+         location: "#{city.latitude},#{city.longitude}",
+         radius: 50000,
+         keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue" || "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "spa" || "casino"
+  }
 
 #   response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment})
 #   entertainments = JSON.parse(response_entertainment)
@@ -2085,11 +2085,13 @@ end
 
 #   puts 'Now for the photos'
 
-#   params_photos = {
-#       key: "AIzaSyA-vaF-ixGMJmG8OSsxB6gpKG-sxdukp5I",
-#       location: "#{city.latitude},#{city.longitude}",
-#       radius: 50000,
-#   }
+
+  params_photos = {
+      key: "AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw",
+      location: "#{city.latitude},#{city.longitude}",
+      radius: 50000,
+  }
+
 
 #   response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
 #   photos = JSON.parse(response_photos)

@@ -20,117 +20,92 @@ class CitiesController < ApplicationController
   end
 
   def show
-
-    @city = City.find(params[:id])
+   @city = City.find(params[:id])
 
     @markers = [
       {
         lat: @city.latitude,
         lng: @city.longitude,
         icon: "http://res.cloudinary.com/dm2e6swvo/image/upload/c_scale,w_50/v1520525872/voyagr/black-pin.png"}]
+  
+    city_flights_in
+    city_flights_out
+    total_price
+  end
+  
+  private
+
+  def city_flights_out
+    @city = City.find(params[:id])
+    latitude = @city.latitude
+    longitude = @city.longitude
+    radius = "30km"
+    @city_from = "LHR,LGW,LCY,STN,SEN"
+    @city_to = "#{latitude.round(1)}-#{longitude.round(1)}-#{radius}"
+    counter = 0
+    start_date = Date.today
+    @hash_out = {
+      airline: [],
+      price: [],
+      logo: [],
+      departure: [],
+      arrival: []
+    }
+    until counter  >= 4
+      next_friday = start_date.next_week.advance(:days=>4)
+      next_saturday = start_date.next_week.advance(:days=>5)
+      url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{next_friday.strftime("%d/%m/%Y")}&dateTo=#{next_saturday.strftime("%d/%m/%Y")}&directFlights=0&partner=picky&partner_market=eur&curr=GBP&limit=1"
+      response_flight = RestClient.get(url)
+      flight = JSON.parse(response_flight)
+      airline = flight["data"].first["airlines"].first
+      @hash_out[:airline] << airline
+      @hash_out[:price] << flight["data"].first["conversion"]["GBP"]
+      @hash_out[:logo] << "https://images.kiwi.com/airlines/64/#{airline}.png"
+      @hash_out[:departure] << flight["data"].first["routes"].first.first
+      @hash_out[:arrival] << flight["data"].first["routes"].first.second
+      counter += 1
+      start_date = start_date.next_week
+    end
+  end
+
+  def city_flights_in
+    @city = City.find(params[:id])
+    latitude = @city.latitude
+    longitude = @city.longitude
+    radius = "30km"
+    @city_to = "LHR,LGW,LCY,STN,SEN"
+    @city_from = "#{latitude.round(1)}-#{longitude.round(1)}-#{radius}"
+    counter = 0
+    start_date = Date.today
+    @hash_in = {
+      airline: [],
+      price: [],
+      logo: [],
+      departure: [],
+      arrival: []
+    }
+    until counter  >= 4
+      next_sunday = start_date.next_week.advance(:days=>6)
+      next_monday = start_date.next_week.advance(:days=>6)
+      url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{next_sunday.strftime("%d/%m/%Y")}&dateTo=#{next_monday.strftime("%d/%m/%Y")}&directFlights=0&partner=picky&partner_market=eur&curr=GBP&limit=1"
+      response_flight = RestClient.get(url)
+      flight = JSON.parse(response_flight)
+      airline = flight["data"].first["airlines"].first
+      @hash_in[:airline] << airline
+      @hash_in[:price] << flight["data"].first["conversion"]["GBP"]
+      @hash_in[:logo] << "https://images.kiwi.com/airlines/64/#{airline}.png"
+      @hash_in[:departure] << flight["data"].first["routes"].first.first
+      @hash_in[:arrival] << flight["data"].first["routes"].first.second
+      counter += 1
+      start_date = start_date.next_week
+    end
+  end
 
 
-    # params_hotel = {
-    #   key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-    #   location: "#{@city.latitude},#{@city.longitude}",
-    #   radius: 50000,
-    #   keyword: "hotel"
-    # }
-
-    # response_hotel =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_hotel})
-    # @hotel = JSON.parse(response_hotel)
-
-
-    # params_restaurant = {
-    #   key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-    #   location: "#{@city.latitude},#{@city.longitude}",
-    #   radius: 50000,
-    #   keyword: "restaurant" || "cafe"
-    # }
-
-    # response_restaurant =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_restaurant})
-    # @restaurant = JSON.parse(response_restaurant)
-
-
-    # params_entertainment = {
-    #   key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-    #   location: "#{@city.latitude},#{@city.longitude}",
-    #   radius: 50000,
-    #   keyword: "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "spa" || "casino"
-    # }
-
-    # response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment})
-    # @entertainment = JSON.parse(response_entertainment)
-
-
-    # params_sightseeing = {
-    #   key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-    #   location: "#{@city.latitude},#{@city.longitude}",
-    #   radius: 50000,
-    #   keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue"
-    # }
-    # &directFlights=1&partner=picky&limit=1
-
-    # response_sightseeing =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_sightseeing})
-    # @sightseeing = JSON.parse(response_sightseeing)
-
-
-def find_flight_next_weekend
-  @city = City.find(params[:id])
-  latitude = @city.latitude
-  longitude = @city.longitude
-  radius = "50km"
-  @city_from = "LHR,LGW,LCY,STN,SEN"
-  @city_to = "#{latitude}-#{longitude}-#{radius}"
-  next_friday = Date.today.next_week.advance(:days=>4)
-  next_sunday= Date.today.next_week.advance(:days=>6)
-  url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{next_friday.strftime("%d/%m/%Y")}&dateTo=#{next_sunday.strftime("%d/%m/%Y")}&partner=picky&partner_market=eur&curr=GBP&limit=1"
-  response_flight = RestClient.get(url)
-  flight = JSON.parse(response_flight)
-  puts flight_price = flight["data"].first["conversion"]["GBP"]
-end
-
-def find_flight_next_next_weekend
-  @city = City.find(params[:id])
-  latitude = @city.latitude
-  longitude = @city.longitude
-  radius = "50km"
-  @city_from = "LHR,LGW,LCY,STN,SEN"
-  @city_to = "#{latitude}-#{longitude}-#{radius}"
-  next_next_friday = Date.today.next_week.advance(:days=>11)
-  next_next_sunday= Date.today.next_week.advance(:days=>13)
-  url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{next_next_friday.strftime("%d/%m/%Y")}&dateTo=#{next_next_sunday.strftime("%d/%m/%Y")}&partner=picky&partner_market=eur&curr=GBP&limit=1"
-  response_flight = RestClient.get(url)
-  flight = JSON.parse(response_flight)
-  puts flight_price = flight["data"].first["conversion"]["GBP"]
-end
-
-def three_weekend
-  @city = City.find(params[:id])
-  latitude = @city.latitude
-  longitude = @city.longitude
-  radius = "50km"
-  @city_from = "LHR,LGW,LCY,STN,SEN"
-  @city_to = "#{latitude}-#{longitude}-#{radius}"
-  three_friday = Date.today.next_week.advance(:days=>18)
-  three_sunday= Date.today.next_week.advance(:days=>20)
-  url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{three_friday.strftime("%d/%m/%Y")}&dateTo=#{three_sunday.strftime("%d/%m/%Y")}&partner=picky&partner_market=eur&curr=GBP&limit=1"
-  response_flight = RestClient.get(url)
-  flight = JSON.parse(response_flight)
-  puts flight_price = flight["data"].first["conversion"]["GBP"]
-end
-
-def four_weekend
-  @city = City.find(params[:id])
-  latitude = @city.latitude
-  longitude = @city.longitude
-  radius = "50km"
-  @city_from = "LHR,LGW,LCY,STN,SEN"
-  @city_to = "#{latitude}-#{longitude}-#{radius}"
-  four_friday = Date.today.next_week.advance(:days=>25)
-  four_sunday= Date.today.next_week.advance(:days=>27)
-  url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{four_friday.strftime("%d/%m/%Y")}&dateTo=#{four_sunday.strftime("%d/%m/%Y")}&partner=picky&partner_market=eur&curr=GBP&limit=1"
-  response_flight = RestClient.get(url)
-  flight = JSON.parse(response_flight)
-  puts flight_price = flight["data"].first["conversion"]["GBP"]
+  def total_price
+    @price_one = @hash_in[:price].first + @hash_out[:price].first
+    @price_two = @hash_in[:price].second + @hash_out[:price].second
+    @price_three = @hash_in[:price].third + @hash_out[:price].third
+    @price_four = @hash_in[:price].fourth + @hash_out[:price].fourth
+  end
 end
