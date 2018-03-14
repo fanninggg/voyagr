@@ -72,7 +72,8 @@ cities_attributes_1 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
   {
     name: 'Seville, Spain',
@@ -84,7 +85,8 @@ cities_attributes_1 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
     {
     name: 'Santorini, Greece',
@@ -96,7 +98,8 @@ cities_attributes_1 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
     {
     name: 'Gdansk, Poland',
@@ -108,7 +111,8 @@ cities_attributes_1 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
      {
     name: 'Canary Islands, Spain',
@@ -120,7 +124,8 @@ cities_attributes_1 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },   {
     name: 'Dublin, Ireland',
     budget:         'low',
@@ -131,162 +136,177 @@ cities_attributes_1 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
-  },   {
-    name: 'Budapest, Hungary',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Bar',
-    type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426756/voyagr/Budapest.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
-  },   {
-    name: 'Berlin, Germany',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Bar',
-    type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426671/voyagr/Berlin.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
-  },
-  {
-    name: 'Prague, Czech Republic',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Bar',
-    type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427263/voyagr/Prague.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
-  },
-  {
-    name: 'Dubrovnik, Croatia',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Bar',
-    type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426874/voyagr/Dubrovnik.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
-    name: 'Krakow, Poland',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Bar',
-    type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427018/voyagr/Krakow.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
-  },
+     name: 'Budapest, Hungary',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Bar',
+     type_of_city:        'Culturous',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426756/voyagr/Budapest.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'bar'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+     top_attractions: [,,,]
+   },   {
+     name: 'Berlin, Germany',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Bar',
+     type_of_city:        'Culturous',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426671/voyagr/Berlin.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'bar'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+     top_attractions: [,,,]
+   },
+   {
+     name: 'Prague, Czech Republic',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Bar',
+     type_of_city:        'Culturous',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427263/voyagr/Prague.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'bar'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+     top_attractions: [,,,]
+   },
+   {
+     name: 'Dubrovnik, Croatia',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Bar',
+     type_of_city:        'Relaxing',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426874/voyagr/Dubrovnik.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'bar'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+     top_attractions: []
+   },
     {
-    name: 'Madeira, Portugal',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Restaurant',
-    type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427105/voyagr/Madiera.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
- },
-  {
-    name: 'Stari Grad, Croatia',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Restaurant',
-    type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427376/voyagr/Stari_Grad.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
-  },
-  {
-    name: 'Malta Island, Malta',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Restaurant',
-    type_of_city:        'Adventurous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427113/voyagr/Malta_Island.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+     name: 'Krakow, Poland',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Bar',
+     type_of_city:        'Relaxing',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427018/voyagr/Krakow.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'bar'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+     top_attractions: []
+   },
+     {
+     name: 'Madeira, Portugal',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Restaurant',
+     type_of_city:        'Adventurous',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427105/voyagr/Madiera.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'bar'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+     top_attractions: []
   },
    {
-    name: 'Glasgow, UK',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Restaurant',
-    type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426900/voyagr/Glasgow.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
-  },
+     name: 'Stari Grad, Croatia',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Restaurant',
+     type_of_city:        'Adventurous',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427376/voyagr/Stari_Grad.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+     top_attractions: []
+   },
    {
-    name: 'Sarajevo, Bosnia and Herzegovina',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Restaurant',
-    type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427335/voyagr/Sarajevo.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
-  },
-   {
-    name: 'Prague, Czech Republic',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Restaurant',
-    type_of_city:        'Culturous',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427263/voyagr/Prague.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
-  },
-   {
-    name: 'Bruges, Belgium',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Restaurant',
-    type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426737/voyagr/Bruges.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
-  },
-   {
-    name: 'Brighton, UK',
-    budget:         'low',
-    location:      'Europe',
-    type_of_evening:  'Restaurant',
-    type_of_city:        'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426721/voyagr/Brighton.jpg",
-    price_answer: PriceAnswer.find_by(payload: '£'),
-    location_answer: LocationAnswer.find_by(payload: 'europe'),
-    evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
-  }
+     name: 'Malta Island, Malta',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Restaurant',
+     type_of_city:        'Adventurous',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427113/voyagr/Malta_Island.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+     top_attractions: []
+   },
+    {
+     name: 'Glasgow, UK',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Restaurant',
+     type_of_city:        'Culturous',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426900/voyagr/Glasgow.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+     top_attractions: [,,,]
+   },
+    {
+     name: 'Sarajevo, Bosnia and Herzegovina',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Restaurant',
+     type_of_city:        'Culturous',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427335/voyagr/Sarajevo.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+     top_attractions: [,,,]
+   },
+    {
+     name: 'Prague, Czech Republic',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Restaurant',
+     type_of_city:        'Culturous',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427263/voyagr/Prague.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+     top_attractions: [,,,]
+   },
+    {
+     name: 'Bruges, Belgium',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Restaurant',
+     type_of_city:        'Relaxing',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426737/voyagr/Bruges.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+     top_attractions: []
+   },
+    {
+     name: 'Brighton, UK',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Restaurant',
+     type_of_city:        'Relaxing',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426721/voyagr/Brighton.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+     top_attractions: []
+   }
 ]
 cities_attributes_2 = [
  {
@@ -299,7 +319,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
  {
     name: 'Madeira, Portugal',
@@ -311,7 +332,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Canary Islands, Spain',
@@ -323,7 +345,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Kotor, Montenegro',
@@ -335,7 +358,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
      {
     name: 'Sofia, Bulgaria',
@@ -347,7 +371,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
      {
     name: 'Minsk, Belarus',
@@ -359,7 +384,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
      {
     name: 'Madrid, Spain',
@@ -371,7 +397,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Sozopol, Bulgaria',
@@ -383,7 +410,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Granada, Spain',
@@ -395,7 +423,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Paphos, Cyprus',
@@ -407,7 +436,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
      {
     name: ' Cartagena, Colombia',
@@ -419,7 +449,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
     {
     name: 'Bangkok, Thailand',
@@ -431,7 +462,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
     {
     name: ' Antigua Guatemala, Guatemala',
@@ -443,7 +475,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
  {
     name: 'Cusco, Peru',
@@ -455,7 +488,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Valparaiso, Chile',
@@ -467,7 +501,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Kuala Lumpa, Malaysia',
@@ -479,7 +514,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Boracay, Philippines',
@@ -491,7 +527,8 @@ cities_attributes_2 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
      }
 ]
 cities_attributes_3 = [
@@ -505,7 +542,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Bogota, Columbia',
@@ -517,7 +555,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
     {
     name: 'Delhi, India',
@@ -529,7 +568,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Oaxaca, Mexico',
@@ -541,7 +581,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Addis Ababa, Ethiopia',
@@ -553,7 +594,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Mumbai, India',
@@ -565,7 +607,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
     {
     name: 'Angkor Wat, Cambodia',
@@ -577,7 +620,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
     {
     name: 'Casablanca, Morocco',
@@ -589,7 +633,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
  {
     name: 'Tunis, Tunisia',
@@ -601,7 +646,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
  {
     name: 'Cancun, Mexico',
@@ -613,7 +659,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
  {
     name: 'Jaipur, India',
@@ -625,7 +672,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Lahore, Pakistan',
@@ -637,7 +685,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Caracas, Venezuela',
@@ -649,7 +698,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Tehran, Iran',
@@ -661,7 +711,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
   {
     name: 'Angkor Wat, Cambodia',
@@ -673,7 +724,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
   {
     name: 'Colombo, Sri Lanka',
@@ -685,7 +737,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
   {
     name: 'Hội An, Vietnam',
@@ -697,7 +750,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Montevideo, Uruguay',
@@ -709,7 +763,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Vientiane, Laos',
@@ -721,7 +776,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '£'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Dublin, Ireland',
@@ -733,7 +789,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   }
 ]
   cities_attributes_4 = [
@@ -748,7 +805,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
     {
     name: 'Bonifacio, France',
@@ -760,7 +818,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
     {
     name: 'Vienna, Austria',
@@ -772,7 +831,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
       {
     name: 'Cambridge, England',
@@ -784,7 +844,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
       {
     name: 'Barcelona, Spain',
@@ -796,7 +857,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
     {
     name: 'Bilbao, Spain',
@@ -808,7 +870,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Lyon, France',
@@ -820,7 +883,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Bratislava, Slovakia',
@@ -832,7 +896,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
     {
     name: 'Lisbon, Portugal',
@@ -844,7 +909,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Mont Saint Michel, France',
@@ -856,7 +922,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Krk, Croatia',
@@ -868,7 +935,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
     {
     name: 'Athens, Greece',
@@ -880,7 +948,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
   {
     name: 'Milan, Italy',
@@ -892,7 +961,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
   {
     name: 'Bucharest, Romania',
@@ -904,7 +974,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
     {
     name: 'Lyon, France',
@@ -916,7 +987,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
      {
     name: 'Santorini, Greece',
@@ -928,7 +1000,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Porto, Portugal',
@@ -940,7 +1013,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
     {
     name: 'La Grave, France',
@@ -952,7 +1026,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
     {
     name: 'Isle of Skye, UK',
@@ -964,7 +1039,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Lisbon, Portugal',
@@ -976,7 +1052,8 @@ cities_attributes_3 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   }
 ]
 cities_attributes_5 = [
@@ -991,7 +1068,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Burgos, Spain',
@@ -1003,7 +1081,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Cork, Ireland',
@@ -1015,7 +1094,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
      {
     name: 'Split, Croatia',
@@ -1027,7 +1107,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
      {
     name: 'Helsinki, Finland',
@@ -1039,7 +1120,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Rio De Janeiro, Brazil',
@@ -1051,7 +1133,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
      {
     name: 'Chicago, Illinois',
@@ -1063,7 +1146,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
      {
     name: 'Moorea, Tahiti',
@@ -1075,7 +1159,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
      {
     name: 'Nairobi, Kenya',
@@ -1087,7 +1172,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
     {
     name: 'St. Petersburg, Russia',
@@ -1099,7 +1185,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
   {
     name: 'Montreal, Canada',
@@ -1111,7 +1198,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
        {
     name: 'Montego Bay, Jamaica',
@@ -1123,7 +1211,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Suva, Fiji',
@@ -1135,7 +1224,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Beirut, Lebanon',
@@ -1147,7 +1237,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: ' Burlington, US',
@@ -1159,7 +1250,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Jakarta, Indonesia',
@@ -1171,7 +1263,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: ' Istanbul, Turkey',
@@ -1183,7 +1276,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
     {
     name: 'Buenos Aires, Argentina',
@@ -1195,7 +1289,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
     {
     name: 'Beijing, China',
@@ -1207,7 +1302,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Marrakech, Morocco',
@@ -1219,7 +1315,8 @@ cities_attributes_5 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   }
 ]
 cities_attributes_6 = [
@@ -1233,7 +1330,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
     {
     name: 'Papeete, Bora Bora',
@@ -1245,7 +1343,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
       {
     name: 'Kathmandu, Nepal',
@@ -1257,7 +1356,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Zanzibar, Tanzania',
@@ -1269,7 +1369,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Samarkand, Uzbekistan',
@@ -1281,7 +1382,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Petra, Jordan',
@@ -1293,7 +1395,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Lalibela, Ethiopia',
@@ -1305,7 +1408,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Beijing, China',
@@ -1317,7 +1421,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Cape Town, South Africa',
@@ -1329,7 +1434,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },   {
     name: 'Honolulu, Hawaii',
     budget:         'Medium',
@@ -1340,7 +1446,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Papeete, Bora Bora',
@@ -1352,7 +1459,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
  {
     name: 'Chamonix, France',
@@ -1364,7 +1472,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Lucerne, Switzerland',
@@ -1376,7 +1485,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Capri, Italy',
@@ -1388,7 +1498,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
  {
     name: 'London, England',
@@ -1400,7 +1511,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Florence, Italy',
@@ -1412,7 +1524,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Paris, France',
@@ -1424,7 +1537,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Geneva, Switzerland',
@@ -1436,7 +1550,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Manchester, UK',
@@ -1448,7 +1563,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Nice, France',
@@ -1460,7 +1576,8 @@ cities_attributes_6 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   }
 ]
 cities_attributes_7 = [
@@ -1474,7 +1591,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Lausanne, Switzerland',
@@ -1486,7 +1604,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Bergen, Norway',
@@ -1498,7 +1617,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
     {
     name: 'Vatican City',
@@ -1510,7 +1630,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
     {
     name: 'Amsterdam, Netherlands',
@@ -1522,7 +1643,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
     {
     name: 'Rome, Italy',
@@ -1534,7 +1656,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Copenhagen, Denmark',
@@ -1546,7 +1669,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Zurich, Switzerland',
@@ -1558,7 +1682,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Wild Taiga, Finland',
@@ -1570,7 +1695,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Edinburgh, Scotland',
@@ -1582,7 +1708,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Gothenburg, Sweden',
@@ -1594,7 +1721,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Stockholm, Sweden',
@@ -1606,7 +1734,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Brussels, Belgium',
@@ -1618,7 +1747,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Maastricht, The Netherlands',
@@ -1630,7 +1760,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Rotterdam, Netherlands ',
@@ -1642,7 +1773,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Oslo, Norway',
@@ -1654,7 +1786,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Reykjavik, Iceland',
@@ -1666,7 +1799,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Havana, Cuba',
@@ -1679,6 +1813,7 @@ cities_attributes_7 = [
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: [],
   },
   {
     name: 'Queenstown, New Zealand',
@@ -1690,7 +1825,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Melbourne, Australia',
@@ -1702,7 +1838,8 @@ cities_attributes_7 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   }
 ]
 cities_attributes_8 = [
@@ -1717,6 +1854,7 @@ cities_attributes_8 = [
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,],
   },
    {
     name: 'Osaka, Japan',
@@ -1728,7 +1866,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Shanghai, China',
@@ -1740,7 +1879,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
   {
     name: 'Sydney, Australia',
@@ -1752,7 +1892,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Vancouver, Canada',
@@ -1764,7 +1905,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'San Diego, US',
@@ -1776,7 +1918,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'bar'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'San Francisco, United States',
@@ -1788,7 +1931,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Bali, Indonesia',
@@ -1800,7 +1944,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Niagara Falls, US/ Canada',
@@ -1812,7 +1957,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Taipei, Taiwan',
@@ -1824,7 +1970,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Ulan Bator, Mongolia',
@@ -1836,7 +1983,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Seoul, South Korea',
@@ -1848,7 +1996,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
   {
     name: 'Washington DC, US',
@@ -1860,7 +2009,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Dubai, United Arab Emirates',
@@ -1872,7 +2022,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Bern, Switzerland',
@@ -1884,7 +2035,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
   {
     name: 'Auckland, New Zealand',
@@ -1896,7 +2048,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Grand Canyon, US',
@@ -1908,7 +2061,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
   {
     name: 'Banff, Canada',
@@ -1920,7 +2074,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
+    top_attractions: []
   },
    {
     name: 'Kyoto, Japan',
@@ -1932,7 +2087,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Wellington, New Zealand',
@@ -1944,7 +2100,8 @@ cities_attributes_8 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   }
 ]
 cities_attributes_9 = [
@@ -1958,7 +2115,8 @@ cities_attributes_9 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'culture')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
+    top_attractions: [,,,]
   },
    {
     name: 'Victoria, Seychelles',
@@ -1970,7 +2128,8 @@ cities_attributes_9 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Honolulu, Hawaii',
@@ -1982,7 +2141,8 @@ cities_attributes_9 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   },
    {
     name: 'Dubai, UAE',
@@ -1994,7 +2154,8 @@ cities_attributes_9 = [
     price_answer: PriceAnswer.find_by(payload: '£££'),
     location_answer: LocationAnswer.find_by(payload: 'further'),
     evening_answer: EveningAnswer.find_by(payload: 'locals'),
-    city_type_answer: CityTypeAnswer.find_by(payload: 'relax')
+    city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+    top_attractions: []
   }
 ]
 
@@ -2048,163 +2209,138 @@ end
 cities = City.all
 cities.each do |city|
 
-#   params_hotel = {
-#       key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-#       location: "#{city.latitude},#{city.longitude}",
-#       radius: 50000,
-#       keyword: "hotel"
-#     }
+  # if type_of_evening == 'Meet the locals'
 
-#   response_hotel =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_hotel})
-#   hotels = JSON.parse(response_hotel)
-#   hotel = hotels["results"][0]
-#   photos = hotel["photos"] if hotel
-#   photo = photos[0] if photos
-#   ref_pic = photo["photo_reference"] if photo
-#   ref_pic ||= ''
-#   hotel_name = hotel["name"] if hotel
-#   hotel_description = hotel["vicinity"] if hotel
+  # else
 
-#   hotel = Suggestion.new(city: city, name: hotel_name, description: hotel_description, photo:ref_pic, result_type: "hotel")
-#   hotel.save!
-#   sleep(1)
+  # @api_key = "AIzaSyB_NyFrZFmA5lX_C1CHFWUGsn611j_oJb0"
+  # params_entertainment = {
+  #        key: @api_key,
+  #        location: "#{city.latitude},#{city.longitude}",
+  #        radius: 50000,
+  #        keyword: 'activity' || 'entertainment' || 'museum'
+  # }
 
-#   params_restaurant = {
-#       key: "AIzaSyCPu5AKvkPmD4FX6X6GTAWXG6HorEuyCio",
-#       location: "#{city.latitude},#{city.longitude}",
-#       radius: 50000,
-#       keyword: "restaurant" || "cafe"
-#     }
+  # response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment})
 
-#   response_restaurant =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_restaurant})
-#   restaurants = JSON.parse(response_restaurant)
-#   restaurant = restaurants["results"][0]
-#   photos = restaurant["photos"] if restaurant
-#   photo = photos[0] if photos
-#   ref_pic = photo["photo_reference"] if photo
-#   ref_pic ||= ''
-#   restaurant_name = restaurant["name"] if restaurant
-#   restaurant_description = restaurant["vicinity"] if restaurant
+  # entertainments = JSON.parse(response_entertainment)
 
-#   restaurant = Suggestion.new(city: city, name: restaurant_name, description: restaurant_description, photo:ref_pic, result_type: "restaurant")
-#   restaurant.save!
-#   sleep(1)
+  # entertainment_1 = entertainments["results"][0]
+  # entertainment_2 = entertainments["results"][1]
 
+  # photos_1 = entertainment_1["photos"] if entertainment_1
+  # photos_2 = entertainment_2["photos"] if entertainment_2
 
-  puts 'Now for the entertainment'
+  # photo_1 = photos_1[0] if photos_1
+  # photo_2 = photos_2[0] if photos_2
 
+  # ref_pic_1 = photo_1["photo_reference"] if photo_1
+  # ref_pic_2 = photo_2["photo_reference"] if photo_2
 
-  #keyword_sample = ["museum", "city_hall", "hindu_temple", "church", "mosque", "synagogue", "night_club", "amusement_park", "aquarium", "art_gallery", "movie_theater", "spa", "casino"].sample
+  # ref_pic_1 ||= ''
+  # ref_pic_2 ||= ''
+
+  # entertainment_name_1 = entertainment_1["name"] if entertainment_1
+  # entertainment_name_2 = entertainment_2["name"] if entertainment_2
+
+  # entertainment_description_1 = entertainment_1["vicinity"] if entertainment_1
+  # entertainment_description_2 = entertainment_2["vicinity"] if entertainment_2
+
+  # entertainment_1 = Suggestion.new(city: city, name: entertainment_name_1, description: entertainment_description_1, photo:ref_pic_1, result_type: "entertainment")
+  # entertainment_2 = Suggestion.new(city: city, name: entertainment_name_2, description: entertainment_description_2, photo:ref_pic_2, result_type: "entertainment")
+
+  # entertainment_1.save!
+  # puts 'Entertainment 1'
+  # entertainment_2.save!
+  # puts 'Entertainment 2'
+  # sleep(1)
 
 
-  params_entertainment = {
-         key: "AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw",
-         location: "#{city.latitude},#{city.longitude}",
-         radius: 50000,
-         keyword: "museum" || "city_hall" || "hindu_temple" || "church" || "mosque" || "synagogue" || "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "spa" || "casino"
-  }
-
-  response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment})
-  entertainments = JSON.parse(response_entertainment)
-
-  entertainment = entertainments["results"][0]
-  entertainment_1 = entertainments["results"][1]
 
 
-  photos = entertainment["photos"] if entertainment
+  # params_entertainment_1 = {
+  #        key: @api_key,
+  #        location: "#{city.latitude},#{city.longitude}",
+  #        radius: 50000,
+  #        keyword:  "night_club" || "amusement_park" || "aquarium" || "art_gallery" || "movie_theater" || "casino"
+  # }
 
-  photo = photos[0] if photos
-  ref_pic = photo["photo_reference"] if photo
-  ref_pic ||= ''
-  entertainment_name = entertainment["name"] if entertainment
-  entertainment_1_name = entertainment_1["name"] if entertainment_1
+  # response_entertainment =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_entertainment_1})
+  # entertainments = JSON.parse(response_entertainment)
+  # entertainment_1 = entertainments["results"][1]
+  # photos_1 = entertainment["photos"] if entertainment_1
+  # photo_1 = photos[1] if photos_1
+  # ref_pic_1 = photo["photo_reference"] if photo_1
+  # ref_pic_1 ||= ''
+  # entertainment_1_name = entertainment_1["name"] if entertainment_1
+  # entertainment_1_description = entertainment_1["vicinity"] if entertainment_1
+  # entertainment_1 = Suggestion.new(city: city, name: entertainment_1_name, description: entertainment_1_description, photo:ref_pic_1, result_type: "entertainment")
+  # entertainment_1.save!
+  # puts 'Entertainment 2'
+  # sleep(1)
 
-  entertainment_description = entertainment["vicinity"] if entertainment
-  entertainment_1_description = entertainment_1["vicinity"] if entertainment_1
+  # puts 'Now for the photos'
 
-  entertainment = Suggestion.new(city: city, name: entertainment_name, description: entertainment_description, photo:ref_pic, result_type: "entertainment")
-  entertainment_1 = Suggestion.new(city: city, name: entertainment_1_name, description: entertainment_1_description, photo:ref_pic, result_type: "entertainment")
+  # params_photos = {
+  #     key:  "AIzaSyB_NyFrZFmA5lX_C1CHFWUGsn611j_oJb0",
+  #     location: "#{city.latitude},#{city.longitude}",
+  #     radius: 50000,
+  # }
 
-  entertainment.save!
-  entertainment_1.save!
-  sleep(1)
+  # response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
+  # photos = JSON.parse(response_photos)
+  # photo = photos["results"][0]
+  # photos = photo["photos"] if photo
+  # photo = photos[0] if photos
+  # ref_pic = photo["photo_reference"] if photo
+  # ref_pic ||= ''
 
-  puts 'Now for the photos'
+  # photo = CityPhoto.new(city: city, photo:ref_pic)
+  # photo.save!
 
-  params_photos = {
-      key: "AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw",
-      location: "#{city.latitude},#{city.longitude}",
-      radius: 50000,
-  }
+  # response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
+  # photos = JSON.parse(response_photos)
+  # photo_1 = photos["results"][1]
+  # photos_1 = photo_1["photos"] if photo_1
+  # photo_1 = photos_1[0] if photos_1
+  # ref_pic_1 = photo_1["photo_reference"] if photo_1
+  # ref_pic_1 ||= ''
 
-  response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
-  photos = JSON.parse(response_photos)
-  photo = photos["results"][0]
-  photos = photo["photos"] if photo
-  photo = photos[0] if photos
-  ref_pic = photo["photo_reference"] if photo
-  ref_pic ||= ''
+  # photo_1 = CityPhoto.new(city: city, photo:ref_pic_1)
+  # photo_1.save!
 
-  photo = CityPhoto.new(city: city, photo:ref_pic)
-  photo.save!
+  # response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
+  # photos = JSON.parse(response_photos)
+  # photo_2 = photos["results"][2]
+  # photos_2 = photo_2["photos"] if photo_2
+  # photo_2 = photos_2[0] if photos_2
+  # ref_pic_2 = photo_2["photo_reference"] if photo_2
+  # ref_pic_2 ||= ''
 
-  response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
-  photos = JSON.parse(response_photos)
-  photo_1 = photos["results"][1]
-  photos_1 = photo_1["photos"] if photo_1
-  photo_1 = photos_1[0] if photos_1
-  ref_pic_1 = photo_1["photo_reference"] if photo_1
-  ref_pic_1 ||= ''
+  # photo_2 = CityPhoto.new(city: city, photo:ref_pic_2)
+  # photo_2.save!
 
-  photo_1 = CityPhoto.new(city: city, photo:ref_pic_1)
-  photo_1.save!
+  # response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
+  # photos = JSON.parse(response_photos)
+  # photo_3 = photos["results"][3]
+  # photos_3 = photo_3["photos"] if photo_3
+  # photo_3 = photos_3[0] if photos_3
+  # ref_pic_3 = photo_3["photo_reference"] if photo_3
+  # ref_pic_3 ||= ''
 
-  response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
-  photos = JSON.parse(response_photos)
-  photo_2 = photos["results"][2]
-  photos_2 = photo_2["photos"] if photo_2
-  photo_2 = photos_2[0] if photos_2
-  ref_pic_2 = photo_2["photo_reference"] if photo_2
-  ref_pic_2 ||= ''
+  # photo_3 = CityPhoto.new(city: city, photo:ref_pic_3)
+  # photo_3.save!
 
-  photo_2 = CityPhoto.new(city: city, photo:ref_pic_2)
-  photo_2.save!
+  # response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
+  # photos = JSON.parse(response_photos)
+  # photo_4 = photos["results"][4]
+  # photos_4 = photo_4["photos"] if photo_4
+  # photo_4 = photos_4[0] if photos_4
+  # ref_pic_4 = photo_4["photo_reference"] if photo_4
+  # ref_pic_4 ||= ''
 
-  response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
-  photos = JSON.parse(response_photos)
-  photo_3 = photos["results"][3]
-  photos_3 = photo_3["photos"] if photo_3
-  photo_3 = photos_3[0] if photos_3
-  ref_pic_3 = photo_3["photo_reference"] if photo_3
-  ref_pic_3 ||= ''
-
-  photo_3 = CityPhoto.new(city: city, photo:ref_pic_3)
-  photo_3.save!
-
-  response_photos =  RestClient.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {params: params_photos})
-  photos = JSON.parse(response_photos)
-  photo_4 = photos["results"][4]
-  photos_4 = photo_4["photos"] if photo_4
-  photo_4 = photos_4[0] if photos_4
-  ref_pic_4 = photo_4["photo_reference"] if photo_4
-  ref_pic_4 ||= ''
-
-  photo_4 = CityPhoto.new(city: city, photo:ref_pic_4)
-  photo_4.save!
-  sleep(1)
+  # photo_4 = CityPhoto.new(city: city, photo:ref_pic_4)
+  # photo_4.save!
+  # sleep(1)
 end
 
-
-
-#entertainments.each do |entertainment|
-#   entertainment["results"]
-#   photos = entertainment["photos"] if entertainment
-#   photo = photos if photos
-#   ref_pic = photo["photo_reference"] if photo
-#   ref_pic ||= ''
-#   entertainment_name = entertainment["name"] if entertainment
-#   entertainment_description = entertainment["vicinity"] if entertainment
-
-#   entertainment = Suggestion.new(city: city, name: entertainment_name, description: entertainment_description, photo:ref_pic, result_type: "entertainment")
-#   entertainment.save!
-# end

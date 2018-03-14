@@ -25,19 +25,19 @@
 
               <div id="slideshow">
                 <div>
-                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
+                  <%#= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
                 </div>
                 <div>
-                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
+                  <%#= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
                 </div>
                 <div>
-                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
+                  <%#= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
                 </div>
                 <div>
-                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
+                  <%#= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
                 </div>
                 <div>
-                  <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
+                  <%#= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw" %>
                 </div>
               </div>
 
@@ -45,9 +45,6 @@
                 <h2>Things to do</h2>
                 <div class="image-and-text">
                   <%= cl_image_tag "voyagr/entertainment.jpg", width: 350, height: 200, class: "gen-image" %>
-                  <!-- <div class="text-and-button">
-                    <p>VoyagrBot recommends these places for you to entertain yourself while exploring <%= @city.name %>. These are suggestions based on your answers.</p>
-                  </div> -->
                 </div>
               </div>
               <div class="col-xs-3 show-map">
@@ -56,15 +53,19 @@
               </div>
             </div>
 
+
+
             <div id="entertainment">
               <div class="suggestion">
                 <!-- for all suggestions do : -->
-                <%=image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{@city.suggestions.first.photo}"%>
-                <%=image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{@city.suggestions.last.photo}"%>
+                <%=image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{@city.suggestions.first.photo}&key=AIzaSyB_NyFrZFmA5lX_C1CHFWUGsn611j_oJb0"%>
                 <p>
                 <%= @city.suggestions.first.name %> - near: <%= @city.suggestions.first.description %>
                 </p>
-                 <p>
+              </div>
+              <div class="suggestion">
+                <%=image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{@city.suggestions.last.photo}&key=AIzaSyB_NyFrZFmA5lX_C1CHFWUGsn611j_oJb0"%>
+                <p>
                   <%= @city.suggestions.last.name %> - near: <%= @city.suggestions.last.description %>
                  </p>
               </div>
