@@ -13,7 +13,7 @@
   </div>
 
   <div class="ticket-box">
-    <h3 class="text-center">Tempted? Here are some flight prices</h3>
+    <h2 class="text-center">Tempted? Here are some flight prices</h2>
     <div class="tickets">
       <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>
       <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>
@@ -24,7 +24,7 @@
 
   <div class="ttd-and-slideshow">
     <div class="info-card things-to-do">
-      <h3>Top Sights in <%= @city.name %></h3>
+      <h2>Top Sights in <%= @city.name %></h2>
       <div class="things-group">
         <div class="thing">
           <p>Thing 1</p>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="slideshow-container info-card">
-      <h3>Some more pictures</h3>
+      <h2>Some more pictures</h2>
       <div class="mySlides1">
         <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 400, height: 300%>
       </div>
