@@ -74,7 +74,8 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.thing {
+.things-blur {
+  filter: blur(0.5px);
 }
 .slideshow-container {
   position: relative;
@@ -137,10 +138,19 @@
 
 
 @media only screen and (max-width: 500px) {
-  .show-background {
-
+  .ttd-and-slideshow {
+    flex-direction: column;
   }
 
+  .things-to-do {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .thing {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   #map {
 
   }
