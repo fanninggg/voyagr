@@ -58,16 +58,12 @@
             <div id="entertainment">
               <div class="suggestion">
                 <!-- for all suggestions do : -->
-                <%=image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{@city.suggestions.first.photo}&key=AIzaSyB_NyFrZFmA5lX_C1CHFWUGsn611j_oJb0"%>
-                <p>
-                <%= @city.suggestions.first.name %> - near: <%= @city.suggestions.first.description %>
-                </p>
-              </div>
-              <div class="suggestion">
-                <%=image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{@city.suggestions.last.photo}&key=AIzaSyB_NyFrZFmA5lX_C1CHFWUGsn611j_oJb0"%>
-                <p>
-                  <%= @city.suggestions.last.name %> - near: <%= @city.suggestions.last.description %>
-                 </p>
+             <p>
+               <%= @city.top_attractions_1 %>
+               <%= @city.top_attractions_2 %>
+               <%= @city.top_attractions_3 %>
+             </p>
+
               </div>
             </div>
 <!--
