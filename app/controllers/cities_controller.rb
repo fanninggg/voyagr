@@ -21,9 +21,16 @@ class CitiesController < ApplicationController
 
   def show
 
-    city_flights_in
-  end
 
+    @city = City.find(params[:id])
+
+    @markers = [
+      {
+        lat: @city.latitude,
+        lng: @city.longitude,
+        icon: "http://res.cloudinary.com/dm2e6swvo/image/upload/c_scale,w_50/v1520525872/voyagr/black-pin.png"}]
+  end
+  
   private
 
   def city_flights_out
@@ -83,4 +90,5 @@ class CitiesController < ApplicationController
       start_date = start_date.next_week
     end
   end
+
 end

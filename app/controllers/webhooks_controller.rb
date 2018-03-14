@@ -23,6 +23,7 @@ class WebhooksController < ApplicationController
       entry["messaging"].each do |messaging|
         sender = messaging["sender"]["id"]
         if Trip.find_by(sender: sender).nil?
+          puts "sender nil"
           trip = Trip.create(sender: sender)
           trip_answer = TripAnswer.create(sender: sender, trip: trip)
         end
@@ -34,8 +35,10 @@ class WebhooksController < ApplicationController
           #do nothing
         elsif messaging["postback"]
           if messaging["postback"]["payload"] == "Get Started"
+            puts "i got the get started"
             Trip.where(sender: sender).destroy_all
             bot_reply = bot_welcome_reply(sender)
+            puts "i've read the bot reply"
             HTTP.post(url, json: bot_reply)
           elsif messaging["postback"]["payload"] == "Let's go!"
             Trip.where(sender: sender).destroy_all
@@ -59,8 +62,11 @@ class WebhooksController < ApplicationController
         elsif messaging["message"]["text"] == "Hi"
           puts "i got the hi"
           Trip.where(sender: sender).destroy_all
+          puts "i destroyed everything"
           bot_reply = bot_choices_reply(sender)
+          puts "i made the reply"
           HTTP.post(url, json: bot_reply)
+          puts "i posted the reply"
         elsif messaging["message"]["text"] == "hi"
           puts "i got the hi"
           Trip.where(sender: sender).destroy_all

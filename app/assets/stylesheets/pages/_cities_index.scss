@@ -1,7 +1,7 @@
 .index-page {
   h1 {
-    color: rgb(220,220,220);
-    font-size: 56px;
+    color: rgb(255, 255, 255);
+    font-size: 60px;
   } h2 {
     font-size: 40px;
     font-weight: lighter;
@@ -10,12 +10,45 @@
   } h3 {
     color: #F89D29;
     font-size: 30px;
-    } p {
+    } a {
     width: 300px;
-    font-size: 16px;
+    font-size: 32px;
     font-weight: lighter;
-    color: rgb(255, 255, 255);
-    opacity: 0.6;
+    color: white;
+    } a:hover {
+      text-decoration: none;
+    } li {
+      padding-bottom: 30px;
+    }
+}
+
+.index-title {
+  margin-left: 35px;
+  margin-bottom: 20px;
+  a:hover {
+    color: #F89D29;
+  }
+}
+
+.answers {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 400px;
+  align-items: center;
+}
+
+.index-picture {
+  background-size: cover;
+  height: 100vh;
+}
+
+.index-page-content {
+  p {
+    border-radius: 60px;
+    padding: 10px;
+    border: solid 2px rgb(255, 255, 255);
+  } p:hover {
+    background-color: rgba(230, 230, 230, .2)
   }
 }
 
@@ -29,20 +62,23 @@
   width: 20px;
 }
 
-.cards-box {
-  display: flex;
-  lex-direction: row;
+@media only screen and (max-width: 415px) {
+  .index-page p {
+    font-size: 12px;
+    margin: 0px 15px;
+  }
+  .index-page a {
+    font-size: 25px;
+  }
+  .index-page h1 {
+    font-size: 30px;
+  }
+  .index-page h3 {
+    font-size: 20px;
+  }
+  .logo-world {
+    height: 12px;
+    width: 12px;
+  }
 }
-.city-card {
-  width: 477px;
-  margin: 10px;
-}
-.city {
-  height: 215px;
-  width: 450px;
-}
-.what {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+

@@ -1,12 +1,12 @@
 import swal from 'sweetalert';
 
-
 function bindSweetAlertButtonDemo() {
   document.getElementById('sweet-alert-demo').addEventListener('click', () => {
     swal({
       title: "Correct",
       text: "Well done!",
       icon: "success"
+    })
   });
 }
 
