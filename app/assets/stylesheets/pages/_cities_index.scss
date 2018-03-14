@@ -1,26 +1,32 @@
 .index-page {
-  h1 {
-    color: rgb(255, 255, 255);
-    font-size: 60px;
-  } h2 {
-    font-size: 40px;
-    font-weight: lighter;
-    color: rgb(255, 255, 255);
-    opacity: 0.6;
-  } h3 {
-    color: #F89D29;
-    font-size: 30px;
-    } a {
-    width: 300px;
-    font-size: 32px;
-    font-weight: lighter;
-    color: white;
-    } a:hover {
-      text-decoration: none;
-    } li {
-      padding-bottom: 30px;
+    h1 {
+      color: rgb(255, 255, 255);
+      font-size: 60px;
+    } h2 {
+      font-size: 40px;
+      font-weight: lighter;
+      color: rgb(255, 255, 255);
+      opacity: 0.6;
+    } h3 {
+      color: #F89D29;
+      font-size: 30px;
+      } a {
+      width: 300px;
+      font-size: 32px;
+      font-weight: lighter;
+      color: white;
+      } a:hover {
+        text-decoration: none;
+      } li {
+        padding-bottom: 30px;
+      }
     }
-}
+
+  .logo-world {
+    height: 20px;
+    width: 20px;
+  }
+
 
 .index-title {
   margin-left: 35px;
@@ -47,6 +53,8 @@
     border-radius: 60px;
     padding: 10px;
     border: solid 2px rgb(255, 255, 255);
+    color: white;
+    font-size: 24px;
   } p:hover {
     background-color: rgba(230, 230, 230, .2)
   }
@@ -57,10 +65,7 @@
   margin-top: -25px;
 }
 
-.logo-world {
-  height: 20px;
-  width: 20px;
-}
+
 
 @media only screen and (max-width: 415px) {
   .index-page p {
@@ -68,7 +73,9 @@
     margin: 0px 15px;
   }
   .index-page a {
-    font-size: 25px;
+    font-size: 18px;
+    color: white;
+    font-weight: lighter;
   }
   .index-page h1 {
     font-size: 30px;
