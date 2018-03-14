@@ -17,8 +17,9 @@
     color: rgb(150, 150, 150);
     opacity: 1;
   } p {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
     font-size: 16px;
-    font-weight: lighter;
     color: rgb(150, 150, 150);
     opacity: 1;
   } a:hover {
@@ -43,14 +44,58 @@
   padding-top: 20px;
   z-index: 5;
 }
-.tickets {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 70px;
-}
 .ticket-box {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+.ticket-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto 15px auto;
+  background-color: rgb(255,255,255);
+  height: 200px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.07)
+}
+.ticket-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px 0 10px 0;
+}
+.ticket-card-body-element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+.column-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+.tickets {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+}
+.ticket-out {
+  display: flex;
+  flex-direction: row;
+}
+.ticket-back {
+  display: flex;
+  flex-direction: row;
+}
+.airline-logo {
+  height: 20px;
+  width: 20px;
+}
+.fa-plane {
+  font-size: 20px;
 }
 .info-card {
   padding-bottom: 50px;

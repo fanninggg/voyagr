@@ -12,51 +12,142 @@
     </div>
   </div>
 
+  <h2 class="text-center">Tempted? Here are some flight prices</h2>
+
   <div class="ticket-box">
-    <h2 class="text-center">Tempted? Here are some flight prices</h2>
-    <div class="tickets">
-
-    <h3>Flight from London for next weekend</h3>
-    <%= @price_one %>
-    <%= @hash_out[:logo].first %>
-    <%= @hash_out[:departure].first %>
-    <%= @hash_out[:arrival].first %>
-    <%= @hash_in[:logo].first %>
-    <%= @hash_in[:departure].first %>
-    <%= @hash_in[:arrival].first %>
-    </div>
-
-    <div class="tickets">
-  <h3>Flight from London in two weekend</h3>
-    <%= @price_two %>
-    <%= @hash_out[:logo].second %>
-    <%= @hash_out[:departure].second %>
-    <%= @hash_out[:arrival].second %>
-    <%= @hash_in[:logo].second %>
-    <%= @hash_in[:departure].second %>
-    <%= @hash_in[:arrival].second %>
-  </div>
-
-  <div class="tickets">
-<h3>Flight from London in three weekend</h3>
-    <%= @price_three %>
-    <%= @hash_out[:logo].third %>
-    <%= @hash_out[:departure].third %>
-    <%= @hash_out[:arrival].third %>
-    <%= @hash_in[:logo].third %>
-    <%= @hash_in[:departure].third %>
-    <%= @hash_in[:arrival].third %>
-  </div>
-
-  <div class="tickets">
- <h3>Flight from London in four weekend</h3>
-    <%= @price_four %>
-    <%= @hash_out[:logo].fourth %>
-    <%= @hash_out[:departure].fourth %>
-    <%= @hash_out[:arrival].fourth %>
-    <%= @hash_in[:logo].fourth %>
-    <%= @hash_in[:departure].fourth %>
-    <%= @hash_in[:arrival].fourth %>
+    <div class="row">
+      <div class="col-xs-6 col-sm-3">
+        <div class="ticket-card">
+          <div class="ticket-card-body">
+            <div class="ticket-card-body-element">
+              <div class="column-one">
+               <p><%= @hash_out[:departure].first %></p>
+              </div>
+              <div class="column-two">
+                <p><i class="fa fa-plane"></i></p>
+                <!-- <p><img src="<%= @hash_out[:logo].first %>" alt="Logo" class="airline-logo"></p> -->
+              </div>
+              <div class="column-three">
+              <p><%= @hash_out[:arrival].first %></p>
+              </div>
+            </div>
+            <div class="ticket-card-body-element">
+              <div class="column-one">
+                <p><%= @hash_in[:departure].first %></p>
+              </div>
+              <div class="column-two">
+                <p><i class="fa fa-plane"></i></p>
+                <!-- <p><img src="<%= @hash_in[:logo].first %>" alt="Logo" class="airline-logo"></p> -->
+              </div>
+              <div class="column-three">
+              <p><%= @hash_in[:arrival].first %></p>
+              </div>
+            </div>
+          </div>
+          <div class="ticket-card-price">
+          <p>£<%= @price_one %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <div class="ticket-card">
+          <div class="ticket-card-body">
+            <div class="ticket-card-body-element">
+              <div class="column-one">
+               <p> <%= @hash_out[:departure].second %></p>
+              </div>
+              <div class="column-two">
+                <p><i class="fa fa-plane"></i></p>
+                <!-- <p><img src="<%= @hash_out[:logo].second %>" alt="Logo" class="airline-logo"></p> -->
+              </div>
+              <div class="column-three">
+              <p><%= @hash_out[:arrival].second %></p>
+              </div>
+            </div>
+            <div class="ticket-card-body-element">
+              <div class="column-one">
+                <p><%= @hash_in[:departure].second %></p>
+              </div>
+              <div class="column-two">
+                <p><i class="fa fa-plane"></i></p>
+                <!-- <p><img src="<%= @hash_in[:logo].second %>" alt="Logo" class="airline-logo"></p> -->
+              </div>
+              <div class="column-three">
+              <p><%= @hash_in[:arrival].second %></p>
+              </div>
+            </div>
+          </div>
+          <div class="ticket-card-price">
+          <p>£<%= @price_two %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <div class="ticket-card">
+          <div class="ticket-card-body">
+            <div class="ticket-card-body-element">
+              <div class="column-one">
+               <p><%= @hash_out[:departure].third %></p>
+              </div>
+              <div class="column-two">
+                <p><i class="fa fa-plane"></i></p>
+                <!-- <p><img src="<%= @hash_out[:logo].third %>" alt="Logo" class="airline-logo"></p> -->
+              </div>
+              <div class="column-three">
+              <p><%= @hash_out[:arrival].third %></p>
+              </div>
+            </div>
+            <div class="ticket-card-body-element">
+              <div class="column-one">
+                <p><%= @hash_in[:departure].third %></p>
+              </div>
+              <div class="column-two">
+                <p><i class="fa fa-plane"></i></p>
+                <!-- <p><img src="<%= @hash_in[:logo].third %>" alt="Logo" class="airline-logo"></p> -->
+              </div>
+              <div class="column-three">
+              <p><%= @hash_in[:arrival].third %></p>
+              </div>
+            </div>
+          </div>
+          <div class="ticket-card-price">
+          <p>£<%= @price_one %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <div class="ticket-card">
+          <div class="ticket-card-body">
+            <div class="ticket-card-body-element">
+              <div class="column-one">
+               <p><%= @hash_out[:departure].fourth %></p>
+              </div>
+              <div class="column-two">
+                <p><i class="fa fa-plane"></i></p>
+                <!-- <p><img src="<%= @hash_out[:logo].fourth %>" alt="Logo" class="airline-logo"></p> -->
+              </div>
+              <div class="column-three">
+              <p><%= @hash_out[:arrival].fourth %></p>
+              </div>
+            </div>
+            <div class="ticket-card-body-element">
+              <div class="column-one">
+                <p><%= @hash_in[:departure].fourth %></p>
+              </div>
+              <div class="column-two">
+                <p><i class="fa fa-plane"></i></p>
+                <!-- <p><img src="<%= @hash_in[:logo].fourth %>" alt="Logo" class="airline-logo"></p> -->
+              </div>
+              <div class="column-three">
+              <p><%= @hash_in[:arrival].fourth %></p>
+              </div>
+            </div>
+          </div>
+          <div class="ticket-card-price">
+          <p>£<%= @price_four %></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
