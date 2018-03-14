@@ -7,6 +7,6 @@ Rails.application.load_tasks
 
 # curl -X POST -H "Content-Type: application/json" -d '{
 #   "setting_type" : "domain_whitelisting",
-#   "whitelisted_domains" : ["https://f5dbedd6.ngrok.io"],
+#   "whitelisted_domains" : ["https://c0df5ea9.ngrok.io"],
 #   "domain_action_type": "add"
-# }' "https://graph.facebook.com/v2.6/me/thread_settings?access_token=EAAFHfgUlUNUBAOollUQNYrQzR2efyTPp4moA1Diw7ExiL2MUiio3KqphaXnn0yZBvOswmmZC8RNdCXloJHQt9FSehgA1OtxDugaGSG1WGcltsXZAB84g59mcBp4ernIJfPFTqOY0xcAWfpZCRWMnGItyf5HbsiPD6NezGxCSxQZDZD"
+# }' "https://graph.facebook.com/v2.6/me/thread_settings?access_token=EAAFHfgUlUNUBAMbOzxRNH7A2VZCi5pGxhRZChSuybRFjul9oAcPARjsZC0WM8auoW4tm8UX1YZBRW9Xb2s1QJZAQZAbE4bvritQchkFmKGthchIIC0nxipzclmZA6ZCdIx2H2ezYcZAfwHTKvo2phuwZCOyhLwmMF1L71jF7gOiiUgwgZDZD"
