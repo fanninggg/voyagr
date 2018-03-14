@@ -20,8 +20,9 @@ class CitiesController < ApplicationController
   end
 
   def show
-
     city_flights_in
+    city_flights_out
+    total_price
   end
 
   private
@@ -38,7 +39,9 @@ class CitiesController < ApplicationController
     @hash_out = {
       airline: [],
       price: [],
-      logo: []
+      logo: [],
+      departure: [],
+      arrival: []
     }
     until counter  >= 4
       next_friday = start_date.next_week.advance(:days=>4)
@@ -50,6 +53,8 @@ class CitiesController < ApplicationController
       @hash_out[:airline] << airline
       @hash_out[:price] << flight["data"].first["conversion"]["GBP"]
       @hash_out[:logo] << "https://images.kiwi.com/airlines/64/#{airline}.png"
+      @hash_out[:departure] << flight["data"].first["routes"].first.first
+      @hash_out[:arrival] << flight["data"].first["routes"].first.second
       counter += 1
       start_date = start_date.next_week
     end
@@ -67,7 +72,9 @@ class CitiesController < ApplicationController
     @hash_in = {
       airline: [],
       price: [],
-      logo: []
+      logo: [],
+      departure: [],
+      arrival: []
     }
     until counter  >= 4
       next_sunday = start_date.next_week.advance(:days=>6)
@@ -79,8 +86,17 @@ class CitiesController < ApplicationController
       @hash_in[:airline] << airline
       @hash_in[:price] << flight["data"].first["conversion"]["GBP"]
       @hash_in[:logo] << "https://images.kiwi.com/airlines/64/#{airline}.png"
+      @hash_in[:departure] << flight["data"].first["routes"].first.first
+      @hash_in[:arrival] << flight["data"].first["routes"].first.second
       counter += 1
       start_date = start_date.next_week
     end
+  end
+
+  def total_price
+    @price_one = @hash_in[:price].first + @hash_out[:price].first
+    @price_two = @hash_in[:price].second + @hash_out[:price].second
+    @price_three = @hash_in[:price].third + @hash_out[:price].third
+    @price_four = @hash_in[:price].fourth + @hash_out[:price].fourth
   end
 end
