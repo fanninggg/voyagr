@@ -216,3 +216,22 @@ function showSlides(n, no) {
   x[slideIndex[no]-1].style.display = "block";
 }
 </script>
+
+<p>Click the button below to trigger a Share Dialog</p>
+
+<div id="shareBtn" class="btn btn-success clearfix">Share</div>
+
+<p style="margin-top: 50px">
+  <hr />
+  <a class="btn btn-small"  href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>
+</p>
+
+<script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: 'https://www.voyagr.co.uk/cities/#{@city.id}',
+  }, function(response){});
+}
+</script>
