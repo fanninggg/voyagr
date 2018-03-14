@@ -1,128 +1,227 @@
 .show-page {
-  h1 {
+  background-color: rgba(255,255,255, 0.9);
+  } h1 {
     color: rgb(220,220,220);
     font-weight: lighter;
-    font-size: 56px;
-  } h2 {
-    font-size: 40px;
-    color: rgb(255, 255, 255);
-    opacity: 1;
-  } h3 {
-    color: #F89D29;
-    font-size: 30px;
-    } p {
-    font-size: 16px;
+    font-size: 80px;
+    } h2 {
+    font-size: 32px;
     font-weight: lighter;
-    color: rgb(255, 255, 255);
+    color: rgb(150, 150, 150);
+    opacity: 1;
+    } h3 {
+    color: #F89D29;
+    font-size: 32px;
+    } h4 {
+    font-size: 32px;
+    color: rgb(150, 150, 150);
+    opacity: 1;
+  } p {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(150, 150, 150);
     opacity: 1;
   } a:hover {
     text-decoration: none;
-  }
 }
-
 .show-link-logo {
   margin-left: 10px;
   opacity: 1 !important;
+  margin-top: -25px;
 }
-.show-banner {
-  padding: 0;
-}
-// .show-map {
-//   position: fixed;
-//   left: 1050px;
-//   top: 80px;
-// }
-.city-information {
-  margin: 45px;
-  margin-top: 0px;
-  padding-bottom: 50px;
-  display:flex;
+.banner-holder {
+  display: flex;
   justify-content: space-around;
 }
-.show-background {
+.show-banner {
+  width: 100vw;
+  height: 80vh;
   background-size: cover !important;
-  min-height: 100vh;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-position: center;
 }
-.image-and-text {
+.city-title {
+  padding-top: 20px;
+  z-index: 5;
+}
+.ticket-box {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.ticket-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto 15px auto;
+  background-color: rgb(255,255,255);
+  height: 200px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.07)
+}
+.ticket-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px 0 10px 0;
+}
+.ticket-card-body-element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+.column-two {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(150,150,150,0.7)
-} p {
-  margin-left: 10px;
-  opacity: 1;
+  padding: 0 10px;
+}
+.tickets {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+}
+.ticket-out {
+  display: flex;
+  flex-direction: row;
+}
+.ticket-back {
+  display: flex;
+  flex-direction: row;
+}
+.airline-logo {
+  height: 20px;
+  width: 20px;
+}
+.fa-plane {
+  font-size: 20px;
+}
+.info-card {
+  padding-bottom: 50px;
 }
 .text-and-button {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.info-card {
-  padding-bottom: 50px;
-}
-.suggestion {
+.ttd-and-slideshow {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
+  justify-content: space-around;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
-.suggestion-text {
+.things-to-do {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 400px;
 }
-.suggestion-image {
-  width: 150px;
-  height: 100px;
+.ttd-title {
+  display: flex;
+  flex-direction: row;
 }
-
-#map {
-  width: 300px;
-  height: 665px;
+.ttd-title-text {
+  color: rgb(255,255,255);
+  margin-left: -180px;
+  z-index: 5;
 }
-
-.modal-button {
-  color: #fff;
-  background-color: rgba(248,157,41,0.6);
-  border-color: #f79210;
-  border-radius: 20px;
+.things-blur {
+  width: 200px;
+  height: 140px;
+  background: linear-gradient(rgba(0,0,0, 1), rgba(0,0,0,0.9));
 }
-
-#ßslideshow {
-  margin: 50px auto;
-  position:relative;
-  width: 240px;
-  height:240px;
-  padding: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4)
+.slideshow-container {
+  position: relative;
+  margin: auto 0;
+}
+.slideshow-images {
+  width: 400px;
+  height: 300px;
 }
 
-#slideshow > div {
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
   position: absolute;
-  top:10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.map-holder {
+  display: flex;
+  justify-content: space-around;
+}
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 
 @media only screen and (max-width: 500px) {
-  .show-background {
-    width: 100%
+  .ttd-and-slideshow {
+    flex-direction: column;
+  }
+
+  .things-to-do {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .thing {
+    margin-left: 25vw;
+  }
+  .slideshow-images {
+    width: 100vw;
+  }
+  .ttd-title {
+    margin-left: 20vw;
   }
 
   #map {
-    height: 300px;
-    width: 100vw;
-    bottom: 190px;
+
   }
 
   .image-and-text {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    height: 245px;
+
   }
 
   .show-page {
@@ -138,20 +237,10 @@
   }
 
   .show-map {
-    position: static;
-    bottom: 0px;
+
   }
   .gen-image {
-    width: 225px;
-    height: 120px;
-    margin-top: 13px;
-  }
 
-  .modal-button {
-    font-size: 14px;
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
   }
 
 }

@@ -1,24 +1,32 @@
 <div class="index-page">
-  <div class="link-logo">
-  <%= link_to root_path do %>
-    <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
-  <% end %>
+  <div class="index-picture" style= "background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.first.photo %>')";>
+    <div class="link-logo">
+      <%= link_to root_path do %>
+        <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
+      <% end %>
+    </div>
+
+    <div class="index-page-content">
+
+      <div class="index-title">
+        <h1 class="text-center">Where is this?</h1>
+        <div class="play-again text-center">
+            <%= link_to 'Play again', cities_path, :class=>"text-center" %>
+        </div>
+      </div>
+
+      <div class="game-content">
+
+        <div class="answers">
+          <a href="#"><p id="sweet-alert-demo" class="text-center"><%= @city.first.name %></p></a>
+          <a href="#"><p id="sweet-alert-demo2" class="text-center"> <%= @cities.sample(1).first.name %></p></a>
+          <a href="#"><p id="sweet-alert-demo3" class="text-center"> <%= @cities.sample(1).first.name %> </p></a>
+        </div>
+      </div>
+
+    </div>
+
   </div>
-  <br>
-  <br>
-  <div class="what">
-    <h1 class="text-center">Hey, what are you doing here!?</h1>
-    <h2 class="text-center">This page is not the page you are looking for</h2>
-    <br>
-    <br>
-    <%= cl_image_tag "voyagr/droids.png", :width=>580, :crop=>"scale" %>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+</div>
+<%= javascript_pack_tag 'index' %>
+

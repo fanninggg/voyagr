@@ -1,21 +1,62 @@
 .index-page {
-  h1 {
-    color: rgb(220,220,220);
-    font-size: 56px;
-  } h2 {
-    font-size: 40px;
-    font-weight: lighter;
-    color: rgb(255, 255, 255);
-    opacity: 0.6;
-  } h3 {
+    h1 {
+      color: rgb(255, 255, 255);
+      font-size: 60px;
+    } h2 {
+      font-size: 40px;
+      font-weight: lighter;
+      color: rgb(255, 255, 255);
+      opacity: 0.6;
+    } h3 {
+      color: #F89D29;
+      font-size: 30px;
+      } a {
+      width: 300px;
+      font-size: 32px;
+      font-weight: lighter;
+      color: white;
+      } a:hover {
+        text-decoration: none;
+      } li {
+        padding-bottom: 30px;
+      }
+    }
+
+  .logo-world {
+    height: 20px;
+    width: 20px;
+  }
+
+
+.index-title {
+  margin-left: 35px;
+  margin-bottom: 20px;
+  a:hover {
     color: #F89D29;
-    font-size: 30px;
-    } p {
-    width: 300px;
-    font-size: 16px;
-    font-weight: lighter;
-    color: rgb(255, 255, 255);
-    opacity: 0.6;
+  }
+}
+
+.answers {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 400px;
+  align-items: center;
+}
+
+.index-picture {
+  background-size: cover;
+  height: 100vh;
+}
+
+.index-page-content {
+  p {
+    border-radius: 60px;
+    padding: 10px;
+    border: solid 2px rgb(255, 255, 255);
+    color: white;
+    font-size: 24px;
+  } p:hover {
+    background-color: rgba(230, 230, 230, .2)
   }
 }
 
@@ -24,25 +65,27 @@
   margin-top: -25px;
 }
 
-.logo-world {
-  height: 20px;
-  width: 20px;
+
+
+@media only screen and (max-width: 415px) {
+  .index-page p {
+    font-size: 12px;
+    margin: 0px 15px;
+  }
+  .index-page a {
+    font-size: 18px;
+    color: white;
+    font-weight: lighter;
+  }
+  .index-page h1 {
+    font-size: 30px;
+  }
+  .index-page h3 {
+    font-size: 20px;
+  }
+  .logo-world {
+    height: 12px;
+    width: 12px;
+  }
 }
 
-.cards-box {
-  display: flex;
-  lex-direction: row;
-}
-.city-card {
-  width: 477px;
-  margin: 10px;
-}
-.city {
-  height: 215px;
-  width: 450px;
-}
-.what {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}

@@ -1,6 +1,6 @@
 def set_up_get_started_button(sender)
  response =  {
-  "get_started": {"payload": "<postback_payload>"}
+  "get_started": {"payload": "Get Started"}
 }
 
 bot_standard_reply(response, sender)
@@ -296,6 +296,16 @@ def bot_choices_reply(sender)
                     "type": "postback",
                     "title": "Take the quiz!",
                     "payload": "quiz",
+                  }],
+                },
+                {
+                  "title": "Play guess the destination!",
+                  "image_url": "https://images.pexels.com/photos/185933/pexels-photo-185933.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb",
+                  "buttons":
+                  [{
+                    "type": "web_url",
+                    "url": "https://www.voyagr.co.uk/cities",
+                    "title": "Play!",
                   }],
                 }]
               }
