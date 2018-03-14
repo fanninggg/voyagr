@@ -15,10 +15,10 @@
       <div class="game-content">
 
         <div class="answers">
-           <% @cities.each do |city| %>
-             <a href="#" class="city-option <%= city == @city ? 'valid' : nil %>">
-               <%= city.name %>
-             </a>
+          <% @cities.each do |city| %>
+            <a href="#" class="city-option <%= city == @city ? 'valid' : nil %>">
+              <%= city.name %>
+            </a>
           <% end %>
         </div>
       </div>
@@ -28,4 +28,3 @@
   </div>
 </div>
 <%= javascript_pack_tag 'index' %>
-

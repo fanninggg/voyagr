@@ -1875,7 +1875,7 @@ cities_attributes_7 = [
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'culture'),
-    top_attractions_1: 'St Peter\'s Basilica',
+    top_attractions_1: 'Vatican Museums',
     top_attractions_2: 'St Peter\'s Basilica',
     top_attractions_3: 'Castel Sant\'Angelo'
   },
@@ -2486,7 +2486,6 @@ cities_attributes_9 = [
   }
 ]
 
-City.create!(cities_attributes_1)
 cities_attributes_1.each do |attr|
   c = City.create!(attr)
   puts c.name + " created"
