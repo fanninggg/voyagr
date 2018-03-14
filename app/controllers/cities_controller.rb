@@ -51,7 +51,8 @@ class CitiesController < ApplicationController
       logo: [],
       departure: [],
       arrival: [],
-      time: []
+      atime: [],
+      dtime: []
     }
     until counter  >= 4
       next_friday = start_date.next_week.advance(:days=>4)
@@ -65,7 +66,8 @@ class CitiesController < ApplicationController
       @hash_out[:logo] << "https://images.kiwi.com/airlines/64/#{airline}.png"
       @hash_out[:departure] << flight["data"].first["routes"].first.first
       @hash_out[:arrival] << flight["data"].first["routes"].first.second
-      @hash_out[:time] << flight["data"].first["route"].first["dTimeUTC"]
+      @hash_out[:dtime] << flight["data"].first["dTimeUTC"]
+      @hash_out[:atime] << flight["data"].first["aTimeUTC"]
       counter += 1
       start_date = start_date.next_week
     end
@@ -86,7 +88,8 @@ class CitiesController < ApplicationController
       logo: [],
       departure: [],
       arrival: [],
-      time: []
+      dtime: [],
+      atime: []
     }
     until counter  >= 4
       next_sunday = start_date.next_week.advance(:days=>6)
@@ -100,7 +103,8 @@ class CitiesController < ApplicationController
       @hash_in[:logo] << "https://images.kiwi.com/airlines/64/#{airline}.png"
       @hash_in[:departure] << flight["data"].first["routes"].first.first
       @hash_in[:arrival] << flight["data"].first["routes"].first.second
-      @hash_in[:time] << flight["data"].first["route"].first["dTimeUTC"]
+      @hash_in[:dtime] << flight["data"].first["dTimeUTC"]
+      @hash_in[:atime] << flight["data"].first["aTimeUTC"]
       counter += 1
       start_date = start_date.next_week
     end
