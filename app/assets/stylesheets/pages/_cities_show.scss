@@ -1,8 +1,9 @@
 .show-page {
-  h1 {
+  background-color: rgba(255,255,255, 0.9);
+} h1 {
     color: rgb(220,220,220);
     font-weight: lighter;
-    font-size: 80px;
+    font-size: 72px;
   } h2 {
     font-size: 40px;
     color: rgb(255, 255, 255);
@@ -13,29 +14,37 @@
     } p {
     font-size: 16px;
     font-weight: lighter;
-    color: rgb(255, 255, 255);
+    color: rgb(180, 180, 180);
     opacity: 1;
   } a:hover {
     text-decoration: none;
-  }
 }
 .show-link-logo {
   margin-left: 10px;
   opacity: 1 !important;
+  margin-top: -25px;
 }
-.show-banner {
+.banner-holder {
   display: flex;
   justify-content: space-around;
-
+}
+.show-banner {
+  width: 100vw;
+  height: 80vh;
+  background-size: cover !important;
 }
 .city-title {
-  position: relative;
-  bottom: 750px;
+  padding-top: 50px;
   z-index: 5;
 }
-#map {
-  width: 100vw;
-  height: 100vh;
+.tickets {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+.ticket-box {
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 .info-card {
   padding-bottom: 50px;
@@ -45,35 +54,29 @@
   flex-direction: column;
   align-items: center;
 }
-
-.suggestion {
+.ttd-and-slideshow {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
+  justify-content: space-around;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
-.suggestion-text {
+.things-to-do {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 400px;
 }
-.suggestion-image {
-  width: 150px;
-  height: 100px;
+.things-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
-
-.modal-button {
-  color: #fff;
-  background-color: rgba(248,157,41,0.6);
-  border-color: #f79210;
-  border-radius: 20px;
+.thing {
 }
-
 .slideshow-container {
-  width: 450px;
-  height: 275px;
   position: relative;
-  margin: auto;
+  margin: auto 0;
 }
 
 /* Hide the images by default */
@@ -111,37 +114,13 @@
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+.map-holder {
+  display: flex;
+  justify-content: space-around;
 }
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+#map {
+  width: 100vw;
+  height: 100vh;
 }
 
 @-webkit-keyframes fade {

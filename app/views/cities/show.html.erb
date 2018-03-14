@@ -1,60 +1,80 @@
 <div class="show-page">
-  <div class="link-logo show-link-logo">
-    <%= link_to root_path do %>
-      <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
-    <% end %>
-  </div>
-  <div class="show-banner">
-    <%= cl_image_tag @city.photo %>
-  </div>
-  <h1 class="city-title text-center"><%= @city.name %></h1>
 
-  <div id="map" data-markers="<%= @markers.to_json %>"></div>
-
-  <div class="slideshow-container info-card entertainment text-center">
-    <div class="mySlides1">
-      <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 450, height: 250%>
+  <div class="banner-holder">
+    <div class="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)),
+    url('<%= cl_image_path @city.photo %>')";>
+    <div class="link-logo show-link-logo">
+      <%= link_to root_path do %>
+        <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
+      <% end %>
     </div>
-    <div class="mySlides1">
-      <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 450, height: 250%>
+      <h1 class="city-title text-center"><%= @city.name %></h1>
     </div>
-    <div class="mySlides1">
-      <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 450, height: 250%>
-    </div>
-    <div class="mySlides1">
-      <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 450, height: 250%>
-    </div>
-     <div class="mySlides1">
-      <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 450, height: 250%>
-    </div>
-    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
   </div>
 
-  <div class="slideshow-container info-card entertainment text-center">
-    <div class="mySlides2">
-      <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 450, height: 250%>
+  <div class="ticket-box">
+    <h3>Flight Tickets</h3>
+    <div class="tickets">
+      <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>
+      <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>
+      <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>
+      <%= cl_image_tag "voyagr/ticket.png", width: 200, height:100 %>
     </div>
-    <div class="mySlides2">
-      <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 450, height: 250%>
-    </div>
-    <div class="mySlides2">
-      <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 450, height: 250%>
-    </div>
-    <div class="mySlides2">
-      <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 450, height: 250%>
-    </div>
-     <div class="mySlides2">
-      <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 450, height: 250%>
-    </div>
-    <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
   </div>
 
+  <div class="ttd-and-slideshow">
+    <div class="info-card things-to-do">
+      <h3>Top Sights in <%= @city.name %></h3>
+      <div class="things-group">
+        <div class="thing">
+          <p>Thing 1</p>
+          <%= cl_image_tag "voyagr/sightseeing.jpg", width: 180, height: 120 %>
+        </div>
+        <div class="thing">
+          <p>Thing 2</p>
+          <%= cl_image_tag "voyagr/sightseeing.jpg", width: 180, height: 120 %>
+        </div>
+      </div>
+      <div class="things-group">
+        <div class="thing">
+          <p>Thing 3</p>
+          <%= cl_image_tag "voyagr/sightseeing.jpg", width: 180, height: 120 %>
+        </div>
+        <div class="thing">
+          <p>Thing 4</p>
+          <%= cl_image_tag "voyagr/sightseeing.jpg", width: 180, height: 120 %>
+        </div>
+      </div>
+    </div>
 
-  <br>
-  <br>
-  <br>
+    <div class="slideshow-container info-card">
+      <h3>Some more pictures</h3>
+      <div class="mySlides1">
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 400, height: 300%>
+      </div>
+      <div class="mySlides1">
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 400, height: 300%>
+      </div>
+      <div class="mySlides1">
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 400, height: 300%>
+      </div>
+      <div class="mySlides1">
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 400, height: 300%>
+      </div>
+       <div class="mySlides1">
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyC_Mm_Ib5PeEXcTDpUmRmSDeptbuaeOohw", width: 400, height: 300%>
+      </div>
+      <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 map-holder">
+      <div id="map" data-markers="<%= @markers.to_json %>"></div>
+    </div>
+  </div>
 </div>
 
 <script>
