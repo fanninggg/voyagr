@@ -94,7 +94,7 @@ class WebhooksController < ApplicationController
         elsif messaging["message"]["quick_reply"]
           puts 'I got the quick reply'
           trip_answer = routing_questions(messaging, sender)
-          if messaging["message"]["quick_reply"]["payload"] == "results"
+          if !trip_answer.city_type_answer.nil?
             escape(messaging, sender, trip_answer)
           end
         elsif messaging["message"]["text"]
@@ -144,7 +144,7 @@ class WebhooksController < ApplicationController
     elsif trip_answer.city_type_answer.nil?
       trip_answer.city_type_answer = fourth_user_answer(messaging, sender)
       trip_answer.save
-      bot_reply = bot_escape_reply(sender)
+      bot_reply = bot_about_result_reply(sender)
       HTTP.post(url, json: bot_reply)
     end
 

@@ -1,4 +1,6 @@
-import swal from 'sweetalert';
+ import swal from 'sweetalert';
+
+
 
 const options = document.querySelectorAll('.city-option')
 
@@ -8,10 +10,9 @@ options.forEach(function(option, index) {
   })
 })
 
-
 function addSweetAlert(option) {
   if (option.classList.contains('valid')) {
-    swal({
+     swal({
         title: "Correct",
         text: "Well done!",
         icon: "success"
