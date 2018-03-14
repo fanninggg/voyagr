@@ -41,6 +41,7 @@
               </div>
               <div class="column-three">
               <p><%= @hash_in[:arrival].first %></p>
+
               </div>
             </div>
           </div>
@@ -155,13 +156,15 @@
   <div class="ttd-and-slideshow">
     <div class="info-card things-to-do">
       <div class="thing">
-        <h2>Three word test </h2>
+        <h2><%= @city.top_attractions_1 %></h2>
+        
       </div>
       <div class="thing">
-        <h2>Four word test title</h2>
+        <h2><%= @city.top_attractions_2 %></h2>
       </div>
       <div class="thing">
-        <h2>Five word long test title</h2>
+        <h2><%= @city.top_attractions_3 %></h2>
+       
       </div>
     </div>
 
