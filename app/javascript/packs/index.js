@@ -1,37 +1,27 @@
-import swal from 'sweetalert';
+ import swal from 'sweetalert';
 
-function bindSweetAlertButtonDemo() {
-  document.getElementById('sweet-alert-demo').addEventListener('click', () => {
-    swal({
-      title: "Correct",
-      text: "Well done!",
-      icon: "success"
-    })
-  });
+
+const options = document.querySelectorAll('.city-option')
+options.forEach(function(option, index) {
+  option.addEventListener('click', function() {
+    addSweetAlert(option)
+  })
+})
+
+function addSweetAlert(option) {
+  if (option.classList.contains('valid')) {
+     swal({
+        title: "Correct",
+        text: "Well done!",
+        icon: "success"
+    }).then(function() {
+    window.location = "cities";
+   })
+   } else {
+     swal({
+        title: "Nope",
+        text: "Didn't get it this time",
+        icon: "error"
+     })
+   }
 }
-
-bindSweetAlertButtonDemo()
-
-function bindSweetAlertButtonDemo2() {
-  document.getElementById('sweet-alert-demo2').addEventListener('click', () => {
-    swal({
-      title: "Nope",
-      text: "Didn't get it this time",
-      icon: "error"
-    })
-  });
-}
-
-bindSweetAlertButtonDemo2()
-
-function bindSweetAlertButtonDemo3() {
-  document.getElementById('sweet-alert-demo3').addEventListener('click', () => {
-    swal({
-      title: "Nope",
-      text: "Didn't get it this time",
-      icon: "error"
-    })
-  });
-}
-
-bindSweetAlertButtonDemo3()

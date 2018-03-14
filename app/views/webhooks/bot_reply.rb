@@ -198,16 +198,9 @@ def bot_fourth_question(sender)
   bot_standard_reply(response, sender)
 end
 
-def bot_escape_reply(sender)
+def bot_about_result_reply(sender)
   response = {
               "text": "We have your results!",
-              "quick_replies": [
-                {
-                  "content_type": "text",
-                  "title": "See my results \u{1F389}",
-                  "payload": "results",
-                }
-              ]
             }
 
   bot_standard_reply(response, sender)
@@ -279,23 +272,23 @@ def bot_choices_reply(sender)
               "template_type": "generic",
                 "elements":
                 [{
-                "title": "Get a random selection of holiday destinations",
-                "image_url": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb",
-                  "buttons":
-                  [{
-                    "type": "postback",
-                    "title": "Random!",
-                    "payload": "random",
-                  }],
-                },
-                {
-                  "title": "Take our quiz to find a more tailored destination",
-                  "image_url": "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/28828573_601862200156340_5594842116490865147_o.jpg?oh=aecb14db7403f287b0d0740e2536c8a6&oe=5B03A5C9",
+                "title": "Take our quiz to find a more tailored destination",
+                "image_url": "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/28828573_601862200156340_5594842116490865147_o.jpg?oh=aecb14db7403f287b0d0740e2536c8a6&oe=5B03A5C9",
                   "buttons":
                   [{
                     "type": "postback",
                     "title": "Take the quiz!",
                     "payload": "quiz",
+                  }],
+                },
+                {
+                "title": "Get a random selection of holiday destinations",
+                "image_url": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb",
+                "buttons":
+                  [{
+                    "type": "postback",
+                    "title": "Random!",
+                    "payload": "random",
                   }],
                 },
                 {

@@ -1,5 +1,5 @@
 <div class="index-page">
-  <div class="index-picture" style= "background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.first.photo %>')";>
+  <div class="index-picture" style= "background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.photo %>')";>
     <div class="link-logo">
       <%= link_to root_path do %>
         <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
@@ -10,17 +10,16 @@
 
       <div class="index-title">
         <h1 class="text-center">Where is this?</h1>
-        <div class="play-again text-center">
-            <%= link_to 'Play again', cities_path, :class=>"text-center" %>
-        </div>
       </div>
 
       <div class="game-content">
 
         <div class="answers">
-          <a href="#"><p id="sweet-alert-demo" class="text-center"><%= @city.first.name %></p></a>
-          <a href="#"><p id="sweet-alert-demo2" class="text-center"> <%= @cities.sample(1).first.name %></p></a>
-          <a href="#"><p id="sweet-alert-demo3" class="text-center"> <%= @cities.sample(1).first.name %> </p></a>
+           <% @cities.each do |city| %>
+             <a href="#" class="city-option <%= city == @city ? 'valid' : nil %>">
+               <%= city.name %>
+             </a>
+          <% end %>
         </div>
       </div>
 
