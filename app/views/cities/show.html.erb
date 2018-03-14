@@ -15,6 +15,48 @@
   <div class="ticket-box">
     <h2 class="text-center">Tempted? Here are some flight prices</h2>
     <div class="tickets">
+
+    <h3>Flight from London for next weekend</h3>
+    <%= @price_one %>
+    <%= @hash_out[:logo].first %>
+    <%= @hash_out[:departure].first %>
+    <%= @hash_out[:arrival].first %>
+    <%= @hash_in[:logo].first %>
+    <%= @hash_in[:departure].first %>
+    <%= @hash_in[:arrival].first %>
+    </div>
+
+    <div class="tickets">
+  <h3>Flight from London in two weekend</h3>
+    <%= @price_two %>
+    <%= @hash_out[:logo].second %>
+    <%= @hash_out[:departure].second %>
+    <%= @hash_out[:arrival].second %>
+    <%= @hash_in[:logo].second %>
+    <%= @hash_in[:departure].second %>
+    <%= @hash_in[:arrival].second %>
+  </div>
+
+  <div class="tickets">
+<h3>Flight from London in three weekend</h3>
+    <%= @price_three %>
+    <%= @hash_out[:logo].third %>
+    <%= @hash_out[:departure].third %>
+    <%= @hash_out[:arrival].third %>
+    <%= @hash_in[:logo].third %>
+    <%= @hash_in[:departure].third %>
+    <%= @hash_in[:arrival].third %>
+  </div>
+
+  <div class="tickets">
+ <h3>Flight from London in four weekend</h3>
+    <%= @price_four %>
+    <%= @hash_out[:logo].fourth %>
+    <%= @hash_out[:departure].fourth %>
+    <%= @hash_out[:arrival].fourth %>
+    <%= @hash_in[:logo].fourth %>
+    <%= @hash_in[:departure].fourth %>
+    <%= @hash_in[:arrival].fourth %>
     </div>
   </div>
 
@@ -60,12 +102,7 @@
     </div>
   </div>
 </div>
-<% @hash.each do |key, value| %>
-  <%= key %>
-  <% value.each do |x| %>
-    <%= x %>
-  <% end %>
-<% end %>
+
 
 <script>
 var slideIndex = [1,1];
