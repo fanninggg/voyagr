@@ -28,19 +28,19 @@
 
     <div class="slideshow-container info-card">
       <div class="mySlides1">
-        <%#= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyAzm0FC5Po0aquCv4jtrAtGvu1UPljgDg8", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).first.photo}&key=AIzaSyAzm0FC5Po0aquCv4jtrAtGvu1UPljgDg8", class: "slideshow-images"%>
       </div>
       <div class="mySlides1">
-        <%#= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyAzm0FC5Po0aquCv4jtrAtGvu1UPljgDg8", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).second.photo}&key=AIzaSyAzm0FC5Po0aquCv4jtrAtGvu1UPljgDg8", class: "slideshow-images"%>
       </div>
       <div class="mySlides1">
-        <%#= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyAzm0FC5Po0aquCv4jtrAtGvu1UPljgDg8", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).third.photo}&key=AIzaSyAzm0FC5Po0aquCv4jtrAtGvu1UPljgDg8", class: "slideshow-images"%>
       </div>
       <div class="mySlides1">
-        <%#= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyAzm0FC5Po0aquCv4jtrAtGvu1UPljgDg8", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fourth.photo}&key=AIzaSyAzm0FC5Po0aquCv4jtrAtGvu1UPljgDg8", class: "slideshow-images"%>
       </div>
        <div class="mySlides1">
-        <%#= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyAzm0FC5Po0aquCv4jtrAtGvu1UPljgDg8", class: "slideshow-images"%>
+        <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{CityPhoto.where(city_id: @city).fifth.photo}&key=AIzaSyAzm0FC5Po0aquCv4jtrAtGvu1UPljgDg8", class: "slideshow-images"%>
       </div>
       <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
       <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
@@ -214,7 +214,6 @@
   <div class="map-holder">
     <div id="map" data-markers="<%= @markers.to_json %>"></div>
   </div>
-  <br>
 <script>
 var slideIndex = [1,1];
 var slideId = ["mySlides1", "mySlides2"]
