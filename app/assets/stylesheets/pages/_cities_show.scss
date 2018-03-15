@@ -27,8 +27,12 @@
   }
 #monospace {
   font-family: 'Roboto Mono', monospace;
-
   }
+#logo-text {
+  color: #F89D29;
+  font-size: 32px;
+  margin-top:20px;
+}
 .show-link-logo {
   margin-left: 10px;
   opacity: 1 !important;
@@ -206,18 +210,25 @@
   }
 
   .things-to-do {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 90vw;
+    margin-left: 5vw;
+    background-color: rgb(255,255,255);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0);
+    margin-bottom: 20px;
   }
   .thing {
-    margin-left: 25vw;
+    width:90vw;
   }
   .slideshow-images {
     width: 100vw;
   }
   .ttd-title {
-    margin-left: 20vw;
+    width: 100vw;
+    margin-left: 10vw;
   }
   .column-two {
     padding: 0;
@@ -229,12 +240,15 @@
     margin-top: 0;
     margin-bottom: 0;
   }
-  #map {
-
+  .ticket-box {
+    margin-top: 10px;
   }
-
-  .image-and-text {
-
+  #logo-text {
+    font-size: 24px;
+  }
+  .logo-world {
+    height: 13px;
+    width: 13px;
   }
 
   .show-page {
@@ -248,21 +262,11 @@
       margin: 0 10px;
     }
   }
-
-  .show-map {
-
+}
+@media only screen and (max-width: 350px) {
+  .show-page {
+    p {
+      margin: 0 5px;
+    }
   }
-  .gen-image {
-
-  }
-
 }
-
-@media only screen and (min-width: 500px) {
-
-}
-
-@media only screen and (min-width: 800px) {
-
-}
-
