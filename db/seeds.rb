@@ -93,21 +93,21 @@ cities_attributes_1 = [
     top_attractions_3: 'Dance Flamenco'
   },
   {
-    name: 'Santorini, Greece',
+    name: 'Crete, Greece',
     budget:         'Medium',
     location:      'Europe',
     type_of_evening:  'Restaurant',
     type_of_city:   'Relaxing',
-    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427331/voyagr/Santorini.jpg",
+    photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1521127519/voyagr/crete.jpg",
     price_answer: PriceAnswer.find_by(payload: '££'),
     location_answer: LocationAnswer.find_by(payload: 'europe'),
     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
     city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
-    top_attractions_1: 'Ancient Akrotiri',
-    top_attractions_2: 'Ammoudi Port',
-    top_attractions_3: 'Wine Tasting'
+    top_attractions_1: 'Heraklion Archaeological Museum',
+    top_attractions_2: 'Palace of Knossos',
+    top_attractions_3: 'Phaestos'
   },
-  {
+ {
     name: 'Gdansk, Poland',
     budget:         'low',
     location:      'Europe',
