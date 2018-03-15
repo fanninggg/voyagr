@@ -87,9 +87,11 @@ class CitiesController < ApplicationController
       url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{next_sunday.strftime("%d/%m/%Y")}&dateTo=#{next_monday.strftime("%d/%m/%Y")}&curr=GBP&limit=1"
       response_flight = RestClient.get(url)
       flight = JSON.parse(response_flight)
-      puts flight["data"]
-      puts flight["data"].first["airlines"]
-      puts flight["data"].first["airlines"].first
+      if flight.length < 1
+        url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{next_sunday.strftime("%d/%m/%Y")}&dateTo=#{next_monday.strftime("%d/%m/%Y")}&curr=GBP&limit=1&directFlights=1"
+        response_flight = RestClient.get(url)
+        flight = JSON.parse(response_flight)
+      end
       airline = flight["data"].first["airlines"].first
       @hash_in[:airline] << airline
       @hash_in[:price] << flight["data"].first["conversion"]["GBP"]
@@ -102,7 +104,6 @@ class CitiesController < ApplicationController
       start_date = start_date.next_week
     end
   end
-
 
   def total_price
     @price_one = @hash_in[:price].first + @hash_out[:price].first
