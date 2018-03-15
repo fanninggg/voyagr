@@ -101,9 +101,6 @@
 .fa-plane {
   font-size: 20px;
 }
-.info-card {
-  padding-bottom: 50px;
-}
 .text-and-button {
   display: flex;
   flex-direction: column;
@@ -188,6 +185,9 @@
   width: 100vw;
   height: 100vh;
 }
+#shareBtn {
+  margin-bottom: 0;
+}
 
 @-webkit-keyframes fade {
   from {opacity: .4}
@@ -219,7 +219,16 @@
   .ttd-title {
     margin-left: 20vw;
   }
-
+  .column-two {
+    padding: 0;
+  }
+  #weekend-title {
+    font-size: 16px;
+  }
+  .ttd-and-slideshow {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
   #map {
 
   }
@@ -236,7 +245,7 @@
       font-size: 18px;
     } p {
       font-size: 12px;
-      margin: 15px;
+      margin: 0 10px;
     }
   }
 
