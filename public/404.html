@@ -4,9 +4,10 @@
   <title>Space Travel (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset='utf-8'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.1/particles.min.js" rel="stylesheet">
   <style>
-  .dialog { color: white; height: 0px; width:1000px; margin-left: 20px; margin-top: 20px;}
+  .dialog { color: white; height: 0px; margin-left: 20px; margin-top: 20px;}
   .dialog h1, p {font-size: 25px;}
   body { margin:0; font:normal 75% Arial, Helvetica, sans-serif; }
   canvas{ display: block; vertical-align: bottom; }
@@ -16,15 +17,29 @@
   #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; }
   #stats{ border-radius: 3px 3px 0 0; overflow: hidden; }
   .count-particles{ border-radius: 0 0 3px 3px; }
+  }
+
+  /*@media (max-width: 600px) {
+    .dialog {
+      width: 100px;
+    }
+  }*/
   </style>
 </head>
 
 <body>
 
   <div id="particles-js">
-    <div class="dialog">
-      <h1>Uh, Oh. You can't travel here!</h1>
-      <p>This destination is out of reach 👽.</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="dialog">
+            <h1 class="text-center">Uh, Oh. You can't travel here!</h1>
+            <br>
+            <p class="text-center">This destination is out of reach 👽.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
