@@ -25,13 +25,16 @@ body {
   }
 }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 375px) {
   .home-page p {
     font-size: 17px;
     margin: 0px 20px;
   }
   .messenger-button {
-    height: 20px !important;
+    height: 78px !important;
+    p {
+      font-size: 25px !important;
+    }
   }
 }
 
@@ -41,7 +44,10 @@ body {
     margin: 0px 30px;
   }
   .messenger-button {
-    height: 35px !important;
+    height: 78px !important;
+    p {
+      font-size: 25px !important;
+    }
   }
 }
 
@@ -51,7 +57,10 @@ body {
     margin: 0px 30px;
   }
   .messenger-button {
-    height: 35px !important;
+    height: 100px !important;
+    p {
+      font-size: 40px !important;
+    }
   }
 }
 
@@ -97,7 +106,22 @@ body {
 }
 
 .messenger-button {
-  height: 50px;
+  height: 100px;
+  p {
+    font-size: 40px;
+    margin-top: 15px;
+    border: solid 1px rgb(255, 255, 255);
+    color: white;
+    border-radius: 60px;
+    padding: 5px;
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  p:hover {
+    background-color: rgba(230, 230, 230, 0.2)
+  }
 }
 
 .here:after {
