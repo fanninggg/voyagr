@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.4.3'
-
+gem 'pace-rails'
 gem 'rest-client'
 gem 'cloudinary'
 gem 'http'
