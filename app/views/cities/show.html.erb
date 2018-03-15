@@ -83,7 +83,7 @@
                 </div>
               </div>
             </div>
-            <div class="ticket-card-price">
+            <div class="ticket-card-price <%= "cheapest" if @price_one == @cheapest_price %>">
             <p style="font-size: 24px", class="price" >£<%= @price_one %></p>
             </div>
           </div>
@@ -122,7 +122,7 @@
               </div>
             </div>
             <div class="ticket-card-price">
-            <p style="font-size: 24px", class="price" >£<%= @price_two %></p>
+            <p style="font-size: 24px", class="price <%= "cheapest" if @price_two == @cheapest_price %>" >£<%= @price_two %></p>
             </div>
           </div>
         </div>
@@ -160,7 +160,7 @@
               </div>
             </div>
             <div class="ticket-card-price">
-            <p style="font-size: 24px", class="price" >£<%= @price_three %></p>
+            <p style="font-size: 24px", class="price <%= "cheapest" if @price_three == @cheapest_price %>" >£<%= @price_three %></p>
             </div>
           </div>
         </div>
@@ -198,7 +198,7 @@
               </div>
             </div>
             <div class="ticket-card-price">
-            <p style="font-size: 24px", class="price" >£<%= @price_four %></p>
+            <p style="font-size: 24px", class="price <%= "cheapest" if @price_four == @cheapest_price %>" >£<%= @price_four %></p>
             </div>
           </div>
         </div>
@@ -231,25 +231,12 @@ function showSlides(n, no) {
   }
   x[slideIndex[no]-1].style.display = "block";
 }
-</script>
 
-<script>
 document.getElementById('shareBtn').onclick = function() {
   FB.ui({
     method: 'share',
     display: 'popup',
     href: 'https://www.voyagr.co.uk/cities/#{@city.id}',
   }, function(response){});
-}
-</script>
-
-<script>
-function lowestPrice() {
-  const prices = document.getElementById("price").innerHTML;
-  // parseint?
-  for each (prices) {
-    Math.min();
-  }
-  // apply a class to the lowest cost
 }
 </script>

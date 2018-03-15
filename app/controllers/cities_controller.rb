@@ -22,6 +22,7 @@ class CitiesController < ApplicationController
     city_flights_in
     city_flights_out
     total_price
+    cheapest_price
   end
 
   private
@@ -110,5 +111,15 @@ class CitiesController < ApplicationController
     @price_two = @hash_in[:price].second + @hash_out[:price].second
     @price_three = @hash_in[:price].third + @hash_out[:price].third
     @price_four = @hash_in[:price].fourth + @hash_out[:price].fourth
+  end
+
+  def cheapest_price
+    array = []
+    array << @price_one
+    array << @price_two
+    array << @price_three
+    array << @price_four
+
+    @cheapest_price = array.sort.first
   end
 end
