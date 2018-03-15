@@ -48,162 +48,166 @@
   </div>
   <h2 class="text-center">Tempted? Here are some flight prices</h2>
   <div class="container">
-    <div class="ticket-box">
-      <div class="row">
-        <div class="col-xs-6 col-sm-3">
-          <div class="ticket-card text-center">
-            <h3 id="weekend-title"><%= Time.at(@hash_out[:dtime].first).strftime('%d')%> <%= Time.at(@hash_out[:dtime].first).strftime('%b')%> - <%= Time.at(@hash_in[:dtime].first).strftime('%d')%> <%= Time.at(@hash_in[:dtime].first).strftime('%b')%></h3>
-            <div class="ticket-card-body">
-              <div class="ticket-card-body-element">
-                <div class="column-one">
-                 <p id="monospace"><%= @hash_out[:departure].first %></p>
-                 <p id="monospace"><%= Time.at(@hash_out[:dtime].first).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].first).strftime('%M') %></p>
+    <% if @hash_in[:departure].length >= 4 %>
+      <div class="ticket-box">
+        <div class="row">
+          <div class="col-xs-6 col-sm-3">
+            <div class="ticket-card text-center">
+              <h3 id="weekend-title">This weekend</h3>
+              <div class="ticket-card-body">
+                <div class="ticket-card-body-element">
+                  <div class="column-one">
+                   <p id="monospace"><%= @hash_out[:departure].first %></p>
+                   <p id="monospace"><%= Time.at(@hash_out[:dtime].first).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].first).strftime('%M') %></p>
+                  </div>
+                  <div class="column-two">
+                    <p><i class="fa fa-plane"></i></p>
+                    <p><img src="<%= @hash_out[:logo].first %>" alt="Logo" class="airline-logo"></p>
+                  </div>
+                  <div class="column-three">
+                    <p id="monospace"><%= @hash_out[:arrival].first %></p>
+                    <p id="monospace"><%= Time.at(@hash_out[:atime].first).strftime('%H') %>:<%= Time.at(@hash_out[:atime].first).strftime('%M') %></p>
+                  </div>
                 </div>
-                <div class="column-two">
-                  <p><i class="fa fa-plane"></i></p>
-                  <p><img src="<%= @hash_out[:logo].first %>" alt="Logo" class="airline-logo"></p>
-                </div>
-                <div class="column-three">
-                  <p id="monospace"><%= @hash_out[:arrival].first %></p>
-                  <p id="monospace"><%= Time.at(@hash_out[:atime].first).strftime('%H') %>:<%= Time.at(@hash_out[:atime].first).strftime('%M') %></p>
+                <div class="ticket-card-body-element">
+                  <div class="column-one">
+                    <p id="monospace"><%= @hash_in[:departure].first %></p>
+                    <p id="monospace"><%= Time.at(@hash_in[:dtime].first).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].first).strftime('%M') %></p>
+                  </div>
+                  <div class="column-two">
+                    <p><i class="fa fa-plane"></i></p>
+                    <p><img src="<%= @hash_in[:logo].first %>" alt="Logo" class="airline-logo"></p>
+                  </div>
+                  <div class="column-three">
+                    <p id="monospace"><%= @hash_in[:arrival].first %></p>
+                    <p id="monospace"><%= Time.at(@hash_in[:atime].first).strftime('%H') %>:<%= Time.at(@hash_out[:atime].first).strftime('%M') %></p>
+                  </div>
                 </div>
               </div>
-              <div class="ticket-card-body-element">
-                <div class="column-one">
-                  <p id="monospace"><%= @hash_in[:departure].first %></p>
-                  <p id="monospace"><%= Time.at(@hash_in[:dtime].first).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].first).strftime('%M') %></p>
-                </div>
-                <div class="column-two">
-                  <p><i class="fa fa-plane"></i></p>
-                  <p><img src="<%= @hash_in[:logo].first %>" alt="Logo" class="airline-logo"></p>
-                </div>
-                <div class="column-three">
-                  <p id="monospace"><%= @hash_in[:arrival].first %></p>
-                  <p id="monospace"><%= Time.at(@hash_in[:atime].first).strftime('%H') %>:<%= Time.at(@hash_out[:atime].first).strftime('%M') %></p>
-                </div>
+              <div class="ticket-card-price <%= "cheapest" if @price_one == @cheapest_price %>">
+                <p style="font-size: 24px", class="price" >£<%= @price_one %></p>
               </div>
-            </div>
-            <div class="ticket-card-price <%= "cheapest" if @price_one == @cheapest_price %>">
-            <p style="font-size: 24px", class="price" >£<%= @price_one %></p>
             </div>
           </div>
-        </div>
-        <div class="col-xs-6 col-sm-3">
-          <div class="ticket-card text-center">
-            <h3 id="weekend-title"><%= Time.at(@hash_out[:dtime].second).strftime('%d')%> <%= Time.at(@hash_out[:dtime].second).strftime('%b')%> - <%= Time.at(@hash_in[:dtime].second).strftime('%d')%> <%= Time.at(@hash_in[:dtime].second).strftime('%b')%></h3>
-            <div class="ticket-card-body">
-              <div class="ticket-card-body-element">
-                <div class="column-one">
-                 <p id="monospace"> <%= @hash_out[:departure].second %></p>
-                 <p id="monospace"><%= Time.at(@hash_out[:dtime].second).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].second).strftime('%M') %></p>
+          <div class="col-xs-6 col-sm-3">
+            <div class="ticket-card text-center">
+              <h3 id="weekend-title">Next weekend</h3>
+              <div class="ticket-card-body">
+                <div class="ticket-card-body-element">
+                  <div class="column-one">
+                   <p id="monospace"> <%= @hash_out[:departure].second %></p>
+                   <p id="monospace"><%= Time.at(@hash_out[:dtime].second).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].second).strftime('%M') %></p>
+                  </div>
+                  <div class="column-two">
+                    <p><i class="fa fa-plane"></i></p>
+                    <p><img src="<%= @hash_out[:logo].second %>" alt="Logo" class="airline-logo"></p>
+                  </div>
+                  <div class="column-three">
+                    <p id="monospace"><%= @hash_out[:arrival].second %></p>
+                    <p id="monospace"><%= Time.at(@hash_out[:atime].second).strftime('%H') %>:<%= Time.at(@hash_out[:atime].second).strftime('%M') %></p>
+                  </div>
                 </div>
-                <div class="column-two">
-                  <p><i class="fa fa-plane"></i></p>
-                  <p><img src="<%= @hash_out[:logo].second %>" alt="Logo" class="airline-logo"></p>
-                </div>
-                <div class="column-three">
-                  <p id="monospace"><%= @hash_out[:arrival].second %></p>
-                  <p id="monospace"><%= Time.at(@hash_out[:atime].second).strftime('%H') %>:<%= Time.at(@hash_out[:atime].second).strftime('%M') %></p>
+                <div class="ticket-card-body-element">
+                  <div class="column-one">
+                    <p id="monospace"><%= @hash_in[:departure].second %></p>
+                    <p id="monospace"><%= Time.at(@hash_in[:dtime].second).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].second).strftime('%M') %></p>
+                  </div>
+                  <div class="column-two">
+                    <p><i class="fa fa-plane"></i></p>
+                    <p><img src="<%= @hash_in[:logo].second %>" alt="Logo" class="airline-logo"></p>
+                  </div>
+                  <div class="column-three">
+                    <p id="monospace"><%= @hash_in[:arrival].second %></p>
+                    <p id="monospace"><%= Time.at(@hash_in[:atime].second).strftime('%H') %>:<%= Time.at(@hash_out[:atime].second).strftime('%M') %></p>
+                  </div>
                 </div>
               </div>
-              <div class="ticket-card-body-element">
-                <div class="column-one">
-                  <p id="monospace"><%= @hash_in[:departure].second %></p>
-                  <p id="monospace"><%= Time.at(@hash_in[:dtime].second).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].second).strftime('%M') %></p>
-                </div>
-                <div class="column-two">
-                  <p><i class="fa fa-plane"></i></p>
-                  <p><img src="<%= @hash_in[:logo].second %>" alt="Logo" class="airline-logo"></p>
-                </div>
-                <div class="column-three">
-                  <p id="monospace"><%= @hash_in[:arrival].second %></p>
-                  <p id="monospace"><%= Time.at(@hash_in[:atime].second).strftime('%H') %>:<%= Time.at(@hash_out[:atime].second).strftime('%M') %></p>
-                </div>
+              <div class="ticket-card-price <%= "cheapest" if @price_one == @cheapest_price %>">
+                <p style="font-size: 24px", class="price" >£<%= @price_one %></p>
               </div>
-            </div>
-            <div class="ticket-card-price">
-            <p style="font-size: 24px", class="price <%= "cheapest" if @price_two == @cheapest_price %>" >£<%= @price_two %></p>
             </div>
           </div>
-        </div>
-        <div class="col-xs-6 col-sm-3">
-          <div class="ticket-card text-center">
-            <h3 id="weekend-title"><%= Time.at(@hash_out[:dtime].third).strftime('%d')%> <%= Time.at(@hash_out[:dtime].third).strftime('%b')%> - <%= Time.at(@hash_in[:dtime].third).strftime('%d')%> <%= Time.at(@hash_in[:dtime].third).strftime('%b')%></h3>
-            <div class="ticket-card-body">
-              <div class="ticket-card-body-element">
-                <div class="column-one">
-                 <p id="monospace"><%= @hash_out[:departure].third %></p>
-                 <p id="monospace"><%= Time.at(@hash_out[:dtime].third).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].third).strftime('%M') %></p>
+          <div class="col-xs-6 col-sm-3">
+            <div class="ticket-card text-center">
+              <h3 id="weekend-title">A fortnight's time</h3>
+              <div class="ticket-card-body">
+                <div class="ticket-card-body-element">
+                  <div class="column-one">
+                   <p id="monospace"><%= @hash_out[:departure].third %></p>
+                   <p id="monospace"><%= Time.at(@hash_out[:dtime].third).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].third).strftime('%M') %></p>
+                  </div>
+                  <div class="column-two">
+                    <p><i class="fa fa-plane"></i></p>
+                    <p><img src="<%= @hash_out[:logo].third %>" alt="Logo" class="airline-logo"></p>
+                  </div>
+                  <div class="column-three">
+                    <p id="monospace"><%= @hash_out[:arrival].third %></p>
+                    <p id="monospace"><%= Time.at(@hash_out[:atime].third).strftime('%H') %>:<%= Time.at(@hash_out[:atime].third).strftime('%M') %></p>
+                  </div>
                 </div>
-                <div class="column-two">
-                  <p><i class="fa fa-plane"></i></p>
-                  <p><img src="<%= @hash_out[:logo].third %>" alt="Logo" class="airline-logo"></p>
-                </div>
-                <div class="column-three">
-                  <p id="monospace"><%= @hash_out[:arrival].third %></p>
-                  <p id="monospace"><%= Time.at(@hash_out[:atime].third).strftime('%H') %>:<%= Time.at(@hash_out[:atime].third).strftime('%M') %></p>
+                <div class="ticket-card-body-element">
+                  <div class="column-one">
+                    <p id="monospace"><%= @hash_in[:departure].third %></p>
+                    <p id="monospace"><%= Time.at(@hash_in[:dtime].third).strftime('%H') %>:<%= Time.at(@hash_in[:dtime].third).strftime('%M') %></p>
+                  </div>
+                  <div class="column-two">
+                    <p><i class="fa fa-plane"></i></p>
+                    <p><img src="<%= @hash_in[:logo].third %>" alt="Logo" class="airline-logo"></p>
+                  </div>
+                  <div class="column-three">
+                  <p id="monospace"><%= @hash_in[:arrival].third %></p>
+                  <p id="monospace"><%= Time.at(@hash_in[:atime].third).strftime('%H') %>:<%= Time.at(@hash_in[:atime].third).strftime('%M') %></p>
+                  </div>
                 </div>
               </div>
-              <div class="ticket-card-body-element">
-                <div class="column-one">
-                  <p id="monospace"><%= @hash_in[:departure].third %></p>
-                  <p id="monospace"><%= Time.at(@hash_in[:dtime].third).strftime('%H') %>:<%= Time.at(@hash_in[:dtime].third).strftime('%M') %></p>
-                </div>
-                <div class="column-two">
-                  <p><i class="fa fa-plane"></i></p>
-                  <p><img src="<%= @hash_in[:logo].third %>" alt="Logo" class="airline-logo"></p>
-                </div>
-                <div class="column-three">
-                <p id="monospace"><%= @hash_in[:arrival].third %></p>
-                <p id="monospace"><%= Time.at(@hash_in[:atime].third).strftime('%H') %>:<%= Time.at(@hash_in[:atime].third).strftime('%M') %></p>
-                </div>
+              <div class="ticket-card-price <%= "cheapest" if @price_one == @cheapest_price %>">
+                <p style="font-size: 24px", class="price" >£<%= @price_one %></p>
               </div>
-            </div>
-            <div class="ticket-card-price">
-            <p style="font-size: 24px", class="price <%= "cheapest" if @price_three == @cheapest_price %>" >£<%= @price_three %></p>
             </div>
           </div>
-        </div>
-        <div class="col-xs-6 col-sm-3">
-          <div class="ticket-card text-center">
-            <h3 id="weekend-title"><%= Time.at(@hash_out[:dtime].fourth).strftime('%d')%> <%= Time.at(@hash_out[:dtime].fourth).strftime('%b')%> - <%= Time.at(@hash_in[:dtime].fourth).strftime('%d')%> <%= Time.at(@hash_in[:dtime].fourth).strftime('%b')%></h3>
-            <div class="ticket-card-body">
-              <div class="ticket-card-body-element">
-                <div class="column-one">
-                 <p id="monospace"><%= @hash_out[:departure].fourth %></p>
-                 <p id="monospace"><%= Time.at(@hash_out[:dtime].fourth).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].fourth).strftime('%M') %></p>
+          <div class="col-xs-6 col-sm-3">
+            <div class="ticket-card text-center">
+              <h3 id="weekend-title">Three weekends</h3>
+              <div class="ticket-card-body">
+                <div class="ticket-card-body-element">
+                  <div class="column-one">
+                   <p id="monospace"><%= @hash_out[:departure].fourth %></p>
+                   <p id="monospace"><%= Time.at(@hash_out[:dtime].fourth).strftime('%H') %>:<%= Time.at(@hash_out[:dtime].fourth).strftime('%M') %></p>
+                  </div>
+                  <div class="column-two">
+                    <p><i class="fa fa-plane"></i></p>
+                    <p><img src="<%= @hash_out[:logo].fourth %>" alt="Logo" class="airline-logo"></p>
+                  </div>
+                  <div class="column-three">
+                    <p id="monospace"><%= @hash_out[:arrival].fourth %></p>
+                    <p id="monospace"><%= Time.at(@hash_out[:atime].fourth).strftime('%H') %>:<%= Time.at(@hash_out[:atime].fourth).strftime('%M') %></p>
+                  </div>
                 </div>
-                <div class="column-two">
-                  <p><i class="fa fa-plane"></i></p>
-                  <p><img src="<%= @hash_out[:logo].fourth %>" alt="Logo" class="airline-logo"></p>
-                </div>
-                <div class="column-three">
-                  <p id="monospace"><%= @hash_out[:arrival].fourth %></p>
-                  <p id="monospace"><%= Time.at(@hash_out[:atime].fourth).strftime('%H') %>:<%= Time.at(@hash_out[:atime].fourth).strftime('%M') %></p>
+                <div class="ticket-card-body-element">
+                  <div class="column-one">
+                    <p id="monospace"><%= @hash_in[:departure].fourth %></p>
+                    <p id="monospace"><%= Time.at(@hash_in[:dtime].fourth).strftime('%H') %>:<%= Time.at(@hash_in[:dtime].fourth).strftime('%M') %></p>
+                  </div>
+                  <div class="column-two">
+                    <p><i class="fa fa-plane"></i></p>
+                    <p><img src="<%= @hash_in[:logo].fourth %>" alt="Logo" class="airline-logo"></p>
+                  </div>
+                  <div class="column-three">
+                    <p id="monospace"><%= @hash_in[:arrival].fourth %></p>
+                    <p id="monospace"><%= Time.at(@hash_in[:atime].fourth).strftime('%H') %>:<%= Time.at(@hash_in[:atime].fourth).strftime('%M') %></p>
+                  </div>
                 </div>
               </div>
-              <div class="ticket-card-body-element">
-                <div class="column-one">
-                  <p id="monospace"><%= @hash_in[:departure].fourth %></p>
-                  <p id="monospace"><%= Time.at(@hash_in[:dtime].fourth).strftime('%H') %>:<%= Time.at(@hash_in[:dtime].fourth).strftime('%M') %></p>
-                </div>
-                <div class="column-two">
-                  <p><i class="fa fa-plane"></i></p>
-                  <p><img src="<%= @hash_in[:logo].fourth %>" alt="Logo" class="airline-logo"></p>
-                </div>
-                <div class="column-three">
-                  <p id="monospace"><%= @hash_in[:arrival].fourth %></p>
-                  <p id="monospace"><%= Time.at(@hash_in[:atime].fourth).strftime('%H') %>:<%= Time.at(@hash_in[:atime].fourth).strftime('%M') %></p>
-                </div>
+              <div class="ticket-card-price <%= "cheapest" if @price_one == @cheapest_price %>">
+                <p style="font-size: 24px", class="price" >£<%= @price_one %></p>
               </div>
-            </div>
-            <div class="ticket-card-price">
-            <p style="font-size: 24px", class="price <%= "cheapest" if @price_four == @cheapest_price %>" >£<%= @price_four %></p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <% else %>
+    <div class="text-center no-flights"><h2>Sorry we are unable to find flights for the next few weekends. We suggest booking further in advance for this one!</h2></div>
+    <% end %>
   </div>
 
 
