@@ -48,7 +48,7 @@
   </div>
   <h2 class="text-center">Tempted? Here are some flight prices</h2>
   <div class="container">
-    <% if @hash_in[:airline].length < 4 %>
+    <% if @hash_in[:departure].length >= 4 %>
       <div class="ticket-box">
         <div class="row">
           <div class="col-xs-6 col-sm-3">
@@ -206,7 +206,7 @@
         </div>
       </div>
     <% else %>
-    <div class="no-flights">NO FLIGHTS</div>
+    <div class="text-center no-flights"><h2>Sorry we are unable to find flights for the next few weekends. We suggest booking further in advance for this one!</h2></div>
     <% end %>
   </div>
 
