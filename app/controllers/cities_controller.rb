@@ -30,7 +30,7 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
     latitude = @city.latitude
     longitude = @city.longitude
-    radius = "30km"
+    radius = "60km"
     @city_from = "LHR,LGW,LCY,STN,SEN"
     @city_to = "#{latitude.round(1)}-#{longitude.round(1)}-#{radius}"
     counter = 0
@@ -67,7 +67,7 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
     latitude = @city.latitude
     longitude = @city.longitude
-    radius = "30km"
+    radius = "60km"
     @city_to = "LHR,LGW,LCY,STN,SEN"
     @city_from = "#{latitude.round(1)}-#{longitude.round(1)}-#{radius}"
     counter = 0
@@ -87,6 +87,9 @@ class CitiesController < ApplicationController
       url = "https://api.skypicker.com/flights?flyFrom=#{@city_from}&to=#{@city_to}&dateFrom=#{next_sunday.strftime("%d/%m/%Y")}&dateTo=#{next_monday.strftime("%d/%m/%Y")}&curr=GBP&limit=1"
       response_flight = RestClient.get(url)
       flight = JSON.parse(response_flight)
+      puts flight["data"]
+      puts flight["data"].first["airlines"]
+      puts flight["data"].first["airlines"].first
       airline = flight["data"].first["airlines"].first
       @hash_in[:airline] << airline
       @hash_in[:price] << flight["data"].first["conversion"]["GBP"]
