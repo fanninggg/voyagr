@@ -126,7 +126,7 @@ class CitiesController < ApplicationController
   end
 
   def total_price
-    if city_flights_in() && city_flights_out()
+    if @hash_in[:price].count == 4 && @hash_out[:price].count == 4
       @price_one = @hash_in[:price].first + @hash_out[:price].first
       @price_two = @hash_in[:price].second + @hash_out[:price].second
       @price_three = @hash_in[:price].third + @hash_out[:price].third
