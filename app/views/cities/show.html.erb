@@ -5,7 +5,7 @@
     url('<%= cl_image_path @city.photo %>')";>
     <div class="link-logo show-link-logo">
       <%= link_to root_path do %>
-        <h3>v<%= image_tag "world", :class=> "logo-world" %>yagr</h3>
+        <h5 id="logo-text">v<%= image_tag "world", :class=> "logo-world" %>yagr</h5>
       <% end %>
     </div>
       <h1 class="city-title text-center"><%= @city.name %></h1>
@@ -16,13 +16,13 @@
   <div class="ttd-and-slideshow">
     <div class="info-card things-to-do">
       <div class="thing">
-        <h2><%= @city.top_attractions_1 %></h2>
+        <h2 class="text-center">1. <%= @city.top_attractions_1 %></h2>
       </div>
       <div class="thing">
-        <h2><%= @city.top_attractions_2 %></h2>
+        <h2 class="text-center">2. <%= @city.top_attractions_2 %></h2>
       </div>
       <div class="thing">
-        <h2><%= @city.top_attractions_3 %></h2>
+        <h2 class="text-center">3. <%= @city.top_attractions_3 %></h2>
       </div>
     </div>
 
