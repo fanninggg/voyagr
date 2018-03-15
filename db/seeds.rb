@@ -2491,46 +2491,46 @@ cities_attributes_1.each do |attr|
   puts c.name + " created"
   sleep(1)
 end
-cities_attributes_2.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_3.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_4.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_5.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_6.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_7.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_8.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
-cities_attributes_9.each do |attr|
-  c = City.create!(attr)
-  puts c.name + " created"
-  sleep(1)
-end
+# cities_attributes_2.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_3.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_4.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_5.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_6.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_7.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_8.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
+# cities_attributes_9.each do |attr|
+#   c = City.create!(attr)
+#   puts c.name + " created"
+#   sleep(1)
+# end
 
 
 cities = City.all
