@@ -63,13 +63,13 @@ class CitiesController < ApplicationController
         counter = 20
       else
         airline = flight["data"].first["airlines"].first
-        @hash_in[:airline] << airline
-        @hash_in[:price] << flight["data"].first["conversion"]["GBP"]
-        @hash_in[:logo] << "https://images.kiwi.com/airlines/64/#{airline}.png"
-        @hash_in[:departure] << flight["data"].first["routes"].first.first
-        @hash_in[:arrival] << flight["data"].first["routes"].first.second
-        @hash_in[:dtime] << flight["data"].first["dTimeUTC"]
-        @hash_in[:atime] << flight["data"].first["aTimeUTC"]
+        @hash_out[:airline] << airline
+        @hash_out[:price] << flight["data"].first["conversion"]["GBP"]
+        @hash_out[:logo] << "https://images.kiwi.com/airlines/64/#{airline}.png"
+        @hash_out[:departure] << flight["data"].first["routes"].first.first
+        @hash_out[:arrival] << flight["data"].first["routes"].first.second
+        @hash_out[:dtime] << flight["data"].first["dTimeUTC"]
+        @hash_out[:atime] << flight["data"].first["aTimeUTC"]
         counter += 1
         start_date = start_date.next_week
       end
@@ -126,7 +126,7 @@ class CitiesController < ApplicationController
   end
 
   def total_price
-    if city_flights_in()
+    if city_flights_in() && city_flights_out()
       @price_one = @hash_in[:price].first + @hash_out[:price].first
       @price_two = @hash_in[:price].second + @hash_out[:price].second
       @price_three = @hash_in[:price].third + @hash_out[:price].third
