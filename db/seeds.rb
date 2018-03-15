@@ -2538,7 +2538,7 @@ counter = 0
 cities.each do |city|
 
   params_photos = {
-      key:  "AIzaSyCzpWPzoF6HKClrmzSFbTKoHDlaTGrsTbI",
+      key:  "AIzaSyAzm0FC5Po0aquCv4jtrAtGvu1UPljgDg8",
       location: "#{city.latitude},#{city.longitude}",
       radius: 50000,
   }
