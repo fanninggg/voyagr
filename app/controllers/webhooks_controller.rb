@@ -37,7 +37,6 @@ class WebhooksController < ApplicationController
           if messaging["postback"]["payload"] == "Get Started"
             Trip.where(sender: sender).destroy_all
             bot_reply = bot_welcome_reply(sender)
-            puts "i've read the bot reply"
             HTTP.post(url, json: bot_reply)
           elsif messaging["postback"]["payload"] == "Let's go!"
             Trip.where(sender: sender).destroy_all
@@ -108,12 +107,10 @@ class WebhooksController < ApplicationController
 
   def go_to_random_suggestion(sender)
     suggestions = []
-    arr_one = City.all.sample(1)
-    arr_two = City.all.sample(1)
-    arr_three = City.all.sample(1)
-    suggestions << arr_one
-    suggestions << arr_two
-    suggestions << arr_three
+    cities = City.all.sample(3)
+    cities.each do |city|
+      suggestions << [city]
+    end
     bot_reply = bot_suggestions(sender, suggestions)
     HTTP.post(url, json: bot_reply)
   end

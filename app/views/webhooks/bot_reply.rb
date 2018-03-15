@@ -65,7 +65,7 @@ end
 
 def bot_thanks_reply(sender)
   response = {
-              "text": "Thanks! I think I'm doing a great job too!"
+              "text": "That's a nice picture, thanks for sharing!"
               }
 
   bot_standard_reply(response, sender)
@@ -104,6 +104,11 @@ def bot_suggestions(sender, suggestions)
                   },
                   {
                     "type": "postback",
+                    "title": "Reshuffle",
+                    "payload": "random"
+                  },
+                  {
+                    "type": "postback",
                     "title": "Main menu",
                     "payload": "menu"
                   }],
@@ -119,6 +124,11 @@ def bot_suggestions(sender, suggestions)
                   },
                   {
                     "type": "postback",
+                    "title": "Reshuffle",
+                    "payload": "random"
+                  },
+                  {
+                    "type": "postback",
                     "title": "Main menu",
                     "payload": "menu"
                   }],
@@ -131,6 +141,11 @@ def bot_suggestions(sender, suggestions)
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{suggestions.third.first[:id]}",
                     "title": "More information"
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Reshuffle",
+                    "payload": "random"
                   },
                   {
                     "type": "postback",
@@ -223,6 +238,11 @@ def bot_results_reply(sender, results)
                   },
                   {
                     "type": "postback",
+                    "title": "Take the quiz again",
+                    "payload": "quiz"
+                  },
+                  {
+                    "type": "postback",
                     "title": "Main menu",
                     "payload": "menu"
                   }],
@@ -238,6 +258,11 @@ def bot_results_reply(sender, results)
                   },
                   {
                     "type": "postback",
+                    "title": "Take the quiz again",
+                    "payload": "quiz"
+                  },
+                  {
+                    "type": "postback",
                     "title": "Main menu",
                     "payload": "menu"
                   }],
@@ -250,6 +275,11 @@ def bot_results_reply(sender, results)
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{results.third.id}",
                     "title": "See more",
+                  },
+                  {
+                    "type": "postback",
+                    "title": "Take the quiz again",
+                    "payload": "quiz"
                   },
                   {
                     "type": "postback",
