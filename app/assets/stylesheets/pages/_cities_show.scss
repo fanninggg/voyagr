@@ -207,11 +207,10 @@
 }
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .ttd-and-slideshow {
     flex-direction: column;
   }
-
   .things-to-do {
     align-items: center;
     display: flex;
@@ -237,7 +236,8 @@
     padding: 0;
   }
   #weekend-title {
-    font-size: 16px;
+    font-size: 22px;
+    padding-bottom: 0;
   }
   .ttd-and-slideshow {
     margin-top: 0;
@@ -255,6 +255,12 @@
   }
   #top-sights {
     font-size: 24px;
+  }
+  .ticket-card {
+    height: 250px;
+  }
+  .ticket-card-body {
+    padding: 0 0 10px 0;
   }
   .show-page {
     h1 {
