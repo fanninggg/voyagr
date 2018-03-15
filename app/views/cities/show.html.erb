@@ -53,7 +53,7 @@
         <div class="row">
           <div class="col-xs-6 col-sm-3">
             <div class="ticket-card text-center">
-              <h3 id="weekend-title">This weekend</h3>
+              <h3 id="weekend-title"><%= Time.at(@hash_out[:dtime].first).strftime('%d')%> <%= Time.at(@hash_out[:dtime].first).strftime('%b')%> - <%= Time.at(@hash_in[:dtime].first).strftime('%d')%> <%= Time.at(@hash_in[:dtime].first).strftime('%b')%></h3>
               <div class="ticket-card-body">
                 <div class="ticket-card-body-element">
                   <div class="column-one">
@@ -91,7 +91,7 @@
           </div>
           <div class="col-xs-6 col-sm-3">
             <div class="ticket-card text-center">
-              <h3 id="weekend-title">Next weekend</h3>
+              <h3 id="weekend-title"><%= Time.at(@hash_out[:dtime].second).strftime('%d')%> <%= Time.at(@hash_out[:dtime].second).strftime('%b')%> - <%= Time.at(@hash_in[:dtime].second).strftime('%d')%> <%= Time.at(@hash_in[:dtime].second).strftime('%b')%></h3>
               <div class="ticket-card-body">
                 <div class="ticket-card-body-element">
                   <div class="column-one">
@@ -129,7 +129,7 @@
           </div>
           <div class="col-xs-6 col-sm-3">
             <div class="ticket-card text-center">
-              <h3 id="weekend-title">A fortnight's time</h3>
+              <h3 id="weekend-title"><%= Time.at(@hash_out[:dtime].third).strftime('%d')%> <%= Time.at(@hash_out[:dtime].third).strftime('%b')%> - <%= Time.at(@hash_in[:dtime].third).strftime('%d')%> <%= Time.at(@hash_in[:dtime].third).strftime('%b')%></h3>
               <div class="ticket-card-body">
                 <div class="ticket-card-body-element">
                   <div class="column-one">
@@ -167,7 +167,7 @@
           </div>
           <div class="col-xs-6 col-sm-3">
             <div class="ticket-card text-center">
-              <h3 id="weekend-title">Three weekends</h3>
+              <h3 id="weekend-title"><%= Time.at(@hash_out[:dtime].fourth).strftime('%d')%> <%= Time.at(@hash_out[:dtime].fourth).strftime('%b')%> - <%= Time.at(@hash_in[:dtime].fourth).strftime('%d')%> <%= Time.at(@hash_in[:dtime].fourth).strftime('%b')%></h3>
               <div class="ticket-card-body">
                 <div class="ticket-card-body-element">
                   <div class="column-one">
