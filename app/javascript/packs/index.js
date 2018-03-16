@@ -17,7 +17,7 @@ function addSweetAlert(option) {
         text: "Well done!",
         icon: "success"
     }).then(function() {
-    window.location = "cities";
+    window.location = `cities?count=${Number(document.getElementById('count').innerHTML) + 1}`;
     })
   } else {
     swal({
