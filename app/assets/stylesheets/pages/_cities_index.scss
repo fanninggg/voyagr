@@ -4,9 +4,8 @@
       font-size: 60px;
     } h2 {
       font-size: 40px;
-      font-weight: lighter;
       color: rgb(255, 255, 255);
-      opacity: 0.6;
+      font-weight: 300;
     } h3 {
       color: #F89D29;
       font-size: 30px;
@@ -36,10 +35,14 @@
   margin-bottom: 20px;
 }
 
+#count {
+  margin-top: 5px;
+}
+
 .answers {
   display: flex;
   justify-content: space-around;
-  margin-top: 500px;
+  margin-top: 380px;
   align-items: center;
 }
 
@@ -56,9 +59,10 @@
     color: white;
     font-size: 24px;
     text-align: center;
+    background-color: rgba(220, 220, 220, .5),
   }
   a.city-option:hover {
-    background-color: rgba(230, 230, 230, .2);
+    background-color: rgba(230, 230, 230, .7);
     text-decoration: none;
   }
 }
@@ -69,8 +73,6 @@
 }
 
 
-
-
 @media only screen and (max-width: 415px) {
   .index-page a.city-option {
     font-size: 12px;
@@ -79,11 +81,17 @@
     color: white;
     font-weight: lighter;
   }
+  #count {
+    margin-top: 1px;
+  }
   .answers {
-    margin-top: 250px;
+    margin-top: 150px;
   }
   .index-page h1 {
     font-size: 30px;
+  }
+  .index-page h2 {
+    font-size: 20px;
   }
   .index-page h3 {
     font-size: 20px;

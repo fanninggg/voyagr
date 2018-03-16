@@ -10,6 +10,10 @@
 
       <div class="index-title">
         <h1 class="text-center">Where is this?</h1>
+        <div class="score-box text-center">
+          <h2 class="text-center">Score:</h2>
+          <h2 class="text-center" id="count"><%= @count %></h2>
+        </div>
       </div>
 
       <div class="game-content">
@@ -22,9 +26,7 @@
           <% end %>
         </div>
       </div>
-
     </div>
-
   </div>
 </div>
 <%= javascript_pack_tag 'index' %>

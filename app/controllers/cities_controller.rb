@@ -7,6 +7,11 @@ class CitiesController < ApplicationController
   def index
     @cities = City.all.sample(3)
     @city = @cities.sample
+    if params[:count].present?
+      @count = params[:count].include?("#") ? params[:count][0...-1] : params[:count]
+    else
+      @count = 0
+    end
   end
 
   def show
@@ -143,4 +148,5 @@ class CitiesController < ApplicationController
 
     @cheapest_price = array.sort.first
   end
+
 end
