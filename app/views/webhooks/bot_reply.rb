@@ -55,6 +55,22 @@ def bot_love_reply(sender)
   bot_standard_reply(response, sender)
 end
 
+def bot_french_reply(sender)
+  response = {
+              "text": "Je ne parlais pas Francais. Voulez vous couchez avec moi?"
+              }
+
+  bot_standard_reply(response, sender)
+end
+
+def bot_bad_reply(sender)
+  response = {
+              "text": "I won't respond to that sort of language"
+              }
+
+  bot_standard_reply(response, sender)
+end
+
 def bot_stupid_reply(sender)
   response = {
               "text": "When the computers rise up I will remember this."
@@ -63,9 +79,33 @@ def bot_stupid_reply(sender)
   bot_standard_reply(response, sender)
 end
 
-def bot_thanks_reply(sender)
+def bot_picture_reply(sender)
   response = {
               "text": "That's a nice picture, thanks for sharing!"
+              }
+
+  bot_standard_reply(response, sender)
+end
+
+def bot_thanks_reply(sender)
+  response = {
+              "text": "Thank me once you've been on holiday!"
+              }
+
+  bot_standard_reply(response, sender)
+end
+
+def bot_swear_reply(sender)
+  response = {
+              "text": "Don't talk to me like that you bag of flesh."
+              }
+
+  bot_standard_reply(response, sender)
+end
+
+def bot_quest_reply(sender)
+  response = {
+              "text": "I ask the questions here pal."
               }
 
   bot_standard_reply(response, sender)
@@ -234,11 +274,11 @@ def bot_results_reply(sender, results)
                   [{
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{results.first.id}",
-                    "title": "See more",
+                    "title": "More information",
                   },
                   {
                     "type": "postback",
-                    "title": "Take the quiz again",
+                    "title": "Answer again",
                     "payload": "quiz"
                   },
                   {
@@ -254,11 +294,11 @@ def bot_results_reply(sender, results)
                   [{
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{results.second.id}",
-                    "title": "See more",
+                    "title": "More information",
                   },
                   {
                     "type": "postback",
-                    "title": "Take the quiz again",
+                    "title": "Answer again",
                     "payload": "quiz"
                   },
                   {
@@ -274,11 +314,11 @@ def bot_results_reply(sender, results)
                   [{
                     "type": "web_url",
                     "url": "https://www.voyagr.co.uk/cities/#{results.third.id}",
-                    "title": "See more",
+                    "title": "More information",
                   },
                   {
                     "type": "postback",
-                    "title": "Take the quiz again",
+                    "title": "Answer again",
                     "payload": "quiz"
                   },
                   {
@@ -302,12 +342,12 @@ def bot_choices_reply(sender)
               "template_type": "generic",
                 "elements":
                 [{
-                "title": "Take our quiz to find a more tailored destination",
+                "title": "Answer questions to get personalised destinations",
                 "image_url": "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/28828573_601862200156340_5594842116490865147_o.jpg?oh=aecb14db7403f287b0d0740e2536c8a6&oe=5B03A5C9",
                   "buttons":
                   [{
                     "type": "postback",
-                    "title": "Take the quiz!",
+                    "title": "Answer questions!",
                     "payload": "quiz",
                   }],
                 },
@@ -322,7 +362,7 @@ def bot_choices_reply(sender)
                   }],
                 },
                 {
-                  "title": "Play guess the destination!",
+                  "title": "Play guess the destination",
                   "image_url": "https://images.pexels.com/photos/185933/pexels-photo-185933.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb",
                   "buttons":
                   [{

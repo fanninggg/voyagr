@@ -53,18 +53,14 @@ class WebhooksController < ApplicationController
             HTTP.post(url, json: bot_reply)
           end
         elsif messaging["message"]["attachments"]
-          bot_reply = bot_thanks_reply(sender)
+          bot_reply = bot_picture_reply(sender)
           HTTP.post(url, json: bot_reply)
           bot_reply = bot_continue_reply(sender)
           HTTP.post(url, json: bot_reply)
         elsif messaging["message"]["text"] == "Hi"
-          puts "i got the hi"
           Trip.where(sender: sender).destroy_all
-          puts "i destroyed everything"
           bot_reply = bot_choices_reply(sender)
-          puts "i made the reply"
           HTTP.post(url, json: bot_reply)
-          puts "i posted the reply"
         elsif messaging["message"]["text"] == "hi"
           puts "i got the hi"
           Trip.where(sender: sender).destroy_all
@@ -80,6 +76,16 @@ class WebhooksController < ApplicationController
           HTTP.post(url, json: bot_reply)
           bot_reply = bot_continue_reply(sender)
           HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "Cunt"
+          bot_reply = bot_bad_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "cunt"
+          bot_reply = bot_bad_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
         elsif messaging["message"]["text"].include? "stupid"
           bot_reply = bot_stupid_reply(sender)
           HTTP.post(url, json: bot_reply)
@@ -87,6 +93,71 @@ class WebhooksController < ApplicationController
           HTTP.post(url, json: bot_reply)
         elsif messaging["message"]["text"].include? "Stupid"
           bot_reply = bot_stupid_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "Dumb"
+          bot_reply = bot_stupid_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "dumb"
+          bot_reply = bot_stupid_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "Fuck"
+          bot_reply = bot_swear_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "fuck"
+          bot_reply = bot_swear_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "Shit"
+          bot_reply = bot_swear_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "shit"
+          bot_reply = bot_swear_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "thank"
+          bot_reply = bot_thanks_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "Thank"
+          bot_reply = bot_thanks_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "bonjour"
+          bot_reply = bot_french_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "Bonjour"
+          bot_reply = bot_french_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "merci"
+          bot_reply = bot_french_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "Merci"
+          bot_reply = bot_french_reply(sender)
+          HTTP.post(url, json: bot_reply)
+          bot_reply = bot_continue_reply(sender)
+          HTTP.post(url, json: bot_reply)
+        elsif messaging["message"]["text"].include? "?"
+          bot_reply = bot_quest_reply(sender)
           HTTP.post(url, json: bot_reply)
           bot_reply = bot_continue_reply(sender)
           HTTP.post(url, json: bot_reply)
