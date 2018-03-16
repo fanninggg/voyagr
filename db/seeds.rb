@@ -1940,7 +1940,7 @@ cities_attributes_7 = [
     top_attractions_3: 'Schweizerisches Landesmuseum'
   },
   {
-    name: 'Wild Taiga, Finland',
+    name: 'Taiga, Finland',
     budget:         'Expensive',
     location:      'Europe',
     type_of_evening:  'Meet the locals',
