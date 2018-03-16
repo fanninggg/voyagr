@@ -236,7 +236,7 @@ cities_attributes_1 = [
      photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520427105/voyagr/Madiera.jpg",
      price_answer: PriceAnswer.find_by(payload: '£'),
      location_answer: LocationAnswer.find_by(payload: 'europe'),
-     evening_answer: EveningAnswer.find_by(payload: 'bar'),
+     evening_answer: EveningAnswer.find_by(payload: 'restaurant'),
      city_type_answer: CityTypeAnswer.find_by(payload: 'adventure'),
      top_attractions_1: 'Quinta das Cruzes',
      top_attractions_2: 'Museu de Arte Sacra',
@@ -2483,7 +2483,21 @@ cities_attributes_9 = [
     top_attractions_1: 'Burj Al Arab',
     top_attractions_2: 'Dubai Museum',
     top_attractions_3: 'IMG Worlds of Adventure'
-  }
+  },
+  { name: 'Dublin, Ireland',
+     budget:         'low',
+     location:      'Europe',
+     type_of_evening:  'Bar',
+     type_of_city:        'Relaxing',
+     photo: "http://res.cloudinary.com/dm2e6swvo/image/upload/v1520426869/voyagr/Dublin.jpg",
+     price_answer: PriceAnswer.find_by(payload: '£'),
+     location_answer: LocationAnswer.find_by(payload: 'europe'),
+     evening_answer: EveningAnswer.find_by(payload: 'bar'),
+     city_type_answer: CityTypeAnswer.find_by(payload: 'relax'),
+     top_attractions_1: 'A Dublin Pub!',
+     top_attractions_2: 'Trinity College',
+     top_attractions_3: 'National Museum Of Ireland'
+   }
 ]
 
 cities_attributes_1.each do |attr|
