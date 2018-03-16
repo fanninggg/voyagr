@@ -140,7 +140,14 @@ body {
   position:relative;
   text-align:center
 }
-
+.meet-team {
+  margin: 0px 200px;
+  color: rgb(220,220,220);
+  font-size: 40px;
+}
+.team-title {
+  align-items: center;
+}
 .team {
   display: flex;
   flex-direction: row;
